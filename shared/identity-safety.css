@@ -1,0 +1,91 @@
+/* 408-BRAND-CONVERGENCE-1.0 — Dylan/agency insurance identity, 408-FARMERS phone mnemonic, independent 408 Local. */
+:root{
+  --idsafe-ink:#102845;
+  --idsafe-muted:#5d6e82;
+  --local-cream:#faf5ea;
+  --local-green:#2f5d50;
+  --local-ink:#24312c;
+  --local-clay:#b85f3f;
+  --local-gold:#d6a84b;
+}
+
+.idsafe-brand-wordmark,
+.idsafe-brand-wordmark:link,
+.idsafe-brand-wordmark:visited{
+  display:inline-grid;
+  gap:2px;
+  min-width:0;
+  color:var(--idsafe-ink);
+  line-height:1.05;
+  text-decoration:none;
+}
+.idsafe-brand-name{font-size:clamp(1.02rem,1.8vw,1.42rem);font-weight:900;letter-spacing:-.025em;white-space:nowrap}
+.idsafe-brand-role{max-width:31rem;color:var(--idsafe-muted);font-size:clamp(.56rem,.86vw,.72rem);font-weight:700;line-height:1.25;letter-spacing:.015em}
+.idsafe-brand-wordmark--inverse,
+.idsafe-brand-wordmark--inverse .idsafe-brand-name{color:#fff}
+.idsafe-brand-wordmark--inverse .idsafe-brand-role{color:rgba(255,255,255,.76)}
+
+.brand:has(.idsafe-brand-wordmark),
+.buyer-brand:has(.idsafe-brand-wordmark),
+.life-brand:has(.idsafe-brand-wordmark),
+.score-brand:has(.idsafe-brand-wordmark),
+.life-ops-brand:has(.idsafe-brand-wordmark){display:inline-flex;align-items:center;max-width:min(460px,62vw);text-decoration:none}
+
+.idsafe-static-contact{display:grid;justify-items:end;gap:1px;margin-left:auto;text-align:right;color:var(--idsafe-ink);line-height:1.2}
+.idsafe-static-contact>span{color:var(--idsafe-muted);font-size:.66rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.idsafe-static-contact>a{font-size:.98rem;font-weight:900;text-decoration:none}
+.idsafe-static-contact>small{color:var(--idsafe-muted);font-size:.66rem;font-weight:700}
+body.ui3-page .idsafe-static-contact{display:none}
+.life-header .idsafe-static-contact,.life-ops-header .idsafe-static-contact{color:#fff}
+.life-header .idsafe-static-contact>span,.life-header .idsafe-static-contact>small,.life-ops-header .idsafe-static-contact>span,.life-ops-header .idsafe-static-contact>small{color:rgba(255,255,255,.72)}
+
+.idsafe-carrier-text{display:grid;gap:3px;padding:14px 16px;border:1px solid rgba(16,40,69,.14);border-radius:14px;background:#fff;color:var(--idsafe-ink);line-height:1.35}
+.idsafe-carrier-text strong{font-size:.94rem}
+.idsafe-carrier-text span{color:var(--idsafe-muted);font-size:.76rem;font-weight:650}
+.idsafe-footer-disclosure{display:grid;gap:3px;max-width:40rem;color:inherit;font-size:.76rem;line-height:1.45}
+.idsafe-footer-disclosure strong{color:#fff;font-size:.88rem}
+
+.idsafe-local-wordmark,
+.idsafe-local-wordmark:link,
+.idsafe-local-wordmark:visited{
+  display:inline-flex;
+  align-items:baseline;
+  gap:.22em;
+  color:var(--local-ink);
+  font-size:clamp(1.28rem,2.1vw,1.78rem);
+  font-weight:900;
+  letter-spacing:-.045em;
+  line-height:1;
+  text-decoration:none;
+}
+.idsafe-local-wordmark .idsafe-local-408{color:var(--local-green)}
+.idsafe-local-wordmark .idsafe-local-name{color:var(--local-clay)}
+.idsafe-local-wordmark--inverse .idsafe-local-408{color:#fff}
+.idsafe-local-wordmark--inverse .idsafe-local-name{color:#f2c977}
+body.idsafe-local{background:var(--local-cream);color:var(--local-ink)}
+body.idsafe-local .ui3-site-header{background:#f8f1e3;border-bottom-color:rgba(47,93,80,.18)}
+body.idsafe-local .ui3-primary-nav a{color:var(--local-ink)}
+body.idsafe-local .ui3-header-call{background:var(--local-green);border-color:var(--local-green);color:#fff}
+body.idsafe-local .ui3-site-footer{background:var(--local-ink)}
+.idsafe-local-bridge{padding:18px;border:1px solid rgba(47,93,80,.25);border-left:5px solid var(--local-green);border-radius:14px;background:#fff;color:var(--local-ink);line-height:1.55}
+.idsafe-local-bridge a{font-weight:850;color:var(--local-green)}
+
+@media(max-width:700px){
+  .idsafe-brand-role{max-width:17rem;font-size:.55rem}
+  .idsafe-brand-name{font-size:1rem}
+  .idsafe-static-contact>small{display:none}
+  .idsafe-static-contact>span{font-size:.58rem}
+  .idsafe-static-contact>a{font-size:.82rem}
+}
+@media(max-width:420px){
+  .idsafe-brand-role{display:none}
+  .idsafe-brand-name{font-size:.95rem}
+}
+@media(forced-colors:active){
+  .idsafe-carrier-text,.idsafe-local-bridge{border:2px solid CanvasText}
+}
+
+/* Brand-convergence contact treatment: mnemonic is a contact mnemonic, never a standalone company mark. */
+.idsafe-static-contact>a{color:var(--idsafe-ink);font-size:clamp(.98rem,1.55vw,1.2rem);letter-spacing:.015em}
+.life-header .idsafe-static-contact>a,.life-ops-header .idsafe-static-contact>a{color:#fff}
+.agency-authority-header__identity span{white-space:normal}

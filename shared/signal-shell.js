@@ -50,11 +50,14 @@
     if (!container) return null;
 
     var flowId = container.getAttribute('data-signal-flow') || opts.flowId || 'foundation_demo';
-    var flow = registry.get(flowId);
-    if (!flow) throw new Error('Unknown Signal flow: ' + flowId);
+    var registeredFlow = registry.get(flowId);
+    if (!registeredFlow) throw new Error('Unknown Signal flow: ' + flowId);
 
     var params = new URLSearchParams(root.location && root.location.search || '');
     var decisionMode = params.get('decision') === 'remote' ? 'remote' : 'local';
+    var flow = decisionMode === 'remote'
+      ? Object.freeze(Object.assign({}, registeredFlow, { id: registeredFlow.id + '_remote' }))
+      : registeredFlow;
     if (decisionMode === 'remote' && !remoteDecision) throw new Error('Remote Signal Decision client is unavailable.');
     var decisionAdapter = decisionMode === 'remote' ? remoteDecision : localDecision;
     var decisionEndpoint = container.getAttribute('data-signal-decision-url') || opts.decisionEndpoint || '';

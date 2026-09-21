@@ -1,9 +1,9 @@
-/* 408-APPOINTMENT-FIRST-1.1 — campaign-specific context, identity checkpoint, secure booking. */
+/* 408-PRODUCTION-HANDOFF-1.0 — campaign-specific context, conditional intake, identity checkpoint, secure booking. */
 (function(window,document){
   'use strict';
   var form=document.querySelector('form[data-appointment-flow]');
   if(!form)return;
-  var BUILD='408-FIV-SIGNALS-1.0';
+  var BUILD='408-PRODUCTION-HANDOFF-1.0';
   var commonReasons=[
     ['price','Price'],['upcoming_renewal','Upcoming renewal'],['new_home_or_vehicle','New home or vehicle'],['coverage_concern','Coverage concern'],['comparison','Just comparing']
   ];
@@ -22,9 +22,8 @@
     condo:{source:'408farmers.com/condo',sourceKey:'web_408_condo',campaign:'Condo appointment',entry:'condo_appointment_capture',surface:'condo_appointment',assessment:'home',defaults:{review_track:'condo',property_type:'condo',fiv_signal_version:'408-FIV-SIGNALS-1.0'},
       questions:[
         {key:'review_reason',title:'What brought you here today?',help:'Choose the closest answer.',options:[['nonrenewal_notice','My condo coverage is being nonrenewed'],['renewal_change','My renewal changed'],['shopping_price','I am comparing price or options'],['buying_condo','I am buying a condo'],['coverage_review','I just want a coverage review']]},
-        {key:'current_carrier',title:'Who currently insures the condo?',help:'Choose the closest answer. Not sure is fine.',options:[['safeco','Safeco'],['liberty_mutual','Liberty Mutual'],['state_farm','State Farm'],['aaa_csaa','AAA / CSAA'],['mercury','Mercury'],['farmers','Farmers'],['other','Other'],['unsure','Not sure']]},
+        {key:'current_carrier',title:'Who currently insures the condo?',help:'Choose the closest answer. Not sure is fine.',when:function(values){return ['nonrenewal_notice','renewal_change'].indexOf(values.review_reason)>-1;},options:[['safeco','Safeco'],['liberty_mutual','Liberty Mutual'],['state_farm','State Farm'],['aaa_csaa','AAA / CSAA'],['mercury','Mercury'],['farmers','Farmers'],['other','Other'],['unsure','Not sure']]},
         {key:'renewal_timing',title:'When do you need the condo coverage reviewed?',help:'An estimate is enough.',options:[['now_urgent','Now / urgent'],['within_30','Within 30 days'],['days_31_60','31–60 days'],['over_60','More than 60 days'],['not_sure','Not sure']]},
-        {key:'auto_vehicle_count',title:'Do you also have auto insurance?',help:'This helps Dylan see whether a household review makes sense.',options:[['0','No'],['1','Yes — 1 vehicle'],['2','Yes — 2 vehicles'],['3_plus','Yes — 3+ vehicles']]},
         {key:'housing_context',title:'How is the condo used?',help:'Choose the closest answer.',options:[['owner_occupied','I own and live in it'],['second_home','It is a second home'],['landlord','I rent it to someone else']]}
       ]},
     buyer:{source:'408farmers.com/buyer',sourceKey:'web_408_buyer',campaign:'Homebuyer appointment',entry:'buyer_appointment_capture',surface:'buyer_appointment',assessment:'home',defaults:{housing_context:'buyer',review_reason:'new_home_or_vehicle'},
@@ -81,12 +80,16 @@
   form.dataset.appointmentEnhanced='true';
   var steps=Array.from(form.querySelectorAll('[data-appointment-step]')),progressLabel=form.querySelector('[data-appointment-progress-label]'),progressBar=form.querySelector('[data-appointment-progress-bar]'),progressTitle=form.querySelector('[data-appointment-progress-title]'),progressTrack=form.querySelector('[role="progressbar"]'),current=0;
   function track(name,detail){var payload=Object.assign({event:name,funnel:'appointment_first',flow:form.dataset.appointmentFlow,route:location.pathname,build:BUILD},detail||{});window.dataLayer=window.dataLayer||[];window.dataLayer.push(payload);}
-  function show(index,focus){current=Math.max(0,Math.min(index,steps.length-1));steps.forEach(function(step,i){step.hidden=i!==current;});if(progressLabel)progressLabel.textContent='Step '+(current+1)+' of '+steps.length;if(progressBar)progressBar.style.width=(((current+1)/steps.length)*100)+'%';if(progressTitle)progressTitle.textContent=questions[current].title;if(progressTrack)progressTrack.setAttribute('aria-valuenow',String(current+1));if(focus){var target=steps[current].querySelector('legend,input,button');if(target){target.setAttribute('tabindex','-1');target.focus({preventScroll:true});}}}
+  function values(){var out={};questions.forEach(function(q){if(q.key!=='capture'&&form.elements[q.key])out[q.key]=form.elements[q.key].value;});return out;}
+  function activeIndexes(){var state=values();return questions.map(function(q,i){return !q.when||q.when(state)?i:null;}).filter(function(i){return i!==null;});}
+  function clearInactive(){var active=new Set(activeIndexes());questions.forEach(function(q,i){if(i!==current&&!active.has(i)&&q.key!=='capture'&&form.elements[q.key])form.elements[q.key].value='';});}
+  function resolveIndex(index,direction){var active=activeIndexes(),candidate=Math.max(0,Math.min(index,steps.length-1));if(active.indexOf(candidate)>-1)return candidate;var ordered=direction<0?active.slice().reverse():active;var found=ordered.find(function(i){return direction<0?i<candidate:i>candidate;});return found==null?(direction<0?active[0]:active[active.length-1]):found;}
+  function show(index,focus,direction){clearInactive();current=resolveIndex(index,direction||1);steps.forEach(function(step,i){step.hidden=i!==current;});var active=activeIndexes(),position=Math.max(0,active.indexOf(current));if(progressLabel)progressLabel.textContent='Step '+(position+1)+' of '+active.length;if(progressBar)progressBar.style.width=(((position+1)/active.length)*100)+'%';if(progressTitle)progressTitle.textContent=questions[current].title;if(progressTrack){progressTrack.setAttribute('aria-valuemax',String(active.length));progressTrack.setAttribute('aria-valuenow',String(position+1));}if(focus){var target=steps[current].querySelector('legend,input,button');if(target){target.setAttribute('tabindex','-1');target.focus({preventScroll:true});}}}
   steps.forEach(function(step,index){
     var q=questions[index];
-    step.querySelectorAll('[data-appointment-value]').forEach(function(button){button.addEventListener('click',function(){step.querySelectorAll('[data-appointment-value]').forEach(function(node){node.setAttribute('aria-pressed',String(node===button));});var field=form.elements[q.key];if(field)field.value=button.dataset.appointmentValue;if(q.labelKey&&form.elements[q.labelKey])form.elements[q.labelKey].value=button.dataset.appointmentLabel;track('appointment_intake_answered',{field:q.key});show(index+1,true);});});
-    var next=step.querySelector('[data-appointment-continue]');if(next)next.addEventListener('click',function(){var input=step.querySelector('input[required]');if(!input.checkValidity()){input.reportValidity();input.focus();return;}form.elements[q.key].value=input.value.trim();track('appointment_intake_answered',{field:q.key});show(index+1,true);});
-    var back=step.querySelector('[data-appointment-back]');if(back)back.addEventListener('click',function(){show(index-1,true);});
+    step.querySelectorAll('[data-appointment-value]').forEach(function(button){button.addEventListener('click',function(){step.querySelectorAll('[data-appointment-value]').forEach(function(node){node.setAttribute('aria-pressed',String(node===button));});var field=form.elements[q.key];if(field)field.value=button.dataset.appointmentValue;if(q.labelKey&&form.elements[q.labelKey])form.elements[q.labelKey].value=button.dataset.appointmentLabel;track('appointment_intake_answered',{field:q.key});show(index+1,true,1);});});
+    var next=step.querySelector('[data-appointment-continue]');if(next)next.addEventListener('click',function(){var input=step.querySelector('input[required]');if(!input.checkValidity()){input.reportValidity();input.focus();return;}form.elements[q.key].value=input.value.trim();track('appointment_intake_answered',{field:q.key});show(index+1,true,1);});
+    var back=step.querySelector('[data-appointment-back]');if(back)back.addEventListener('click',function(){show(index-1,true,-1);});
   });
   form.addEventListener('submit',function(){track('appointment_identity_submitted',{stage:'lead_checkpoint'});});
   show(0,false);track('appointment_intake_viewed');

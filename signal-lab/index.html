@@ -8,13 +8,15 @@
   <meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
   <meta name="theme-color" content="#061f48">
   <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="stylesheet" href="/shared/signal-foundation.css?v=408-SIGNAL-FOUNDATION-1.0">
+  <link rel="stylesheet" href="/shared/signal-foundation.css?v=408-SIGNAL-DECISION-BRIDGE-1.0">
+  <script defer src="/shared/config.js?v=408-SIGNAL-DECISION-BRIDGE-1.0"></script>
   <script defer src="/shared/signal-contract.js?v=408-SIGNAL-FOUNDATION-1.0"></script>
   <script defer src="/shared/signal-flow-registry.js?v=408-SIGNAL-FOUNDATION-1.0"></script>
   <script defer src="/shared/signal-session.js?v=408-SIGNAL-FOUNDATION-1.0"></script>
   <script defer src="/shared/signal-analytics.js?v=408-SIGNAL-FOUNDATION-1.0"></script>
-  <script defer src="/shared/signal-decision-local.js?v=408-SIGNAL-FOUNDATION-1.0"></script>
-  <script defer src="/shared/signal-shell.js?v=408-SIGNAL-FOUNDATION-1.0"></script>
+  <script defer src="/shared/signal-decision-local.js?v=408-SIGNAL-DECISION-BRIDGE-1.0"></script>
+  <script defer src="/shared/signal-decision-remote.js?v=408-SIGNAL-DECISION-BRIDGE-1.0"></script>
+  <script defer src="/shared/signal-shell.js?v=408-SIGNAL-DECISION-BRIDGE-1.0"></script>
 </head>
 <body class="signal-lab-page">
   <header class="signal-lab-header">
@@ -22,7 +24,7 @@
       <img src="/shared/assets/farmers-insurance-official.svg" alt="Farmers Insurance">
       <span><strong>408FARMERS</strong><small>Virginia Tam Insurance Agency, Inc.</small></span>
     </a>
-    <span class="signal-lab-badge">Internal foundation lab · no lead creation</span>
+    <span class="signal-lab-badge">Local by default · add ?decision=remote for CoverageFit QA</span>
   </header>
   <main class="signal-lab-main" id="main-content">
     <div data-signal-shell data-signal-flow="foundation_demo">
@@ -34,7 +36,7 @@
     </div>
   </main>
   <footer class="signal-lab-footer">
-    <strong>Phase 1 boundary:</strong> anonymous local SignalSession only. No quote, lead, CRM record, CoverageFit Opportunity, or insurance eligibility decision is created here.
+    <strong>Bridge boundary:</strong> anonymous SignalSession only. Remote mode may ask CoverageFit what to do next, but no quote, lead, CRM record, CoverageFit Opportunity, contact permission, or insurance eligibility decision is created here.
   </footer>
 </body>
 </html>

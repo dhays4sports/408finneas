@@ -5,3 +5,5 @@ Disallow: /neighbor/
 Disallow: /*/thank-you.html
 
 Sitemap: https://408farmers.com/sitemap.xml
+
+Disallow: /signal-lab/

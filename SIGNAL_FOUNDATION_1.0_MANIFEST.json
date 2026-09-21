@@ -1,0 +1,21 @@
+{
+  "build": "408-SIGNAL-FOUNDATION-1.0",
+  "packageVersion": "1.4.3",
+  "date": "2026-09-20",
+  "status": "foundation_lab",
+  "productionPagesMigrated": [],
+  "coverageFitDecisionConnected": false,
+  "leadCreationEnabled": false,
+  "files": [
+    "shared/signal-contract.js",
+    "shared/signal-flow-registry.js",
+    "shared/signal-session.js",
+    "shared/signal-analytics.js",
+    "shared/signal-decision-local.js",
+    "shared/signal-shell.js",
+    "shared/signal-foundation.css",
+    "signal-lab/index.html",
+    "SIGNAL_FOUNDATION_1.0.md",
+    "SIGNAL_FOUNDATION_1.0_QA.md"
+  ]
+}

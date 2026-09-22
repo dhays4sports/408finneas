@@ -1,5 +1,32 @@
 # SIGNAL_REMOTE_BROWSER_QA_1.0
 
+## Browser follow-up — 2026-09-22 17:48 UTC
+
+Current status: LOCAL DEPLOYED BROWSER SMOKE PASS; CROSS-PREVIEW GATE BLOCKED.
+
+Both user-specified heads were verified current before this run:
+408 7a98a3affaa2dea09ebd37fa78bb81354fd5ac61; CoverageFit 2b15f8bb7d54c292863237b2a8dac6b31bd1d49c. Both PRs remain draft/unmerged.
+
+Cloudflare bot deployment records in the PRs identify:
+- Pages project 408farmers-v2: successful deployment 6bf8d1d2-9717-40be-b43b-8194abc604b0 at the exact requested 408 SHA.
+- Exact tested deployment origin: https://6bf8d1d2.408farmers-v2.pages.dev
+- Reported stable branch alias: https://signal-decision-bridge-1-0.408farmers-v2.pages.dev (not used for this immutable-SHA test).
+- Pages project coveragefit: build failed at exact CoverageFit SHA; deployment f4a5c3be-bb5f-4842-b8af-2835373d6dc0.
+- Production domain mappings/branches and environment bindings are not yet independently verified in the dashboard.
+
+Real browser: Work cloud Chrome/CDP. Opened deployed /signal-lab/?fresh=1.
+PASS: first question renders; Something changed selected; reload shows Continue where you left off; Continue restores Intent; Open to a review leads to Timing; Within 30 days completes; heading says Three signals captured. No lead created.
+PASS: Inspect local session opens JSON; canonical signals something_changed/open_to_review/within_30; contact anonymous, permissionState not_requested; leadCheckpointId and opportunityId empty. No name/phone/email/DOB/SSN/health/VIN/full address in displayed session. No contact fields or internal numeric priority score in inspected UI.
+Screenshot saved as signal-local-browser-proof.jpg with this Work task.
+This updates ONLY local browser smoke coverage; all remote browser cases and deployed CORS/CSP enforcement remain untested.
+
+External blocker: dash.cloudflare.com repeatedly rendered Performing security verification after one reload. Browser could not reach login, logs, project settings or bindings. This is not evidence of a D1 cause. GitHub combined status contained no detailed diagnostic; Cloudflare bot comment only states Build failed. The cause remains undiagnosed pending build-log access.
+
+No new deployment was manually triggered, no environment/binding/database settings changed, no temporary source wiring introduced, no business action performed, and no production deployment requested. A report-only commit may automatically produce another preview through existing Git integration; tested SHA above remains authoritative. SIGNAL-LIFE-1.0 remains gated.
+
+The offline matrix below is the earlier run's record, superseded for local browser smoke by this addendum.
+
+
 Date: 2026-09-22, final offline run 07:14 UTC.
 Status: OFFLINE PREFLIGHT PASS; REAL BROWSER / CLOUDFLARE GATE DEFERRED.
 

@@ -328,3 +328,10 @@ PASS rate limit and minimal SQLite schema; no business tables or external busine
 }
 
 ```
+
+
+## SIGNAL-LIFE-1.1 follow-on — 2026-09-22
+
+Synthetic contact handoff staging passed in Work Chrome on signal-life-1.0. See [SIGNAL-LIFE-1.1.md](SIGNAL-LIFE-1.1.md) for the complete matrix and evidence. Final tested source: 8c499e8d9174e74f01bf71c0ae5bd7f3c1a0e4dc; preview deployment 41dcccde-3dee-4266-b517-095a79db0c69. CoverageFit stayed at e02e85737051e65a5e1e0fdbf5f76cb9dd36ea35.
+
+Talk now / Choose a time / Text me preserve the anonymous Life evidence after explicit human selection. Only a fixed fictional number and simulated channel permission are accepted. No business tables, production adapters, real permission, messages, appointments, leads or opportunities are involved. A real preview-only 503 test preserved answers and Retry recovered after restoration. Browser Back restoration and missing shared page styling were fixed and retested. Temporary outage code was reverted; shared bridge endpoint/CSP defaults remain production-safe. Safari/Firefox/mobile and live downstream contact integration remain unresolved migration gates. No merge or production cutover.

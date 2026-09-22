@@ -8,7 +8,7 @@ Route /signal-life-preview/ uses the existing SignalSession and remote CoverageF
 
 Life sessions are separate from both labs. Refresh/resume, Back, explicit start-over and visible retry are supported. Learn/later outcomes avoid a forced sales conversation; Talk with a person is available as a human override, including during errors. No identity fields appear in the initial route.
 
-Explicitly selecting Talk with a person transfers the anonymous session's complete canonical evidence/answer history into a 30-minute sessionStorage handoff record. This is not contact consent. It opens /signal-life-preview/application/, a non-submitting preview of the existing detailed form, copied from unchanged /life/index.html atf6287a4. Known coverage/goal inputs are prefilled and their question groups hidden. Other known canonical facts remain in the handoff and visible summary; unknown application facts are not invented. No identity input is saved to storage or sent. No submit control, integration script, callback, Formspree, contact-permission or application API is connected. CSP form-action none; downstream connect-src none.
+Explicitly selecting Talk with a person transfers the anonymous session's complete canonical evidence/answer history into a 30-minute sessionStorage handoff record. This is not contact consent. It opens /signal-life-preview/application/, a read-only, non-submitting preview of the existing detailed form, copied from unchanged /life/index.html atf6287a4. Known coverage/goal inputs are prefilled and their question groups hidden. Other known canonical facts remain in the handoff and visible summary; unknown application facts are not invented. No identity input is saved to storage or sent. No submit control, integration script, callback, Formspree, contact-permission or application API is connected. CSP form-action none; downstream connect-src none.
 
 Production /life/index.html and detailed application code remain byte-for-byte unchanged. This preview demonstrates ZERO-REPEAT data transfer; it does not certify the live application intake's acceptance of a Signal handoff.
 
@@ -29,3 +29,9 @@ Browser QA on this new branch is pending its exact-origin authorization. Do not 
 - Integrate and review the real downstream handoff consumer, consent collection and identity boundary; current application preview deliberately cannot submit.
 - Verify existing application/callback behavior in an isolated environment before any live transaction testing.
 - Review final consumer copy/design and remove preview-only endpoint wiring before a separately authorized production cutover.
+
+## First deployed browser check — 2026-09-22 19:15 UTC
+
+Initial implementation SHA07823972cbf50cc2c1a43a4669d5936cc40d40a0 deployed successfully:67928c51-5942-4acc-9ac6-59865d87fb17, origin https://signal-life-1-0.408farmers-v2.pages.dev. Work Chrome renders the pilot and visible retry error. Direct preflight confirms403 origin rejection: new Life origin is not yet authorized by CoverageFit Preview. Explicit human override opens only the isolated local application preview and carries product=life; no fields were filled or business request submitted. Full answered-session prefill and adaptive browser paths remain BLOCKED pending exact origin configuration. Application preview fields were made read-only after inspection, and live-encryption wording replaced with accurate preview wording; production form unchanged.
+
+Operator action: add https://signal-life-1-0.408farmers-v2.pages.dev to CoverageFit Preview CF_SIGNAL_ALLOWED_ORIGINS, comma-separated with the existing exact bridge origin, then redeploy the CoverageFit feature branch. Production settings must stay unchanged.

@@ -11,7 +11,7 @@ Object.entries(handoff.canonicalSignals).forEach(function(pair){
 });
 root.appendChild(document.querySelector('template').content.cloneNode(true));
 var form=root.querySelector('form');form.addEventListener('submit',function(e){e.preventDefault();});
-form.querySelectorAll('input').forEach(function(input){input.disabled=false;});
+form.querySelectorAll('input').forEach(function(input){input.disabled=true;});
 Object.entries(p.applicationMapping(handoff.canonicalSignals)).forEach(function(pair){
  var input=Array.from(form.querySelectorAll('input')).find(function(i){return i.name===pair[0]&&i.value===pair[1];});
  if(input){input.checked=true;var group=input.closest('[data-life-step]');if(group)group.hidden=true;}

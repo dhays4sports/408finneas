@@ -1,3 +1,4 @@
+async function main() {
 const assert = require('node:assert/strict');
 const path = require('node:path');
 
@@ -119,3 +120,9 @@ await assert.rejects(
 );
 
 console.log('SIGNAL-DECISION-BRIDGE-1.0 tests passed');
+}
+
+main().catch(error => {
+  console.error(error);
+  process.exitCode = 1;
+});

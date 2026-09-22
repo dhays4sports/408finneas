@@ -1731,6 +1731,7 @@ async function handleSignalLifeHandoffPreview(request) {
   if (request.method !== 'POST') return reply(405,{error:'method_not_allowed'});
   if (request.headers.get('Origin') !== origin) return reply(403,{error:'origin_not_allowed'});
   if ((request.headers.get('Content-Type')||'').split(';')[0].trim() !== 'application/json') return reply(415,{error:'json_required'});
+  return reply(503,{error:'preview_outage_test'}); // TEMPORARY QA outage; revert after browser failure check.
   const strict = (obj, keys) => obj && typeof obj === 'object' && !Array.isArray(obj) && Object.keys(obj).every(k => keys.includes(k));
   let body;
   try {

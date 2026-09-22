@@ -1,5 +1,18 @@
 # SIGNAL_REMOTE_BROWSER_QA_1.0
 
+## Cross-preview browser attempt — 2026-09-22 18:40 UTC
+
+BLOCKED: remote API returns rate_limit_unavailable. User reports creating isolated coveragefit-signal-preview with api_rate_limits/index and binding COVERAGEFIT_DB in Preview, then setting exact allowed origin and redeploying.
+
+CoverageFit cf-signal-decision-1.0 SHA 2b58e1ead97083baa2d364a5a4c16b6dd3b454c2; deployment 7734716e-93e7-4820-8e86-d713ea286b1e. Tested API origin https://cf-signal-decision-1-0.coveragefit.pages.dev.
+408 signal-decision-bridge-1.0 temporary wiring SHA 141edf785b1b2e82abd012eecc2dfa1c877c273f; deployment 39117ad6-19aa-435e-a9f6-2604887119c0. Tested origin https://signal-decision-bridge-1-0.408farmers-v2.pages.dev.
+
+Work Chrome/CDP: local three questions/completion/anonymous inspector PASS. Remote first evaluation displays The next step could not load, rate_limit_unavailable, Retry decision; no local fallback. Remote inspector has separate session, empty answers, anonymous/not_requested and empty promotion IDs. Answer preservation/retry recovery and remaining remote matrix are NOT RUN.
+
+Direct HTTP: exact-origin OPTIONS 204 with exact Allow-Origin and no Allow-Credentials PASS; random origin rejected PASS. Deployed lab CSP permits self and exact CF preview only PASS. Static HTML also has Cloudflare's wildcard Allow-Origin header; this is separate from the restricted Signal API CORS and does not broaden connect-src.
+
+Minimal SQL matches migration0001/limiter. Public error cannot distinguish absent binding from query failure. Need Preview binding and actual schema verification; dashboard remains inaccessible here. No business actions or production changes performed. Source preview wiring remains temporarily active and MUST be reverted before merge readiness. Both PRs stay draft; SIGNAL-LIFE-1.0 remains gated.
+
 ## Closing-flow build follow-up — 2026-09-22 18:03 UTC
 
 The supplied log for deployment d22a91b9-fe88-4749-9e3c-821d33100133 identified one remaining JSON import attribute in server/closing-flow.mjs. This supersedes the unknown-cause note below.

@@ -8,7 +8,10 @@ Fix commit: 2b58e1ead97083baa2d364a5a4c16b6dd3b454c2 on cf-signal-decision-1.0. 
 
 PASS: expanded configuration parity/recursive scan, closing-flow syntax, Signal Decision core regressions, cross-repo HTTP/SQLite suite including Life happy path (2026-09-22T18:02:07Z). These checks do not replace a deployed browser test.
 
-Cloudflare triggered preview deployment a9e6f423-989d-43f8-b83b-a784cc9a8cac for this fix. Status at report preparation: build in progress. The PR comments record the subsequent observed build result when available.
+Cloudflare triggered preview deployment a9e6f423-989d-43f8-b83b-a784cc9a8cac for this fix. Confirmed result: DEPLOY SUCCESSFUL via Cloudflare PR bot.
+- Immutable origin: https://a9e6f423.coveragefit.pages.dev
+- Stable branch origin: https://cf-signal-decision-1-0.coveragefit.pages.dev
+The complete Pages Functions graph now builds successfully in the deployed environment.
 
 Preview D1 binding remains unverified because dashboard access is blocked. No remote endpoint was exercised, no settings/bindings changed, no temporary origin wiring introduced and no business action performed. Remote browser gate and SIGNAL-LIFE-1.0 remain blocked.
 

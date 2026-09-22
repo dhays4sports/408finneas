@@ -1,0 +1,32 @@
+- banner:
+  - link "408FARMERS · Life preview":
+    - /url: ../
+  - paragraph: Preview only · Test number only · No calls or texts
+- main:
+  - heading "How would you like to connect?" [level=1]
+  - paragraph: "Your Life answers will carry forward. This is a test: nothing is booked or sent."
+  - paragraph: "Durable staging test: synthetic handoff and simulated permission evidence are saved with a seven-day expiration. Nothing is sent or booked."
+  - heading "Your answers so far" [level=2]
+  - list:
+    - listitem: "Coverage: Life"
+    - listitem: "Interest: Open to it"
+    - listitem: "Timing: Within 30 days"
+    - listitem: "Current coverage: Only through work"
+  - group "Contact preference":
+    - generic: Contact preference
+    - radio "Talk now" [checked]
+    - text: Talk now
+    - radio "Choose a time"
+    - text: Choose a time
+    - radio "Text me"
+    - text: Text me
+  - generic: Test phone number
+  - textbox "Test phone number"
+  - paragraph: This preview uses a fixed fictional number. Do not enter personal contact information.
+  - checkbox "Simulate permission for a call about my Life request. This does not grant actual contact permission." [checked]
+  - generic: Simulate permission for a call about my Life request. This does not grant actual contact permission.
+  - button "Retry handoff"
+  - status: The handoff could not load. Your Life answers and selections are still here. Retry the handoff. If your preview has expired, return to your Life answers and select Talk with a person again.
+  - paragraph:
+    - link "Return to my Life answers":
+      - /url: ../

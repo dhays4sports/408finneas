@@ -53,3 +53,12 @@ Cloudflare binding reference: https://developers.cloudflare.com/pages/functions/
 Run Life happy path, explicit human entry, then the durable URL. Submit each synthetic mode. Inspect D1 count and stored canonical/answer/permission JSON; repeat identical requests and confirm one row/original receipt. Verify no delivery or business objects. Test retry and reload with retained answers, unauthorized Origin, and missing/invalid permission. Restore any temporary fault configuration, record both tested SHA and deployment ID, and update this report. Do not call this gate passed until actual preview D1 persistence and browser receipts are verified.
 
 No merge, production deployment, /life migration, real permission, real contact collection, or outbound delivery is authorized by this phase. Safari/Firefox/mobile remain separate outstanding gates.
+
+## Deployed verification — 2026-09-22 21:19–21:22 UTC
+
+Implementation SHA: b53c0cff1a4d044e6b97f381fff1be5c00e84831.
+Preview deployment: ef57da02-571d-4e77-bf23-a2f0520c4887, https://ef57da02.408farmers-v2.pages.dev; Cloudflare GitHub bot reported deployment success.
+
+PASS: Work Chrome resumed the existing three-answer Life session to the qualified conversation outcome. Default stateless contact submission still returned success with three answers. Opt-in durable page displayed the retention/simulation notice and all known answers. Submission showed visible failure/Retry with all answers and choice preserved. A controlled same-Origin POST returned HTTP 503 with `{"error":"staging_binding_missing"}`.
+
+BLOCKED: successful deployed D1 write/read/duplicate-count verification. No remote staging row or simulated permission evidence has been created. The operator setup above is required before certifying this gate. The 1.1 route remains available; no fallback masks the durable-mode failure. Browser DOM evidence is in qa/signal-life-1.2/missing-binding-dom.txt.

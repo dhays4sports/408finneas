@@ -12,12 +12,15 @@ var labels={product:'Coverage',lifeCoverageStatus:'Current coverage',shoppingInt
 var values={life:'Life',employer_only:'Only through work',yes_personal:'Personal coverage',none:'No personal coverage',unsure:'Not sure',ready_now:'Ready now',open_to_review:'Open to it',researching:'Mostly researching',not_interested:'Not interested',now:'As soon as possible',within_30:'Within 30 days',within_90:'Next few months',future:'Not sure yet',family_income:'Family income',mortgage:'Mortgage or home',children:'Children or dependents',business:'Business or key person',final_expenses:'Final expenses',review_existing:'Review existing coverage'};
 Object.keys(handoff.canonicalSignals||{}).forEach(function(k){if(!labels[k])return;var li=document.createElement('li');li.textContent=labels[k]+': '+(values[handoff.canonicalSignals[k]]||'Answer retained');form.querySelector('ul').appendChild(li);});
 var details=form.querySelector('#contact-details'),timing=form.querySelector('#time-details'),permission=form.querySelector('#preview-permission'),status=form.querySelector('#contact-status'),submit=form.querySelector('button'),busy=false;
-form.addEventListener('change',function(e){
- if(e.target.name!=='mode')return;
- details.hidden=false;timing.hidden=e.target.value!=='choose_time';permission.checked=false;
- form.querySelector('#permission-copy').textContent=e.target.value==='text'?'Simulate permission for a text about my Life request. This does not grant actual contact permission.':'Simulate permission for a call about my Life request. This does not grant actual contact permission.';
+function syncPreference(){
+ var selected=form.querySelector('input[name="mode"]:checked');
+ details.hidden=!selected;timing.hidden=!selected||selected.value!=='choose_time';permission.checked=false;
+ if(selected)form.querySelector('#permission-copy').textContent=selected.value==='text'?'Simulate permission for a text about my Life request. This does not grant actual contact permission.':'Simulate permission for a call about my Life request. This does not grant actual contact permission.';
  status.textContent='';form.querySelector('#application-link').hidden=true;submit.textContent='Test this handoff';
-});
+}
+form.addEventListener('change',function(e){if(e.target.name==='mode')syncPreference();});
+// Browsers may restore radio selection after Back without firing change.
+window.addEventListener('pageshow',syncPreference);
 form.addEventListener('submit',async function(e){
  e.preventDefault();if(busy)return;
  var selected=form.querySelector('input[name="mode"]:checked'),mode=selected&&selected.value,slot=mode==='choose_time'?form.querySelector('select').value:'';

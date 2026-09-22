@@ -44,3 +44,15 @@ test('human override carries an empty anonymous Life session without invented an
  const b=fixture();const s=sessionApi.create(pilot.FLOW,{storage});b.handoff=pilot.handoff(s,'human');
  const r=await send(b);assert.equal(r.status,200);assert.equal((await r.json()).answerCount,0);
 });
+
+test('browser Back restoration shows the restored method and resets permission',async()=>{
+ const {default:vm}=await import('node:vm');const {readFileSync}=await import('node:fs');
+ const events={};let selected={value:'text'};
+ const nodes={ul:{appendChild(){}},'#contact-details':{hidden:true},'#time-details':{hidden:true},'#preview-permission':{checked:true},'#contact-status':{textContent:'old receipt'},button:{textContent:'Test again'},'#permission-copy':{},'#application-link':{hidden:false}};
+ const form={noValidate:false,innerHTML:'',querySelector(k){return k==='input[name="mode"]:checked'?selected:nodes[k];},addEventListener(){}};
+ const document={getElementById(){return {appendChild(){}};},createElement(tag){return tag==='form'?form:{textContent:''};}};
+ const window={SignalLifePreview:pilot,addEventListener(name,fn){events[name]=fn;}};
+ vm.runInNewContext(readFileSync(new URL('../signal-life-preview/contact/contact.js',import.meta.url),'utf8'),{document,window,sessionStorage:{getItem(){return JSON.stringify(fixture().handoff);}}});
+ events.pageshow();assert.equal(nodes['#contact-details'].hidden,false);assert.equal(nodes['#preview-permission'].checked,false);assert.match(nodes['#permission-copy'].textContent,/text about/);assert.equal(nodes['#application-link'].hidden,true);
+ selected={value:'choose_time'};events.pageshow();assert.equal(nodes['#time-details'].hidden,false);assert.match(nodes['#permission-copy'].textContent,/call about/);
+});

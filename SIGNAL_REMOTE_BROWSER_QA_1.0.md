@@ -1,5 +1,17 @@
 # SIGNAL_REMOTE_BROWSER_QA_1.0
 
+## Closing-flow build follow-up — 2026-09-22 18:03 UTC
+
+The supplied log for deployment d22a91b9-fe88-4749-9e3c-821d33100133 identified one remaining JSON import attribute in server/closing-flow.mjs. This supersedes the unknown-cause note below.
+
+Fix commit: 2b58e1ead97083baa2d364a5a4c16b6dd3b454c2 on cf-signal-decision-1.0. closing-flow now imports the same generated producer-config.mjs. All 106 server JavaScript modules at parent 86a9555 were fetched and inspected; closing-flow was the only remaining attribute occurrence. The parity regression now includes closing-flow and recursively scans the whole server directory for JSON import assertions/attributes.
+
+PASS: expanded configuration parity/recursive scan, closing-flow syntax, Signal Decision core regressions, cross-repo HTTP/SQLite suite including Life happy path (2026-09-22T18:02:07Z). These checks do not replace a deployed browser test.
+
+Cloudflare triggered preview deployment a9e6f423-989d-43f8-b83b-a784cc9a8cac for this fix. Status at report preparation: build in progress. The PR comments record the subsequent observed build result when available.
+
+Preview D1 binding remains unverified because dashboard access is blocked. No remote endpoint was exercised, no settings/bindings changed, no temporary origin wiring introduced and no business action performed. Remote browser gate and SIGNAL-LIFE-1.0 remain blocked.
+
 ## Pages build follow-up — 2026-09-22 17:54 UTC
 
 Status: DEPLOYMENT STILL FAILED; REMOTE BROWSER GATE BLOCKED.

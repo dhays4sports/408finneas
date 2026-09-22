@@ -1,5 +1,24 @@
 # SIGNAL_REMOTE_BROWSER_QA_1.0
 
+## Pages build follow-up — 2026-09-22 17:54 UTC
+
+Status: DEPLOYMENT STILL FAILED; REMOTE BROWSER GATE BLOCKED.
+
+The user supplied the original build log for CoverageFit 2b15f8bb7d54c292863237b2a8dac6b31bd1d49c. Wrangler 3.114.17 failed during Pages Functions compilation on JSON import attributes (`with {type:'json'}`) in quote-template-api.mjs, recommendation-api.mjs and solo-desk-repository.mjs. This failure occurs before database initialization; it does not establish a D1 binding problem.
+
+CoverageFit feature-branch fix: 86a955534c7680850abffb5bd4a5ca60575d6223.
+The three consumers now import a generated plain ESM producer-config.mjs. The original producer.json remains unchanged. A sync script and parity regression preserve the same parsed configuration. No score weights, endpoint behavior, CORS, CSP, bindings or production settings changed.
+
+Local verification PASS: syntax checks for all three modules; producer configuration parity before and after regeneration; Signal Decision core tests; actual cross-repo HTTP/isolated SQLite integration suite including Life happy path, routing, failure/retry, input rejection, exact CORS and rate limiting. These are not proof of a successful Wrangler build or remote browser execution.
+
+Cloudflare automatically attempted the new feature head. Its PR bot reports Build failed for 86a9555 at 2026-09-22T17:53:44Z:
+- Deployment ID: d22a91b9-fe88-4749-9e3c-821d33100133
+- [New build log](https://dash.cloudflare.com/?to=/ac46c14627f1ad50d6f4c92b347c957c/pages/view/coveragefit/d22a91b9-fe88-4749-9e3c-821d33100133)
+
+The new failure cause is unknown until that deployment's log is available. GitHub combined status supplies no additional details, and dashboard security verification still prevents log/binding access in Work. Do not assume the new failure matches the original parser error.
+
+No safe Preview D1 binding has been verified or created. No remote endpoint evaluation was performed. No temporary preview-origin wiring was introduced, so no source-wiring revert is needed. No business object or contact action was created by this follow-up. Both PRs remain draft; SIGNAL-LIFE-1.0 remains blocked. Earlier records below retain their original run context.
+
 ## Browser follow-up — 2026-09-22 17:48 UTC
 
 Current status: LOCAL DEPLOYED BROWSER SMOKE PASS; CROSS-PREVIEW GATE BLOCKED.

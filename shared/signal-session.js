@@ -9,7 +9,7 @@
   if (!contract && typeof require === 'function') contract = require('./signal-contract.js');
   if (!contract) throw new Error('Signal contract is required.');
 
-  var BUILD = '408-SIGNAL-FOUNDATION-1.0';
+  var BUILD = '408-SIGNAL-DECISION-BRIDGE-1.0';
   var KEY_PREFIX = '408farmers.signal.session.v1:';
   var MEMORY = {};
 
@@ -145,6 +145,13 @@
   function recomputeSignals(flow, answers) {
     var signals = { product: flow.product };
     answers.forEach(function (answer) {
+      var storedSignals = contract.safeObject(answer && answer.signals);
+      if (Object.keys(storedSignals).length) {
+        Object.keys(storedSignals).forEach(function (field) {
+          if (contract.isAllowedCanonicalField(field)) signals[field] = contract.clean(storedSignals[field], 160);
+        });
+        return;
+      }
       var question = flow.questionMap[answer.questionId];
       if (!question) return;
       var option = question.options.find(function (item) { return item.code === answer.optionCode; });
@@ -183,6 +190,7 @@
       questionId: question.id,
       questionVersion: question.version,
       optionCode: option.code,
+      signals: contract.clone(option.signals || {}),
       answeredAt: at
     });
     if (answers.length > contract.MAX_ANSWERS) throw new Error('Signal answer limit exceeded.');
@@ -198,6 +206,31 @@
       evaluatedAt: at
     };
     return { session: save(next, flow, options), changed: changed, option: option };
+  }
+
+  function answerQuestion(session, flow, questionInput, optionCode, options) {
+    var question = contract.validateQuestion(questionInput);
+    var code = contract.token(optionCode, 80);
+    var option = question.options.find(function (item) { return item.code === code; });
+    if (!option) throw new TypeError('Unknown signal answer.');
+    var at = nowIso(options && options.now), answers = (session.answers || []).slice();
+    var existingIndex = answers.findIndex(function (item) { return item.questionId === question.id; });
+    var changed = existingIndex !== -1 && answers[existingIndex].optionCode !== option.code;
+    if (existingIndex !== -1) answers = answers.slice(0, existingIndex);
+    answers.push({
+      questionId: question.id,
+      questionVersion: question.version,
+      optionCode: option.code,
+      signals: contract.clone(option.signals || {}),
+      answeredAt: at
+    });
+    if (answers.length > contract.MAX_ANSWERS) throw new Error('Signal answer limit exceeded.');
+    var next = contract.clone(session);
+    next.answers = answers;
+    next.currentQuestionId = '';
+    next.state = 'signal_developing';
+    next.decision = { status: 'not_evaluated', decision: '', nextQuestionId: '', evaluatedAt: '' };
+    return { session: save(next, flow, options), changed: changed, option: option, question: question };
   }
 
   function goBack(session, flow, options) {
@@ -230,6 +263,7 @@
     loadOrCreate: loadOrCreate,
     save: save,
     answer: answer,
+    answerQuestion: answerQuestion,
     goBack: goBack,
     restart: restart,
     destroy: destroy,

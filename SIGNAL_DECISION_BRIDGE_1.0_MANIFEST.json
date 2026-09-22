@@ -1,0 +1,20 @@
+{
+  "build": "408-SIGNAL-DECISION-BRIDGE-1.0",
+  "packageVersion": "1.4.4",
+  "date": "2026-09-20",
+  "status": "internal_bridge_lab",
+  "productionPagesMigrated": [],
+  "coverageFitDecisionConnected": "lab_only",
+  "leadCreationEnabled": false,
+  "files": [
+    "shared/signal-session.js",
+    "shared/signal-decision-remote.js",
+    "shared/signal-shell.js",
+    "shared/config.js",
+    "signal-lab/index.html",
+    "_headers",
+    "tests/signal-decision-bridge.test.cjs",
+    "SIGNAL_DECISION_BRIDGE_1.0.md",
+    "SIGNAL_DECISION_BRIDGE_1.0_QA.md"
+  ]
+}

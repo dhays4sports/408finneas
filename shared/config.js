@@ -4,6 +4,7 @@ window.LANDING_PAGE_CONFIG = {
   formEndpoint: "https://formspree.io/f/mojgnegn",
   coverageFitTransitionUrl: "https://coveragefit.com/transition/",
   coverageFitBootstrapUrl: "https://coveragefit.com/api/pvx/web-bootstrap",
+  coverageFitSignalDecisionUrl: "https://coveragefit.com/api/signal/decision",
   coverageFitHomeUrl: "https://coveragefit.com/home/",
   coverageFitFallbackUrl: "/home#form",
   referralBridgeUrl: "https://408farmers.com/neighbor/",

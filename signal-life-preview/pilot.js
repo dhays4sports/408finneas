@@ -36,7 +36,7 @@ box.addEventListener('click',function(e){
  else if(a==='retry'||a==='continue')void evaluate();
  else if(a==='restart'){session=api.restart(flow,{location:location,document:document});void evaluate();}
  else if(a==='human'){
-  try{sessionStorage.setItem(pilot.HANDOFF_KEY,JSON.stringify(pilot.handoff(session,'human')));location.assign('./application/');}
+  try{sessionStorage.setItem(pilot.HANDOFF_KEY,JSON.stringify(pilot.handoff(session,'human')));location.assign('./contact/');}
   catch(error){render('Your answers could not be carried forward.','Please allow storage for this preview, then try again. No request was sent.',human()+button('Return to questions','continue'));}
  }else if(a==='learn')render('Start with what you want to protect.','Personal life coverage can help with family income, a mortgage, dependents or other obligations. Workplace coverage and a personal policy can serve different needs. A licensed agent can explain options; this preview makes no eligibility or pricing decision.',human()+button('Keep this for later','later')+button('Return to my result','continue'));
  else if(a==='later')render('Come back when you are ready.','Your anonymous answers remain on this device for up to 30 days. No call or follow-up has been requested.',button('Continue','continue')+human());

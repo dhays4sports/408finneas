@@ -1723,9 +1723,53 @@ function assetRequestFor(request, pathname) {
   return new Request(target.toString(), request);
 }
 
+// SIGNAL-LIFE-1.1: stateless synthetic-contact staging boundary. No env or integrations.
+async function handleSignalLifeHandoffPreview(request) {
+  const origin = 'https://signal-life-1-0.408farmers-v2.pages.dev';
+  const reply = (status, body) => new Response(JSON.stringify(body), {status, headers:{'Content-Type':'application/json','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'}});
+  if (new URL(request.url).origin !== origin) return reply(404,{error:'not_found'});
+  if (request.method !== 'POST') return reply(405,{error:'method_not_allowed'});
+  if (request.headers.get('Origin') !== origin) return reply(403,{error:'origin_not_allowed'});
+  if ((request.headers.get('Content-Type')||'').split(';')[0].trim() !== 'application/json') return reply(415,{error:'json_required'});
+  const strict = (obj, keys) => obj && typeof obj === 'object' && !Array.isArray(obj) && Object.keys(obj).every(k => keys.includes(k));
+  let body;
+  try {
+    const reader = request.body?.getReader();
+    if (!reader) return reply(400,{error:'invalid_preview_request'});
+    let size=0, chunks=[];
+    while (true) {const part=await reader.read();if(part.done)break;size+=part.value.byteLength;if(size>8192){await reader.cancel();return reply(413,{error:'request_too_large'});}chunks.push(part.value);}
+    const bytes=new Uint8Array(size);let offset=0;for(const chunk of chunks){bytes.set(chunk,offset);offset+=chunk.length;}
+    body=JSON.parse(new TextDecoder().decode(bytes));
+  } catch {return reply(400,{error:'invalid_preview_request'});}
+  const modes=['call_now','choose_time','text'];
+  if (!strict(body,['schemaVersion','mode','phone','timePreference','permission','handoff']) || body.schemaVersion!=='SIGNAL-LIFE-1.1' || !modes.includes(body.mode) || body.phone!=='+12025550123') return reply(400,{error:'synthetic_contact_required'});
+  const slot=body.timePreference;
+  if (body.mode==='choose_time' ? !['weekday_morning_pacific','weekday_afternoon_pacific'].includes(slot) : slot!=='') return reply(400,{error:'invalid_time_preference'});
+  if (!strict(body.permission,['version','channel','checked']) || body.permission.version!=='preview-permission-v1' || body.permission.checked!==true || body.permission.channel!==(body.mode==='text'?'sms':'phone')) return reply(400,{error:'explicit_preview_permission_required'});
+  const h=body.handoff;
+  if(!strict(h,['schemaVersion','previewOnly','signalSessionId','canonicalSignals','answers','action','contactPermissionGranted','createdAt','expiresAt']) || h.schemaVersion!=='1.0' || h.previewOnly!==true || h.action!=='human' || h.contactPermissionGranted!==false || !/^[a-zA-Z0-9_-]{10,100}$/.test(h.signalSessionId||'')) return reply(400,{error:'invalid_handoff'});
+  const created=Date.parse(h.createdAt), expires=Date.parse(h.expiresAt), now=Date.now();
+  if(!Number.isFinite(created)||!Number.isFinite(expires)||created>now+60000||expires<=now||expires-created!==1800000) return reply(400,{error:'expired_handoff'});
+  // Accepted Life question contract, not decision logic or score weights.
+  const questions={life_coverage_status:['lifeCoverageStatus',['yes_personal','employer_only','none','unsure']],life_shopping_intent:['shoppingIntent',['ready_now','open_to_review','researching','not_interested']],life_decision_timing:['decisionTiming',['now','within_30','within_90','future']],life_protection_goal:['lifeGoal',['family_income','mortgage','children','business','final_expenses','review_existing']]};
+  if(!Array.isArray(h.answers)||h.answers.length>4) return reply(400,{error:'invalid_evidence'});
+  const signals={product:'life'}, seen=new Set();
+  for(const a of h.answers){
+    if(!strict(a,['questionId','questionVersion','optionCode','signals','answeredAt'])) return reply(400,{error:'invalid_evidence'});
+    const q=questions[a.questionId];
+    if(!q||seen.has(a.questionId)||!q[1].includes(a.optionCode)||!strict(a.signals,[q[0]])||a.signals[q[0]]!==a.optionCode||typeof a.questionVersion!=='string'||!/^\d+(\.\d+){0,2}$/.test(a.questionVersion)||!Number.isFinite(Date.parse(a.answeredAt)))return reply(400,{error:'invalid_evidence'});
+    seen.add(a.questionId);signals[q[0]]=a.optionCode;
+  }
+  if(!strict(h.canonicalSignals,Object.keys(signals))||Object.keys(signals).some(k=>h.canonicalSignals[k]!==signals[k]))return reply(400,{error:'inconsistent_evidence'});
+  const digest=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(JSON.stringify({session:h.signalSessionId,mode:body.mode,slot,signals})));
+  const receipt='preview-'+Array.from(new Uint8Array(digest)).slice(0,12).map(v=>v.toString(16).padStart(2,'0')).join('');
+  return reply(200,{schemaVersion:'SIGNAL-LIFE-1.1',status:'preview_validated',receipt,mode:body.mode,timePreference:slot,canonicalSignals:signals,answerCount:h.answers.length,guardrails:{syntheticContactOnly:true,persisted:false,leadCreated:false,opportunityCreated:false,callbackCreated:false,consultationCreated:false,contactPermissionGranted:false,messageSent:false}});
+}
+
 export default {
   async fetch(request, env, executionContext) {
     const url = new URL(request.url);
+    if (url.pathname === '/api/signal/life-handoff-preview') return handleSignalLifeHandoffPreview(request);
     const lifeTraffic = url.pathname === API_PATH || url.pathname.startsWith('/api/life/producer/') || url.pathname === '/life/' || url.pathname === '/life';
     if (lifeTraffic && Date.now() - lastSensitivePurgeAt >= SENSITIVE_PURGE_INTERVAL_MS && executionContext && typeof executionContext.waitUntil === 'function') {
       lastSensitivePurgeAt = Date.now();
@@ -1759,3 +1803,4 @@ export default {
     else await task;
   }
 };
+

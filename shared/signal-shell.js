@@ -63,6 +63,13 @@
     var decisionEndpoint = container.getAttribute('data-signal-decision-url') || opts.decisionEndpoint || '';
     var forceNew = params.get('fresh') === '1';
     var loaded = sessionApi.loadOrCreate(flow, { forceNew: forceNew, location: root.location, document: root.document });
+    // Consume the reset instruction once so refreshing can resume this session.
+    if (forceNew && root.history && root.history.replaceState) {
+      params.delete('fresh');
+      var remainingQuery = params.toString();
+      root.history.replaceState(root.history.state, '', (root.location.pathname || '/signal-lab/') +
+        (remainingQuery ? '?' + remainingQuery : '') + (root.location.hash || ''));
+    }
     var session = loaded.session;
     var activeQuestion = null;
     var busy = false;

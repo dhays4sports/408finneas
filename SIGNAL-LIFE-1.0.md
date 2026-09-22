@@ -1,5 +1,42 @@
 # SIGNAL-LIFE-1.0 — preview pilot
 
+## Life pilot browser completion — 2026-09-22 19:28–19:32 UTC
+
+**PASS: preview-only Life routing and read-only ZERO-REPEAT demonstration in Work Chrome/CDP.** This supersedes prior origin-blocked notes. No Safari/Firefox certification or production readiness is claimed.
+
+Tested 408 branch signal-life-1.0 SHA7bc27f40a23daa31c6d35ad91d0a1d78c73d6beb (implementation7cf637ce8d7e55203f9211a8e8952d6c134b1600); deployment a9beaa88-c249-46b1-9868-eae6b739e74a.
+Origin https://signal-life-1-0.408farmers-v2.pages.dev, route /signal-life-preview/.
+CoverageFit cf-signal-decision-1.0 SHAe02e85737051e65a5e1e0fdbf5f76cb9dd36ea35; deployment0e641c8b-9c0c-4da1-9190-cf7ce0c92b5a.
+Origin https://cf-signal-decision-1-0.coveragefit.pages.dev; isolated Preview COVERAGEFIT_DB remains coveragefit-signal-preview.
+
+Operator's pasted value showed the cause: second origin began https// (missing colon). Operator corrected it; fresh deployment now returns204 with exact Life Allow-Origin and no Allow-Credentials. Random origin still403. No CORS rule was broadened.
+
+| Browser case | Result | Observed evidence |
+|---|---|---|
+| Error / Retry recovery | PASS | Previously visible next-step error recovered via Retry after corrected preview deployment. No local fallback. |
+| Life-first entry | PASS | First question is personal coverage status, selected by CoverageFit with product=life already seeded. No product question or contact fields. |
+| Three-answer happy path | PASS | Only through work → I am open to it → Within30 → This looks worth a quick conversation. |
+| Explicit human action | PASS | Talk with a person opens only the read-only local application preview; no business request or permission grant. |
+| ZERO-REPEAT coverage handoff | PASS | Summary retains life/employer_only/open_to_review/within_30; prior coverage question absent from downstream visible DOM. Unknown goal/resilience still shown. All application controls disabled. |
+| Resume | PASS | Fresh employer-only answer, reopen → Continue where you left off → Continue → Intent. |
+| Back / changed evidence | PASS | Timing → Back → Not really → come back when timing changes. |
+| Later action | PASS | Keep this for later displays saved anonymous answers/no follow-up requested, with Continue and human override. |
+| Weak Life / learn action | PASS | No → Mostly researching → learn-first outcome; Learn the basics opens education copy, human option and later action. |
+| Existing personal coverage | PASS | Yes → open → within30 → canonical protection goal; no fabricated gap. |
+| ZERO-REPEAT coverage + goal | PASS | Mortgage or home → human outcome → explicit handoff; summary life/yes_personal/open_to_review/within_30/mortgage. Both coverage and protection question groups absent; unknown resilience remains. |
+| Consumer boundary | PASS | No score or internal queue displayed. No identity fields on initial Signal route; downstream identity fields disabled. No identity value entered. |
+| CORS/CSP | PASS | Exact-origin preflight204; unrelated origin403. Live Signal route connect-src self + exact CF preview, form-action none; downstream additionally connect-src none. |
+| Regression | PASS | tests/signal-life-preview.test.cjs passes actual canonical-engine routing, handoff mapping, Back, learn/later and explicit-action boundary. |
+
+Evidence is the observed browser DOM in this Work task and the preserved test/deployment details here. Bridge API JSON evidence remains in SIGNAL_REMOTE_BROWSER_QA_1.0.md. Pilot error recovery was tested from an empty session; answered-session outage/retry was tested on the bridge earlier, not repeated as a separate outage in this pilot.
+
+No lead, Opportunity, AgencyZoom record, callback, consultation, quote request, SMS/email or contact permission was created by these actions. Evidence is scoped to stateless decision calls, isolated rate-limit-only Preview setup, disabled/non-submitting application controls and source graph; no independent dashboard-wide object audit is claimed.
+
+Cleanup: bridge shared/config.js and lab CSP remain production-safe after625aa02; CF temporary rejection fixture remains reverted2970962. The new Life route deliberately retains its exact preview endpoint/CSP on its own preview-only branch. Do not merge that preview configuration into production. Production /life and application source remain unchanged.
+
+Readiness: preview pilot is implemented, deployed, and ready for review. A controlled /life migration still requires live downstream ZERO-REPEAT consumption/consent integration, isolated submission validation, broader browser/mobile testing, final consumer copy/design review, removal of preview-specific wiring and separate production authorization. No merge or production cutover performed.
+
+
 2026-09-22. Stacked on bridge625aa0278c0d6adae6d5829ca43f65fdd437662d, after documented Chrome cross-preview scenario PASS. No production /life cutover or merge.
 
 ## Preview scope

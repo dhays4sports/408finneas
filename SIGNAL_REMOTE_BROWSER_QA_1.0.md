@@ -1,5 +1,15 @@
 # SIGNAL_REMOTE_BROWSER_QA_1.0
 
+## Preview schema verification — 2026-09-22 18:46 UTC
+
+Operator screenshots confirm Preview branch settings (all non-production branches), COVERAGEFIT_DB -> coveragefit-signal-preview, correct api_rate_limits columns and reset_at index. This resolves the earlier uncertainty about saved settings/schema.
+
+Fresh Git-triggered deployment 9e6b0967-6df5-48ec-80be-fbc70bb25021 at documentation-only CoverageFit commit 1db955c06bc74699e8cd2bb045740da3b92faa9e succeeded, but remote POST still returned rate_limit_unavailable. A stale retry is therefore not established as the cause.
+
+Found an observability defect: fail-closed D1 errors were returned without server diagnostics. CoverageFit fix 071bd2b7fac4fc602901bef9533b1b9f5c1b23d0 logs only bounded categories binding_missing/table_missing/schema_mismatch/query_failed. Public response remains identical; no raw error, SQL values, client IP or request data is logged by this new path. Regression verifies all categories, unchanged503 response and no handler execution. Full offline HTTP/SQLite suite including Life passes again.
+
+Next required evidence: runtime log category from the new feature preview. Full remote browser gate remains blocked. Temporary 408 wiring remains active pending completion and must be reverted before merge readiness. No production settings, merges or business actions.
+
 ## Cross-preview browser attempt — 2026-09-22 18:40 UTC
 
 BLOCKED: remote API returns rate_limit_unavailable. User reports creating isolated coveragefit-signal-preview with api_rate_limits/index and binding COVERAGEFIT_DB in Preview, then setting exact allowed origin and redeploying.

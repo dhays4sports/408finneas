@@ -52,7 +52,7 @@ test('browser Back restoration shows the restored method and resets permission',
  const form={noValidate:false,innerHTML:'',querySelector(k){return k==='input[name="mode"]:checked'?selected:nodes[k];},addEventListener(){}};
  const document={getElementById(){return {appendChild(){}};},createElement(tag){return tag==='form'?form:{textContent:''};}};
  const window={SignalLifePreview:pilot,addEventListener(name,fn){events[name]=fn;}};
- vm.runInNewContext(readFileSync(new URL('../signal-life-preview/contact/contact.js',import.meta.url),'utf8'),{document,window,sessionStorage:{getItem(){return JSON.stringify(fixture().handoff);}}});
+ vm.runInNewContext(readFileSync(new URL('../signal-life-preview/contact/contact.js',import.meta.url),'utf8'),{document,window,URLSearchParams,location:{search:''},sessionStorage:{getItem(){return JSON.stringify(fixture().handoff);}}});
  events.pageshow();assert.equal(nodes['#contact-details'].hidden,false);assert.equal(nodes['#preview-permission'].checked,false);assert.match(nodes['#permission-copy'].textContent,/text about/);assert.equal(nodes['#application-link'].hidden,true);
  selected={value:'choose_time'};events.pageshow();assert.equal(nodes['#time-details'].hidden,false);assert.match(nodes['#permission-copy'].textContent,/call about/);
 });

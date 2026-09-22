@@ -1,5 +1,51 @@
 # SIGNAL_REMOTE_BROWSER_QA_1.0
 
+## Completed cross-preview scenario matrix — 2026-09-22 18:57–19:06 UTC
+
+**PASS for the requested scenarios in Work Chrome/CDP across the two deployed origins.** This is cross-origin preview certification in one browser engine, not a claim of Safari/Firefox certification. Earlier blocked entries below are historical.
+
+- 408 branch signal-decision-bridge-1.0: tested SHA f6287a424ff833b086845bd1274275ec7db4d0c9; deployment 2b47763e-cf0e-42a3-9502-028c7059e83e. Temporary wiring originated at 141edf785b1b2e82abd012eecc2dfa1c877c273f.
+- 408 origin: https://signal-decision-bridge-1-0.408farmers-v2.pages.dev
+- CoverageFit branch cf-signal-decision-1.0: matrix SHA 3d4fdb208a1f6bc4f5b6fdd6a2ad28b2986117c5; deployment fad93ffb-031f-44b2-a8b9-09242da8fcac.
+- CoverageFit origin: https://cf-signal-decision-1-0.coveragefit.pages.dev
+- Recovery/Life retest SHA 29709626512922794efc6faac4de5fe8cce6c2d9; deployment 70f2cf1e-7eba-4ceb-b4d7-4963a995a6c6. Endpoint source restored byte-for-byte to pre-fixture blob aff79daf19f005efdef707ab6cceb309c0fecad4.
+- D1: operator-created coveragefit-signal-preview, Preview-only COVERAGEFIT_DB; operator applied only api_rate_limits and its reset_at index. Schema and binding screenshots supplied. Actual endpoint now successfully executes limiter SQL. No migration0019 or production DB use.
+- Root cause of 503: runtime binding_missing, confirmed by live log at18:53:19. Recreating the Preview binding and deploying3d4fdb2 resolved it. No business logic fix was required.
+- Browser evidence: observed DOM snapshots in Work; exact public JSON preserved below. No screenshot is claimed for this run.
+
+| Case | Result | Actual outcome |
+|---|---|---|
+| Local foundation | PASS | Deployed Chrome smoke at18:39: three questions, completion No lead created, anonymous inspector; earlier refresh/resume verified. |
+| Remote first question | PASS | Retry recovered to CoverageFit product question, never local foundation. |
+| Life happy path | PASS | Life → employer_only → open_to_review → within_30 → OFFER_HUMAN; expected public headline. |
+| Public JSON | PASS | Direct controlled POST using same Origin and evidence: qualified_signal, both engine IDs; no internal score/ranges/queue/dimensions/reasons or decision results. Negative underwriting/eligibility/pricing guardrails are present as false. |
+| Resume | PASS | Fresh Life/employer-only, reopen → Continue where you left off → Continue → Intent. |
+| Back / changed evidence | PASS | From Timing, Back returned to Intent; Not really → CONTINUE_LATER. Inspector retained life/employer_only/not_interested and no timing or old intent. |
+| Weak Life | PASS | No coverage/Mostly researching → OFFER_LEARN immediately; timing unnecessary. |
+| Existing personal Life | PASS | Yes/open/within30 → What are you mainly trying to protect or improve? No fabricated coverage gap. |
+| Home | PASS | nonrenewal_notice/ready_now/within_14 → OFFER_HUMAN, no Shoot Now or score. |
+| Auto new vehicle | PASS | new_vehicle/open_to_review/days_31_60 → OFFER_HUMAN. |
+| Auto need now | PASS | need_now/ready_now/now → OFFER_HUMAN. |
+| Business class gate | PASS | coi/ready_now/now → business type required; contractor → OFFER_HUMAN. |
+| Explicit low intent | PASS | not_interested → CONTINUE_LATER; no forced call. |
+| Real failure / retry | PASS | Temporary exact-preview-origin rejection632a3e98e56692c61a8918b893bdbc3241853033 deployed2d6bbfa0-a8bb-4a97-aca1-d33e10ba2557. Browser showed next step could not load / Failed to fetch / Retry, no fallback. All3 answers retained. Revert2970962 restored permission; Retry without reload resumed Timing and completed Life. |
+| Anonymous boundaries | PASS | Inspected sessions contain bounded signals only, contact anonymous/not_requested, empty leadCheckpointId/opportunityId. All handoff actions deliberately unwired; no business endpoint/action exercised. |
+| Exact CORS | PASS | Browser success; random origin OPTIONS403; exact-origin responses have exact Allow-Origin and no Allow-Credentials. Client credentials omit. |
+| Narrow CSP | PASS | Live lab connect-src self + exact CoverageFit preview; no wildcard. Static Pages HTML Allow-Origin wildcard is unrelated to Signal API CORS. |
+| Business persistence | PASS, scoped evidence | Isolated preview DB initialized with only limiter schema, stateless endpoint graph and inspected sessions/negative response guardrails. No leads, Opportunities, AgencyZoom, callbacks, consultations, contact permissions, SMS/email or quote actions invoked. No independent dashboard-wide audit is claimed. Only expected endpoint writes are rate-limit buckets. |
+
+Recovery session3c27207c-902f-4d24-a3d6-4a864ba56ef7 retained life/employer_only/open_to_review through actual CORS failure. After Retry, within_30 completed the same session at19:06:22.385Z with state qualified_signal and no promotion/contact permission.
+
+Public Life response (18:59:59.501Z, deploymentfad93ffb):
+```json
+{"ok":true,"schemaVersion":"1.0","engine":"CF-SIGNAL-DECISION-1.0","priorityEngine":"CF-OPPORTUNITY-PRIORITY-1.0","signalSessionId":"c01fb08f-b0c3-4f02-99bc-3be83e807978","flowId":"foundation_demo_remote","flowVersion":"1.0","decision":"OFFER_HUMAN","state":"qualified_signal","nextQuestionId":null,"missingDimension":null,"nextQuestion":null,"publicExperience":{"eyebrow":"Next step","headline":"This looks worth a quick conversation.","body":"A licensed agent can pick up from what you already shared instead of starting over.","actions":["talk_now","choose_time","text"]},"evaluatedAt":"2026-09-22T18:59:59.501Z","guardrails":{"anonymous":true,"persisted":false,"leadCreated":false,"opportunityCreated":false,"contactPermissionGranted":false,"consumerScoreExposed":false,"underwritingDecision":false,"eligibilityDecision":false,"pricingDecision":false,"bindAuthorized":false}}
+```
+
+Cleanup: this report commit restores shared/config.js to https://coveragefit.com/api/signal/decision and /signal-lab/* connect-src to the exact https://coveragefit.com default. The successful tested wiring SHA is preserved above. Temporary CoverageFit rejection has already been removed. Preview infrastructure remains isolated and available. No merge, ready-for-merge marking, production deployment or /life cutover.
+
+Readiness: sufficient to begin SIGNAL-LIFE-1.0 as a separate stacked preview-only implementation. Keep PRs draft. A new Life branch origin will need exact Preview CORS authorization before its browser test. Production migration additionally requires downstream ZERO-REPEAT integration/consent review and browser coverage beyond Work Chrome.
+
+
 ## Preview schema verification — 2026-09-22 18:46 UTC
 
 Operator screenshots confirm Preview branch settings (all non-production branches), COVERAGEFIT_DB -> coveragefit-signal-preview, correct api_rate_limits columns and reset_at index. This resolves the earlier uncertainty about saved settings/schema.

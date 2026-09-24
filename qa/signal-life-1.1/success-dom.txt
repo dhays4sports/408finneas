@@ -1,0 +1,34 @@
+- banner:
+  - link "408FARMERS · Life preview":
+    - /url: ../
+  - paragraph: Preview only · Test number only · No calls or texts
+- main:
+  - heading "How would you like to connect?" [level=1]
+  - paragraph: "Your Life answers will carry forward. This is a test: nothing is booked or sent."
+  - heading "Your answers so far" [level=2]
+  - list:
+    - listitem: "Coverage: Life"
+    - listitem: "Interest: Open to it"
+    - listitem: "Timing: Within 30 days"
+    - listitem: "Current coverage: Only through work"
+  - group "Contact preference":
+    - generic: Contact preference
+    - radio "Talk now" [checked]
+    - text: Talk now
+    - radio "Choose a time"
+    - text: Choose a time
+    - radio "Text me"
+    - text: Text me
+  - generic: Test phone number
+  - textbox "Test phone number"
+  - paragraph: This preview uses a fixed fictional number. Do not enter personal contact information.
+  - checkbox "Simulate permission for a call about my Life request. This does not grant actual contact permission." [checked]
+  - generic: Simulate permission for a call about my Life request. This does not grant actual contact permission.
+  - button "Test again" [active]
+  - status: "Preview handoff verified. 3 answers carried forward. No call, text, appointment, lead or contact-permission record was created. Receipt: preview-bada3f58fe1d689f1aea1f0e"
+  - paragraph:
+    - link "Review the application preview":
+      - /url: ../application/
+  - paragraph:
+    - link "Return to my Life answers":
+      - /url: ../

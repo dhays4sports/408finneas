@@ -1,3 +1,5 @@
+> Historical preview evidence: deployment/configuration instructions below are superseded by SIGNAL-NORTH-STAR-1.0.md. Signal decision transport now uses production CoverageFit. Life staging remains isolated and is not a production binding requirement.
+
 # SIGNAL_REMOTE_BROWSER_QA_1.0
 
 ## Life pilot browser completion — 2026-09-22 19:28–19:32 UTC

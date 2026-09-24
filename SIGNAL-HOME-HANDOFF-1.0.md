@@ -1,3 +1,5 @@
+> Historical preview evidence: deployment/configuration instructions below are superseded by SIGNAL-NORTH-STAR-1.0.md. Signal decision transport now uses production CoverageFit. Life staging remains isolated and is not a production binding requirement.
+
 # Home Signal — contact handoff v1
 
 ## Delivered flow

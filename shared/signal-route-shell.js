@@ -1,7 +1,6 @@
 (function(){
 'use strict';
 var api=window.Farmers408SignalSession,remote=window.Farmers408SignalDecisionRemote,registry=window.Farmers408SignalRoutes,box=document.querySelector('[data-signal-route]'),route=registry.get(box.dataset.signalRoute),flow=registry.flow(route.id);
-var endpoint=registry.endpoint;
 var params=new URLSearchParams(location.search),fresh=params.get('fresh')==='1';
 var loaded=api.loadOrCreate(flow,{forceNew:fresh,location:location,document:document}),session=loaded.session,question=null,busy=false;
 if(fresh){params.delete('fresh');history.replaceState(null,'',location.pathname+(params.toString()?'?'+params:'')+location.hash);}
@@ -15,7 +14,7 @@ function human(){return button(route.id==='home'?'Talk with Dylan':'Talk with a 
 async function evaluate(){
  if(busy)return;busy=true;box.setAttribute('aria-busy','true');
  try{
-  var d=await remote.evaluate(flow,session,{endpoint:endpoint});question=d.nextQuestion;
+  var d=await remote.evaluate(flow,session);question=d.nextQuestion;
   session.currentQuestionId=d.nextQuestionId||'';session.state=d.state;
   session.decision={status:'coveragefit_remote',decision:d.decision,nextQuestionId:d.nextQuestionId||'',evaluatedAt:d.evaluatedAt};
   session=api.save(session,flow);

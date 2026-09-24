@@ -1,3 +1,5 @@
+> Historical preview evidence: deployment/configuration instructions below are superseded by SIGNAL-NORTH-STAR-1.0.md. Signal decision transport now uses production CoverageFit. Life staging remains isolated and is not a production binding requirement.
+
 # SIGNAL-LIFE-1.1 — Contact handoff staging
 
 Status: PASS for synthetic staging in Work Chrome; real contact delivery and additional browser engines remain gated.

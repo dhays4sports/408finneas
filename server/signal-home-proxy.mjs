@@ -1,5 +1,5 @@
 const reply=(body,status=200)=>new Response(JSON.stringify(body),{status,headers:{'Content-Type':'application/json','Cache-Control':'no-store'}});
-const targets=new Set(['https://cf-signal-sms-integration.coveragefit.pages.dev/api/signal/home-handoff','https://coveragefit.com/api/signal/home-handoff']);
+const targets=new Set(['https://coveragefit.com/api/signal/home-handoff']);
 export async function handleHomeContact(request,env={},deliver=fetch){
  if(request.method!=='POST')return reply({ok:false,error:'method_not_allowed'},405);
  if(request.headers.get('origin')!==new URL(request.url).origin)return reply({ok:false,error:'origin_rejected'},403);

@@ -1,3 +1,4 @@
+import {handleHomeContact} from './server/signal-home-proxy.mjs';
 /* 408-LIFE-1.8 — separated short-lived LIFE application-start vault. */
 
 const BUILD = '408-LIFE-1.8';
@@ -1803,6 +1804,7 @@ async function handleSignalLifeHandoffPreview(request, stagingEnv = null) {
 export default {
   async fetch(request, env, executionContext) {
     const url = new URL(request.url);
+    if (url.pathname === '/api/signal/home-contact') return handleHomeContact(request, env);
     if (url.pathname === '/api/signal/life-handoff-staging') return handleSignalLifeHandoffPreview(request, env);
     if (url.pathname === '/api/signal/life-handoff-preview') return handleSignalLifeHandoffPreview(request);
     const lifeTraffic = url.pathname === API_PATH || url.pathname.startsWith('/api/life/producer/') || url.pathname === '/life/' || url.pathname === '/life';

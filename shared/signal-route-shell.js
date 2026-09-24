@@ -11,7 +11,7 @@ function render(title,body,controls){
  box.innerHTML='<section class="signal-card"><span class="signal-eyebrow">'+esc(route.title)+' · Preview</span><h1 tabindex="-1">'+esc(title)+'</h1><p>'+esc(body)+'</p><div class="signal-choice-list">'+controls+'</div><p class="signal-meta">Answers are saved on this device and shared with CoverageFit to choose the next question. No contact request has been sent.</p></section>';
  box.querySelector('h1').focus({preventScroll:true});
 }
-function human(){return button('Talk with a person','human');}
+function human(){return button(route.id==='home'?'Talk with Dylan':'Talk with a person','human');}
 async function evaluate(){
  if(busy)return;busy=true;box.setAttribute('aria-busy','true');
  try{
@@ -36,6 +36,7 @@ box.addEventListener('click',function(e){
  else if(a==='retry'||a==='continue')void evaluate();
  else if(a==='restart'){session=api.restart(flow,{location:location,document:document});void evaluate();}
  else if(a==='human'){
+  if(route.id==='home'&&window.Farmers408HomeContact){window.Farmers408HomeContact.open(box,session,function(){void evaluate();});return;}
   render('Your next step: a conversation.','This preview has kept your answers. Contact delivery is not connected here yet, so no callback or appointment has been requested.',button('Return to my answers','continue')+button('Keep this for later','later'));
  }else if(a==='learn')render('Start with what you want to protect.','Think about what changed, when you need coverage and what you want to understand. A licensed agent can explain options. This preview makes no eligibility, price or coverage recommendation.',human()+button('Keep this for later','later')+button('Return to my result','continue'));
  else if(a==='later')render('Come back when you are ready.','Your anonymous answers remain on this device for up to 30 days. No call or follow-up has been requested.',button('Continue','continue')+human());

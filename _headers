@@ -46,3 +46,10 @@
   X-Robots-Tag: noindex, nofollow
   Content-Security-Policy: default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
   Referrer-Policy: no-referrer
+
+/signal-preview/*
+  Cache-Control: no-store, max-age=0
+  X-Robots-Tag: noindex, nofollow, noarchive
+  Referrer-Policy: no-referrer
+  X-Content-Type-Options: nosniff
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://cf-signal-decision-1-0.coveragefit.pages.dev; font-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'

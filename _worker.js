@@ -1,4 +1,5 @@
 import {handleHomeContact} from './server/signal-home-proxy.mjs';
+import {entryPage,entryAction,parseEntryRoute,ACTIVE_ENTRY_ROUTES} from './server/entry-presentation-proxy.mjs';
 /* 408-LIFE-1.8 — separated short-lived LIFE application-start vault. */
 
 const BUILD = '408-LIFE-1.8';
@@ -1804,6 +1805,13 @@ async function handleSignalLifeHandoffPreview(request, stagingEnv = null) {
 export default {
   async fetch(request, env, executionContext) {
     const url = new URL(request.url);
+    if(url.pathname.startsWith('/api/entry/'))return entryAction(request);
+    if(['GET','HEAD'].includes(request.method)){
+      const entry=parseEntryRoute(url.pathname);
+      if(entry&&!entry.market&&ACTIVE_ENTRY_ROUTES.has(entry.entry))return entryPage(request,entry);
+      if(['/buyer/continue.html','/buyer/continue'].includes(url.pathname))return entryPage(request,{entry:'buyer'});
+      if(url.pathname==='/home/legacy.html')return env.ASSETS.fetch(request);
+    }
     if (url.pathname === '/api/signal/home-contact') return handleHomeContact(request, env);
     if (url.pathname === '/api/signal/life-handoff-staging') return handleSignalLifeHandoffPreview(request, env);
     if (url.pathname === '/api/signal/life-handoff-preview') return handleSignalLifeHandoffPreview(request);
@@ -1840,4 +1848,3 @@ export default {
     else await task;
   }
 };
-

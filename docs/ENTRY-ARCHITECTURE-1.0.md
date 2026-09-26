@@ -8,4 +8,6 @@ Home activation was attempted and then paused after the hosted server-to-server 
 
 Canonical specification, acquisition/presentation contracts, route matrix, QA checklist and limitations are in CoverageFit docs/ENTRY-ARCHITECTURE-1.0.md and docs/ENTRY-ROUTE-MATRIX-1.0.md. Do not copy decision rules here. Public title remains Insurance Producer. Source/audience/ZIP never imply intent, fit or priority.
 
-Local tests: 27 top-level pass, 0 fail/skip. Hosted direct CoverageFit first-answer/resume passed. Hosted 408 presentation fetch failed; the exact upstream cause is not yet observed. Mobile certification pending. Rollback Home interception before rolling back CoverageFit endpoints; leave saved data and old routes intact. No migration or Cloudflare setting is required by this increment. Existing district/SMS treatment is unaffected.
+Local tests: 29 top-level pass, 0 fail/skip. Hosted direct CoverageFit first-answer/resume passed. Hosted 408 presentation fetch failed; the exact upstream cause is not yet observed. Mobile certification pending. Rollback Home interception before rolling back CoverageFit endpoints; leave saved data and old routes intact. No migration or Cloudflare setting is required by this increment. Existing district/SMS treatment is unaffected.
+
+Runtime diagnostic: `entry_presentation_upstream_failure` logs only upstream status/error type, never cookie, contact, campaign or response body. Inspect this in the Cloudflare project serving 408farmers.com before changing configuration.

@@ -18,12 +18,12 @@ export async function entryPage(request,context,options={}){
   if(context.market){target.searchParams.set('market',context.market);target.searchParams.set('qr_campaign',context.campaign);}
   try{
     const upstream=await (options.fetch||fetch)(target,{headers:{Cookie:cookie(request)},redirect:'error'});
-    if(!upstream.ok)throw Error('upstream');
+    if(!upstream.ok)throw Object.assign(Error('upstream'),{upstreamStatus:upstream.status});
     const headers=new Headers(upstream.headers);headers.delete('X-Robots-Tag');
     headers.set('Cache-Control','private, no-store');headers.set('Referrer-Policy','no-referrer');
     headers.set('Content-Security-Policy',"default-src 'none'; script-src 'self' https://coveragefit.com; style-src https://coveragefit.com; connect-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'");
     return new Response(request.method==='HEAD'?null:upstream.body,{status:200,headers});
-  }catch{return new Response('<!doctype html><html lang="en"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Review with Dylan — 408FARMERS</title><main><h1>Let’s pick up with Dylan</h1><p>The quick review is temporarily unavailable. You can still contact Dylan directly.</p><a href="/contact/">Contact Dylan</a></main></html>',{status:503,headers:{'Content-Type':'text/html; charset=utf-8','Cache-Control':'no-store'}});}
+  }catch(error){console.warn('entry_presentation_upstream_failure',JSON.stringify({status:error?.upstreamStatus||null,name:error?.name||'Error'}));return new Response('<!doctype html><html lang="en"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Review with Dylan — 408FARMERS</title><main><h1>Let’s pick up with Dylan</h1><p>The quick review is temporarily unavailable. You can still contact Dylan directly.</p><a href="/contact/">Contact Dylan</a></main></html>',{status:503,headers:{'Content-Type':'text/html; charset=utf-8','Cache-Control':'no-store'}});}
 }
 export async function entryAction(request,options={}){
   const url=new URL(request.url),action=url.pathname.split('/').pop();
@@ -36,5 +36,5 @@ export async function entryAction(request,options={}){
     const session=upstream.headers.get('set-cookie');
     if(session&&/^cf_distribution_resume=pvxw_[A-Za-z0-9_-]{43};/.test(session))headers.set('Set-Cookie',session);
     return new Response(upstream.body,{status:upstream.status,headers});
-  }catch{return Response.json({ok:false,message:'Please retry or contact Dylan.'},{status:503,headers:{'Cache-Control':'no-store'}});}
+  }catch(error){console.warn('entry_action_upstream_failure',JSON.stringify({name:error?.name||'Error'}));return Response.json({ok:false,message:'Please retry or contact Dylan.'},{status:503,headers:{'Cache-Control':'no-store'}});}
 }

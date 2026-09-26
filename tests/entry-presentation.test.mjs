@@ -20,3 +20,5 @@ test('same-origin action proxy forwards only the opaque capability and fixed Cov
 });
 
 test('Pages dispatch includes the active trailing-slash and compatibility entry URLs',async()=>{const {readFileSync}=await import('node:fs');const routes=JSON.parse(readFileSync(new URL('../_routes.json',import.meta.url),'utf8'));for(const path of ['/home','/home/','/buyer/continue','/buyer/continue.html'])assert.ok(routes.include.includes(path));});
+
+test('upstream failure gives a safe contact fallback and logs only status/type',async(t)=>{const log=t.mock.method(console,'warn',()=>{});const response=await entryPage(new Request('https://408farmers.com/home/?campaign_id=private_campaign'),{entry:'home'},{fetch:async()=>new Response('internal upstream details',{status:403})});assert.equal(response.status,503);assert.doesNotMatch(await response.text(),/internal upstream details|private_campaign/);assert.deepEqual(log.mock.calls[0].arguments,['entry_presentation_upstream_failure','{"status":403,"name":"Error"}']);});

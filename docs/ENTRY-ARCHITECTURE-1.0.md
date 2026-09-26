@@ -73,3 +73,10 @@ repeat, no route-derived intent. Original Condo form is preserved at legacy
 aliases with pretty-path asset dispatch. Home/Buyer/Condo active; Tech and later
 routes remain off pending Condo hosted check. 35 local tests pass. Rollback:
 remove condo from active set, retaining original index.html and all records.
+
+### Tech preparation, inactive
+Retain Tech original form as a compatibility asset, including its relative
+scripts and old URLs. Canonical replacement starts with insurance product rather
+than mandatory profession. No profession-derived intent/fit. Public Tech still
+inactive pending Condo certification. 36 tests pass. This increment stays on the
+working branch, not main, until the hosted gate is resolved.

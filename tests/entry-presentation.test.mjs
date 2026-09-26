@@ -89,3 +89,11 @@ test('Condo retains the appointment form and routes both legacy aliases',async()
  assert.ok(source.includes("if(['/condo/legacy.html','/condo/legacy'].includes(url.pathname))return env.ASSETS.fetch(assetRequestFor(request,'/condo/legacy'))"));
  assert.equal(ACTIVE_ENTRY_ROUTES.has('tech'),false);
 });
+
+test('Tech compatibility preserves historical links while public Tech remains gated',async()=>{
+ const {readFileSync}=await import('node:fs');
+ assert.equal(ACTIVE_ENTRY_ROUTES.has('tech'),false);
+ assert.equal(readFileSync(new URL('../tech/legacy.html',import.meta.url),'utf8'),readFileSync(new URL('../tech/index.html',import.meta.url),'utf8'));
+ const routes=JSON.parse(readFileSync(new URL('../_routes.json',import.meta.url),'utf8'));
+ for(const p of ['/tech/legacy','/tech/legacy.html'])assert.ok(routes.include.includes(p));
+});

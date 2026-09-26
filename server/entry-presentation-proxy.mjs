@@ -1,7 +1,7 @@
 // Presentation/transport only. All question selection, evidence and durable
 // session mutations happen in CoverageFit. No provider or CRM adapter here.
 export const COVERAGEFIT_ENTRY_BASE='https://coveragefit.com/api/distribution/';
-export const ACTIVE_ENTRY_ROUTES=new Set(['home']);
+export const ACTIVE_ENTRY_ROUTES=new Set([]);
 export function parseEntryRoute(path){
   const direct=path.match(/^\/(home|buyer|condo|auto-bundle|tech|teachers|healthcare|engineers)\/?$/);
   if(direct)return {entry:direct[1]};

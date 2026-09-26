@@ -18,3 +18,5 @@ test('same-origin action proxy forwards only the opaque capability and fixed Cov
   assert.equal(calls,1);assert.equal(response.status,200);assert.match(response.headers.get('set-cookie'),/HttpOnly/);
   const denied=await entryAction(new Request(request.url,{method:'POST',headers:{Origin:'https://evil.example','Content-Type':'application/json'},body:'{}'}),{fetch:()=>{throw Error('must not call')}});assert.equal(denied.status,403);
 });
+
+test('Pages dispatch includes the active trailing-slash and compatibility entry URLs',async()=>{const {readFileSync}=await import('node:fs');const routes=JSON.parse(readFileSync(new URL('../_routes.json',import.meta.url),'utf8'));for(const path of ['/home','/home/','/buyer/continue','/buyer/continue.html'])assert.ok(routes.include.includes(path));});

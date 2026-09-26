@@ -21,7 +21,10 @@
     "/home/qr/*",
     "/home/campaign/*",
     "/neighbor/r/*",
-    "/local/*"
+    "/local/*",
+    "/home/",
+    "/buyer/continue",
+    "/buyer/continue.html"
   ],
   "exclude": []
 }

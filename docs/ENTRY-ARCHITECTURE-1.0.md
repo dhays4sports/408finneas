@@ -65,3 +65,11 @@ original form. Activate only Home + Buyer and include /buyer/ in Pages routing.
 Condo/affinity/QR remain inactive. Local suite: 34 pass, zero fail/skip. Buyer
 public hosted verification follows deployment. Rollback: remove buyer from the
 active set; existing buyer/index.html is untouched.
+
+### Condo staged conversion
+Buyer public Back/save/reload now confirmed hosted. Condo uses the existing
+canonical home engine with retained condo audience context; no property-type
+repeat, no route-derived intent. Original Condo form is preserved at legacy
+aliases with pretty-path asset dispatch. Home/Buyer/Condo active; Tech and later
+routes remain off pending Condo hosted check. 35 local tests pass. Rollback:
+remove condo from active set, retaining original index.html and all records.

@@ -29,7 +29,10 @@
     "/home/legacy.html",
     "/buyer/legacy",
     "/buyer/legacy.html",
-    "/buyer/"
+    "/buyer/",
+    "/condo/",
+    "/condo/legacy",
+    "/condo/legacy.html"
   ],
   "exclude": []
 }

@@ -1,7 +1,7 @@
 import test from 'node:test';import assert from 'node:assert/strict';
 import {entryPage,entryAction,parseEntryRoute,ACTIVE_ENTRY_ROUTES} from '../server/entry-presentation-proxy.mjs';
-test('Home and Buyer alone are activated after Home certification; QR parser is bounded',()=>{
-  assert.deepEqual([...ACTIVE_ENTRY_ROUTES],['home','buyer']);assert.deepEqual(parseEntryRoute('/home/qr/95118/rate'),{entry:'home',market:'95118',campaign:'rate'});
+test('Home, Buyer and Condo are the active staged entries; QR parser is bounded',()=>{
+  assert.deepEqual([...ACTIVE_ENTRY_ROUTES],['home','buyer','condo']);assert.deepEqual(parseEntryRoute('/home/qr/95118/rate'),{entry:'home',market:'95118',campaign:'rate'});
   assert.equal(parseEntryRoute('/home/qr/person@example.com/rate'),null);assert.equal(parseEntryRoute('/home/qr/95118/unknown'),null);assert.equal(parseEntryRoute('/life/'),null);
 });
 test('408 renders canonical questions without a redirect or local question engine',async()=>{
@@ -78,4 +78,14 @@ test('Buyer compatibility retains the original appointment form with independent
   assert.ok(source.includes("if(['/buyer/legacy.html','/buyer/legacy'].includes(url.pathname))return env.ASSETS.fetch(assetRequestFor(request,'/buyer/legacy'))"));
   const routes=JSON.parse(readFileSync(new URL('../_routes.json',import.meta.url),'utf8'));
   for(const p of ['/buyer/legacy','/buyer/legacy.html'])assert.ok(routes.include.includes(p));
+});
+
+test('Condo retains the appointment form and routes both legacy aliases',async()=>{
+ const {readFileSync}=await import('node:fs');
+ assert.equal(readFileSync(new URL('../condo/legacy.html',import.meta.url),'utf8'),readFileSync(new URL('../condo/index.html',import.meta.url),'utf8'));
+ const routes=JSON.parse(readFileSync(new URL('../_routes.json',import.meta.url),'utf8'));
+ for(const path of ['/condo/','/condo/legacy','/condo/legacy.html'])assert.ok(routes.include.includes(path));
+ const source=readFileSync(new URL('../_worker.js',import.meta.url),'utf8');
+ assert.ok(source.includes("if(['/condo/legacy.html','/condo/legacy'].includes(url.pathname))return env.ASSETS.fetch(assetRequestFor(request,'/condo/legacy'))"));
+ assert.equal(ACTIVE_ENTRY_ROUTES.has('tech'),false);
 });

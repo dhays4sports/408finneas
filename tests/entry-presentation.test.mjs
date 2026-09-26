@@ -97,3 +97,15 @@ test('Tech compatibility preserves historical links while public Tech remains ga
  const routes=JSON.parse(readFileSync(new URL('../_routes.json',import.meta.url),'utf8'));
  for(const p of ['/tech/legacy','/tech/legacy.html'])assert.ok(routes.include.includes(p));
 });
+
+test('remaining affinity compatibility is preserved without activating routes',async()=>{
+ const {readFileSync}=await import('node:fs');
+ const routes=JSON.parse(readFileSync(new URL('../_routes.json',import.meta.url),'utf8'));
+ const worker=readFileSync(new URL('../_worker.js',import.meta.url),'utf8');
+ for(const entry of ['teachers','healthcare','engineers']){
+  assert.equal(ACTIVE_ENTRY_ROUTES.has(entry),false);
+  assert.equal(readFileSync(new URL('../'+entry+'/legacy.html',import.meta.url),'utf8'),readFileSync(new URL('../'+entry+'/index.html',import.meta.url),'utf8'));
+  for(const suffix of ['/legacy','/legacy.html'])assert.ok(routes.include.includes('/'+entry+suffix));
+  assert.ok(worker.includes("assetRequestFor(request,'/"+entry+"/legacy')"));
+ }
+});

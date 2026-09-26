@@ -35,7 +35,13 @@
     "/condo/legacy.html",
     "/tech/legacy",
     "/tech/legacy.html",
-    "/tech/"
+    "/tech/",
+    "/teachers/legacy",
+    "/teachers/legacy.html",
+    "/healthcare/legacy",
+    "/healthcare/legacy.html",
+    "/engineers/legacy",
+    "/engineers/legacy.html"
   ],
   "exclude": []
 }

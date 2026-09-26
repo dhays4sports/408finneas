@@ -86,3 +86,6 @@ Authenticated Work confirms the fresh Condo record, original route/source/audien
 
 ### Teachers promotion
 Tech hosted source/evidence receipt certified. Teachers alone activates using the canonical engine; original form and aliases preserved. Healthcare, Engineers and QR remain inactive pending preceding gates. No configuration, scoring or SMS change.
+
+### Healthcare promotion
+Teachers hosted receipt/source/answers certified. Healthcare alone joins the active set; original form and legacy aliases preserved. Engineers/QR remain inactive. Canonical engine and profession governance unchanged.

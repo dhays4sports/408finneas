@@ -38,7 +38,10 @@
     "/tech/",
     "/teachers/",
     "/teachers/legacy",
-    "/teachers/legacy.html"
+    "/teachers/legacy.html",
+    "/healthcare/",
+    "/healthcare/legacy",
+    "/healthcare/legacy.html"
   ],
   "exclude": []
 }

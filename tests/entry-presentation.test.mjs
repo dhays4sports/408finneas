@@ -1,7 +1,7 @@
 import test from 'node:test';import assert from 'node:assert/strict';
 import {entryPage,entryAction,parseEntryRoute,ACTIVE_ENTRY_ROUTES} from '../server/entry-presentation-proxy.mjs';
 test('Home, Buyer and Condo are the active staged entries; QR parser is bounded',()=>{
-  assert.deepEqual([...ACTIVE_ENTRY_ROUTES],['home','buyer','condo','tech','teachers']);assert.deepEqual(parseEntryRoute('/home/qr/95118/rate'),{entry:'home',market:'95118',campaign:'rate'});
+  assert.deepEqual([...ACTIVE_ENTRY_ROUTES],['home','buyer','condo','tech','teachers','healthcare']);assert.deepEqual(parseEntryRoute('/home/qr/95118/rate'),{entry:'home',market:'95118',campaign:'rate'});
   assert.equal(parseEntryRoute('/home/qr/person@example.com/rate'),null);assert.equal(parseEntryRoute('/home/qr/95118/unknown'),null);assert.equal(parseEntryRoute('/life/'),null);
 });
 test('408 renders canonical questions without a redirect or local question engine',async()=>{
@@ -104,5 +104,13 @@ test('Teachers activates after Tech receipt while later affinity stays staged',a
  const routes=JSON.parse(readFileSync(new URL('../_routes.json',import.meta.url),'utf8'));
  for(const p of ['/teachers/','/teachers/legacy','/teachers/legacy.html'])assert.ok(routes.include.includes(p));
  assert.equal(ACTIVE_ENTRY_ROUTES.has('teachers'),true);
- for(const p of ['healthcare','engineers'])assert.equal(ACTIVE_ENTRY_ROUTES.has(p),false);
+ for(const p of ['engineers'])assert.equal(ACTIVE_ENTRY_ROUTES.has(p),false);
+});
+
+test('Healthcare activates after Teachers receipt and retains its original form',async()=>{
+ const {readFileSync}=await import('node:fs');
+ assert.equal(readFileSync(new URL('../healthcare/legacy.html',import.meta.url),'utf8'),readFileSync(new URL('../healthcare/index.html',import.meta.url),'utf8'));
+ const routes=JSON.parse(readFileSync(new URL('../_routes.json',import.meta.url),'utf8'));
+ for(const p of ['/healthcare/','/healthcare/legacy','/healthcare/legacy.html'])assert.ok(routes.include.includes(p));
+ assert.equal(ACTIVE_ENTRY_ROUTES.has('healthcare'),true);assert.equal(ACTIVE_ENTRY_ROUTES.has('engineers'),false);
 });

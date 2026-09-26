@@ -11,3 +11,13 @@ Canonical specification, acquisition/presentation contracts, route matrix, QA ch
 Local tests: 29 top-level pass, 0 fail/skip. Hosted direct CoverageFit first-answer/resume passed. Hosted 408 presentation fetch failed; the exact upstream cause is not yet observed. Mobile certification pending. Rollback Home interception before rolling back CoverageFit endpoints; leave saved data and old routes intact. No migration or Cloudflare setting is required by this increment. Existing district/SMS treatment is unaffected.
 
 Runtime diagnostic: `entry_presentation_upstream_failure` logs only upstream status/error type, never cookie, contact, campaign or response body. Inspect this in the Cloudflare project serving 408farmers.com before changing configuration.
+
+### 2026-09-26 transport diagnostic follow-up
+Production candidate returned 503 with `TypeError` and no upstream status in
+Pages project `408farmers-v2`. The previous catch did not identify the failing
+stage. Preserve the native fetch global receiver and pass a URL string; retain
+redirect rejection and fixed destinations. New tests exercise the real default
+transport branch with a receiver-sensitive stub. Safe page diagnostics now
+separate fetch from response processing, without exception messages or URLs.
+31 tests pass; hosted resolution remains unverified. Public activation stays
+paused. No configuration, migration, scoring or SMS changes.

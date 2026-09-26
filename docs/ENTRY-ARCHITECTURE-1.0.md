@@ -83,3 +83,6 @@ working branch, not main, until the hosted gate is resolved.
 
 ### Tech activation after Condo receipt certification
 Authenticated Work confirms the fresh Condo record, original route/source/audience and submitted answers. Tech now joins the active set; canonical first question has no professional-role gate. Original Tech form and aliases retained. 36 tests pass. Remaining affinity/QR inactive until Tech certification. No Cloudflare configuration changes. Rollback removes tech from ACTIVE_ENTRY_ROUTES only.
+
+### Teachers promotion
+Tech hosted source/evidence receipt certified. Teachers alone activates using the canonical engine; original form and aliases preserved. Healthcare, Engineers and QR remain inactive pending preceding gates. No configuration, scoring or SMS change.

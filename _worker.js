@@ -1814,6 +1814,7 @@ export default {
       if(['/buyer/legacy.html','/buyer/legacy'].includes(url.pathname))return env.ASSETS.fetch(assetRequestFor(request,'/buyer/legacy'));
       if(['/condo/legacy.html','/condo/legacy'].includes(url.pathname))return env.ASSETS.fetch(assetRequestFor(request,'/condo/legacy'));
       if(['/tech/legacy.html','/tech/legacy'].includes(url.pathname))return env.ASSETS.fetch(assetRequestFor(request,'/tech/legacy'));
+      if(['/teachers/legacy.html','/teachers/legacy'].includes(url.pathname))return env.ASSETS.fetch(assetRequestFor(request,'/teachers/legacy'));
     }
     if (url.pathname === '/api/signal/home-contact') return handleHomeContact(request, env);
     if (url.pathname === '/api/signal/life-handoff-staging') return handleSignalLifeHandoffPreview(request, env);

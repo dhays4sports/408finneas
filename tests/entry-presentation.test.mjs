@@ -1,7 +1,7 @@
 import test from 'node:test';import assert from 'node:assert/strict';
 import {entryPage,entryAction,parseEntryRoute,ACTIVE_ENTRY_ROUTES} from '../server/entry-presentation-proxy.mjs';
 test('Home, Buyer and Condo are the active staged entries; QR parser is bounded',()=>{
-  assert.deepEqual([...ACTIVE_ENTRY_ROUTES],['home','buyer','condo','tech']);assert.deepEqual(parseEntryRoute('/home/qr/95118/rate'),{entry:'home',market:'95118',campaign:'rate'});
+  assert.deepEqual([...ACTIVE_ENTRY_ROUTES],['home','buyer','condo','tech','teachers']);assert.deepEqual(parseEntryRoute('/home/qr/95118/rate'),{entry:'home',market:'95118',campaign:'rate'});
   assert.equal(parseEntryRoute('/home/qr/person@example.com/rate'),null);assert.equal(parseEntryRoute('/home/qr/95118/unknown'),null);assert.equal(parseEntryRoute('/life/'),null);
 });
 test('408 renders canonical questions without a redirect or local question engine',async()=>{
@@ -96,4 +96,13 @@ test('Tech compatibility preserves historical links while public Tech remains ga
  assert.equal(readFileSync(new URL('../tech/legacy.html',import.meta.url),'utf8'),readFileSync(new URL('../tech/index.html',import.meta.url),'utf8'));
  const routes=JSON.parse(readFileSync(new URL('../_routes.json',import.meta.url),'utf8'));
  for(const p of ['/tech/legacy','/tech/legacy.html'])assert.ok(routes.include.includes(p));
+});
+
+test('Teachers activates after Tech receipt while later affinity stays staged',async()=>{
+ const {readFileSync}=await import('node:fs');
+ assert.equal(readFileSync(new URL('../teachers/legacy.html',import.meta.url),'utf8'),readFileSync(new URL('../teachers/index.html',import.meta.url),'utf8'));
+ const routes=JSON.parse(readFileSync(new URL('../_routes.json',import.meta.url),'utf8'));
+ for(const p of ['/teachers/','/teachers/legacy','/teachers/legacy.html'])assert.ok(routes.include.includes(p));
+ assert.equal(ACTIVE_ENTRY_ROUTES.has('teachers'),true);
+ for(const p of ['healthcare','engineers'])assert.equal(ACTIVE_ENTRY_ROUTES.has(p),false);
 });

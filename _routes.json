@@ -35,7 +35,10 @@
     "/condo/legacy.html",
     "/tech/legacy",
     "/tech/legacy.html",
-    "/tech/"
+    "/tech/",
+    "/teachers/",
+    "/teachers/legacy",
+    "/teachers/legacy.html"
   ],
   "exclude": []
 }

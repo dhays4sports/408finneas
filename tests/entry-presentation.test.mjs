@@ -1,7 +1,7 @@
 import test from 'node:test';import assert from 'node:assert/strict';
 import {entryPage,entryAction,parseEntryRoute,ACTIVE_ENTRY_ROUTES} from '../server/entry-presentation-proxy.mjs';
-test('route activation stays paused after the hosted proxy failure; strict QR parser is bounded',()=>{
-  assert.deepEqual([...ACTIVE_ENTRY_ROUTES],[]);assert.deepEqual(parseEntryRoute('/home/qr/95118/rate'),{entry:'home',market:'95118',campaign:'rate'});
+test('only Home is activated after hosted answer and resume certification; QR parser is bounded',()=>{
+  assert.deepEqual([...ACTIVE_ENTRY_ROUTES],['home']);assert.deepEqual(parseEntryRoute('/home/qr/95118/rate'),{entry:'home',market:'95118',campaign:'rate'});
   assert.equal(parseEntryRoute('/home/qr/person@example.com/rate'),null);assert.equal(parseEntryRoute('/home/qr/95118/unknown'),null);assert.equal(parseEntryRoute('/life/'),null);
 });
 test('408 renders canonical questions without a redirect or local question engine',async()=>{

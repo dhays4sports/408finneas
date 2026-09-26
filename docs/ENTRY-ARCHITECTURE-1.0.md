@@ -31,3 +31,11 @@ reject redirects before returning any location, cookie or response body. No
 redirect is followed. All 32 tests pass, including 301/302/303/307/308 on both
 paths. Hosted certification remains required; activation stays paused.
 Source: https://github.com/cloudflare/workerd/blob/main/src/workerd/api/http.c%2B%2B
+
+### Home-only rollout following transport verification
+User confirmed successful page load after redirect fix. Browser verification of
+/buyer/continue.html confirmed immediate buyer-specific question, first answer
+saved, next canonical question, and reload resuming that next question without
+repeating the first. No contact details submitted or provider messages sent.
+Activate only Home; other public entries and QR remain unchanged. Home hosted
+verification is pending deployment. Rollback: empty ACTIVE_ENTRY_ROUTES set.

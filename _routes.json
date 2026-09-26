@@ -28,7 +28,8 @@
     "/home/legacy",
     "/home/legacy.html",
     "/buyer/legacy",
-    "/buyer/legacy.html"
+    "/buyer/legacy.html",
+    "/buyer/"
   ],
   "exclude": []
 }

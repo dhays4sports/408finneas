@@ -1,7 +1,7 @@
 import test from 'node:test';import assert from 'node:assert/strict';
 import {entryPage,entryAction,parseEntryRoute,ACTIVE_ENTRY_ROUTES} from '../server/entry-presentation-proxy.mjs';
-test('only Home is activated after hosted answer and resume certification; QR parser is bounded',()=>{
-  assert.deepEqual([...ACTIVE_ENTRY_ROUTES],['home']);assert.deepEqual(parseEntryRoute('/home/qr/95118/rate'),{entry:'home',market:'95118',campaign:'rate'});
+test('Home and Buyer alone are activated after Home certification; QR parser is bounded',()=>{
+  assert.deepEqual([...ACTIVE_ENTRY_ROUTES],['home','buyer']);assert.deepEqual(parseEntryRoute('/home/qr/95118/rate'),{entry:'home',market:'95118',campaign:'rate'});
   assert.equal(parseEntryRoute('/home/qr/person@example.com/rate'),null);assert.equal(parseEntryRoute('/home/qr/95118/unknown'),null);assert.equal(parseEntryRoute('/life/'),null);
 });
 test('408 renders canonical questions without a redirect or local question engine',async()=>{
@@ -19,7 +19,7 @@ test('same-origin action proxy forwards only the opaque capability and fixed Cov
   const denied=await entryAction(new Request(request.url,{method:'POST',headers:{Origin:'https://evil.example','Content-Type':'application/json'},body:'{}'}),{fetch:()=>{throw Error('must not call')}});assert.equal(denied.status,403);
 });
 
-test('Pages dispatch includes the active trailing-slash and compatibility entry URLs',async()=>{const {readFileSync}=await import('node:fs');const routes=JSON.parse(readFileSync(new URL('../_routes.json',import.meta.url),'utf8'));for(const path of ['/home','/home/','/buyer/continue','/buyer/continue.html'])assert.ok(routes.include.includes(path));});
+test('Pages dispatch includes the active trailing-slash and compatibility entry URLs',async()=>{const {readFileSync}=await import('node:fs');const routes=JSON.parse(readFileSync(new URL('../_routes.json',import.meta.url),'utf8'));for(const path of ['/home','/home/','/buyer/','/buyer/continue','/buyer/continue.html'])assert.ok(routes.include.includes(path));});
 
 test('upstream failure gives a safe contact fallback and logs only status/stage/type',async(t)=>{const log=t.mock.method(console,'warn',()=>{});const response=await entryPage(new Request('https://408farmers.com/home/?campaign_id=private_campaign'),{entry:'home'},{fetch:async()=>new Response('internal upstream details',{status:403})});assert.equal(response.status,503);assert.doesNotMatch(await response.text(),/internal upstream details|private_campaign/);assert.deepEqual(log.mock.calls[0].arguments,['entry_presentation_upstream_failure','{"status":403,"stage":"response","name":"Error"}']);});
 
@@ -70,10 +70,10 @@ test('Home compatibility bypasses campaign fallback and uses the pretty asset pa
   for(const path of ['/home/legacy','/home/legacy.html'])assert.ok(routes.include.includes(path));
 });
 
-test('Buyer compatibility retains the original appointment form without activating Buyer',async()=>{
+test('Buyer compatibility retains the original appointment form with independent canonical entry',async()=>{
   const {readFileSync}=await import('node:fs');
   assert.equal(readFileSync(new URL('../buyer/legacy.html',import.meta.url),'utf8'),readFileSync(new URL('../buyer/index.html',import.meta.url),'utf8'));
-  assert.equal(ACTIVE_ENTRY_ROUTES.has('buyer'),false);
+  assert.equal(ACTIVE_ENTRY_ROUTES.has('buyer'),true);
   const source=readFileSync(new URL('../_worker.js',import.meta.url),'utf8');
   assert.ok(source.includes("if(['/buyer/legacy.html','/buyer/legacy'].includes(url.pathname))return env.ASSETS.fetch(assetRequestFor(request,'/buyer/legacy'))"));
   const routes=JSON.parse(readFileSync(new URL('../_routes.json',import.meta.url),'utf8'));

@@ -56,3 +56,12 @@ Fresh visitor hosted certification is still pending; the available browser has
 an existing secure session and no supported isolated-context API. Buyer legacy
 appointment copy and both pretty/html dispatch paths are prepared while public
 Buyer activation remains off. 34 local tests pass. No contact details or SMS sent.
+
+### Buyer activation after Home fresh-session confirmation
+Dylan confirmed private-browser Home first answer advances and reload retains
+next question. Buyer candidate previously passed first-answer/save/resume and
+buyer-specific first question. Hosted Buyer compatibility destination now renders
+original form. Activate only Home + Buyer and include /buyer/ in Pages routing.
+Condo/affinity/QR remain inactive. Local suite: 34 pass, zero fail/skip. Buyer
+public hosted verification follows deployment. Rollback: remove buyer from the
+active set; existing buyer/index.html is untouched.

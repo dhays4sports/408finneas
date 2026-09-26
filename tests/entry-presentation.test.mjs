@@ -28,7 +28,7 @@ test('native fetch keeps its global receiver and rejects redirects on page and a
   let calls=0;
   t.mock.method(globalThis,'fetch',function(url,init){
     assert.equal(this,globalThis);assert.equal(typeof url,'string');
-    assert.equal(init.redirect,'error');calls++;
+    assert.equal(init.redirect,'manual');calls++;
     return Promise.resolve(new Response('{}',{headers:{'Content-Type':'application/json'}}));
   });
   assert.equal((await entryPage(new Request('https://408farmers.com/buyer/continue.html'),{entry:'buyer'})).status,200);
@@ -40,4 +40,17 @@ test('fetch exception is distinguished without logging URLs, tokens or exception
   const response=await entryPage(new Request('https://408farmers.com/buyer/continue.html'),{entry:'buyer'},{fetch:()=>{throw new TypeError('sensitive upstream context')}});
   assert.equal(response.status,503);
   assert.deepEqual(log.mock.calls[0].arguments,['entry_presentation_upstream_failure','{"status":null,"stage":"fetch","name":"TypeError"}']);
+});
+
+
+test('manual redirects fail closed without forwarding location, cookies or bodies',async(t)=>{
+  t.mock.method(console,'warn',()=>{});
+  for(const status of [301,302,303,307,308]){
+    let calls=0;
+    const fetch=async(url,init)=>{calls++;assert.equal(init.redirect,'manual');return new Response('private redirect body',{status,headers:{Location:'https://other.example/','Set-Cookie':'private=value'}});};
+    const page=await entryPage(new Request('https://408farmers.com/buyer/continue.html'),{entry:'buyer'},{fetch});
+    const action=await entryAction(new Request('https://408farmers.com/api/entry/interact',{method:'POST',headers:{Origin:'https://408farmers.com','Content-Type':'application/json'},body:'{}'}),{fetch});
+    for(const response of [page,action]){assert.equal(response.status,503);assert.equal(response.headers.get('location'),null);assert.equal(response.headers.get('set-cookie'),null);assert.doesNotMatch(await response.text(),/private redirect body/);}
+    assert.equal(calls,2);
+  }
 });

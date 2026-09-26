@@ -23,7 +23,7 @@ export async function entryPage(request,context,options={}){
   if(context.market){target.searchParams.set('market',context.market);target.searchParams.set('qr_campaign',context.campaign);}
   let stage='fetch',status=null;
   try{
-    const upstream=await upstreamFetch(target,{headers:{Cookie:cookie(request)},redirect:'error'},options);
+    const upstream=await upstreamFetch(target,{headers:{Cookie:cookie(request)},redirect:'manual'},options);
     status=upstream.status;stage='response';
     if(!upstream.ok)throw Object.assign(Error('upstream'),{upstreamStatus:upstream.status});
     const headers=new Headers(upstream.headers);headers.delete('X-Robots-Tag');
@@ -38,7 +38,8 @@ export async function entryAction(request,options={}){
   if(!request.headers.get('content-type')?.includes('application/json'))return new Response(null,{status:415});
   const body=await request.text();if(body.length>8192)return new Response(null,{status:413});
   try{
-    const upstream=await upstreamFetch(new URL(action,COVERAGEFIT_ENTRY_BASE),{method:'POST',redirect:'error',headers:{'Content-Type':'application/json',Origin:'https://coveragefit.com',Cookie:cookie(request)},body},options);
+    const upstream=await upstreamFetch(new URL(action,COVERAGEFIT_ENTRY_BASE),{method:'POST',redirect:'manual',headers:{'Content-Type':'application/json',Origin:'https://coveragefit.com',Cookie:cookie(request)},body},options);
+    if(upstream.status>=300&&upstream.status<400)throw Object.assign(Error('upstream_redirect'),{upstreamStatus:upstream.status});
     const headers=new Headers({'Content-Type':'application/json','Cache-Control':'private, no-store','Referrer-Policy':'no-referrer'});
     const session=upstream.headers.get('set-cookie');
     if(session&&/^cf_distribution_resume=pvxw_[A-Za-z0-9_-]{43};/.test(session))headers.set('Set-Cookie',session);

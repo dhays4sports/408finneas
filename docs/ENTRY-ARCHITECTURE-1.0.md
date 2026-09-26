@@ -21,3 +21,13 @@ transport branch with a receiver-sensitive stub. Safe page diagnostics now
 separate fetch from response processing, without exception messages or URLs.
 31 tests pass; hosted resolution remains unverified. Public activation stays
 paused. No configuration, migration, scoring or SMS changes.
+
+### Runtime redirect compatibility correction
+The next production log confirmed stage=fetch, status=null, TypeError after the
+receiver change. Cloudflare workerd source (src/workerd/api/http.c++, Request
+constructor and tryParseRedirect) explicitly rejects redirect=error, contrary to
+its Request reference documentation. Both entry transports now use manual and
+reject redirects before returning any location, cookie or response body. No
+redirect is followed. All 32 tests pass, including 301/302/303/307/308 on both
+paths. Hosted certification remains required; activation stays paused.
+Source: https://github.com/cloudflare/workerd/blob/main/src/workerd/api/http.c%2B%2B

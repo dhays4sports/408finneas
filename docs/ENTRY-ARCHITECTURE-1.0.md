@@ -48,3 +48,11 @@ asset-normalization issue: legacy.html normalizes to legacy, which previously
 fell through Home campaign fallback. Both aliases now dispatch to the pretty
 legacy asset path and are in Pages include routes. Buyer activation remains on
 hold until this compatibility correction is verified hosted. 33 local tests pass.
+
+### Home compatibility verified; Buyer prepared, not activated
+Hosted legacy Home link now opens the original appointment flow and advances to
+step 2. Home save/completion/resume verified with an existing anonymous session.
+Fresh visitor hosted certification is still pending; the available browser has
+an existing secure session and no supported isolated-context API. Buyer legacy
+appointment copy and both pretty/html dispatch paths are prepared while public
+Buyer activation remains off. 34 local tests pass. No contact details or SMS sent.

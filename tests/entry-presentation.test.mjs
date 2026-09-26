@@ -69,3 +69,13 @@ test('Home compatibility bypasses campaign fallback and uses the pretty asset pa
   const routes=JSON.parse(readFileSync(new URL('../_routes.json',import.meta.url),'utf8'));
   for(const path of ['/home/legacy','/home/legacy.html'])assert.ok(routes.include.includes(path));
 });
+
+test('Buyer compatibility retains the original appointment form without activating Buyer',async()=>{
+  const {readFileSync}=await import('node:fs');
+  assert.equal(readFileSync(new URL('../buyer/legacy.html',import.meta.url),'utf8'),readFileSync(new URL('../buyer/index.html',import.meta.url),'utf8'));
+  assert.equal(ACTIVE_ENTRY_ROUTES.has('buyer'),false);
+  const source=readFileSync(new URL('../_worker.js',import.meta.url),'utf8');
+  assert.ok(source.includes("if(['/buyer/legacy.html','/buyer/legacy'].includes(url.pathname))return env.ASSETS.fetch(assetRequestFor(request,'/buyer/legacy'))"));
+  const routes=JSON.parse(readFileSync(new URL('../_routes.json',import.meta.url),'utf8'));
+  for(const p of ['/buyer/legacy','/buyer/legacy.html'])assert.ok(routes.include.includes(p));
+});

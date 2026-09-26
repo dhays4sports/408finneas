@@ -1811,6 +1811,7 @@ export default {
       if(entry&&!entry.market&&ACTIVE_ENTRY_ROUTES.has(entry.entry))return entryPage(request,entry);
       if(['/buyer/continue.html','/buyer/continue'].includes(url.pathname))return entryPage(request,{entry:'buyer'});
       if(['/home/legacy.html','/home/legacy'].includes(url.pathname))return env.ASSETS.fetch(assetRequestFor(request,'/home/legacy'));
+      if(['/buyer/legacy.html','/buyer/legacy'].includes(url.pathname))return env.ASSETS.fetch(assetRequestFor(request,'/buyer/legacy'));
     }
     if (url.pathname === '/api/signal/home-contact') return handleHomeContact(request, env);
     if (url.pathname === '/api/signal/life-handoff-staging') return handleSignalLifeHandoffPreview(request, env);

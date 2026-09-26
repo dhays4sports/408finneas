@@ -26,7 +26,9 @@
     "/buyer/continue",
     "/buyer/continue.html",
     "/home/legacy",
-    "/home/legacy.html"
+    "/home/legacy.html",
+    "/buyer/legacy",
+    "/buyer/legacy.html"
   ],
   "exclude": []
 }

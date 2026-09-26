@@ -54,3 +54,18 @@ test('manual redirects fail closed without forwarding location, cookies or bodie
     assert.equal(calls,2);
   }
 });
+
+
+test('Home compatibility bypasses campaign fallback and uses the pretty asset path',async()=>{
+  const {readFileSync}=await import('node:fs');
+  const source=readFileSync(new URL('../_worker.js',import.meta.url),'utf8');
+  const branch=source.match(/if\(\['\/home\/legacy.html','\/home\/legacy'\][^\n]+/)[0];
+  const dispatch=new Function('url','env','request','assetRequestFor',branch+'return null;');
+  for(const path of ['/home/legacy','/home/legacy.html']){
+    const request=new Request('https://408farmers.com'+path+'?utm_source=test');let destination;
+    const result=await dispatch(new URL(request.url),{ASSETS:{fetch:r=>{destination=r.url;return new Response('legacy appointment');}}},request,(r,p)=>{const u=new URL(r.url);u.pathname=p;return new Request(u,r);});
+    assert.equal(await result.text(),'legacy appointment');assert.equal(new URL(destination).pathname,'/home/legacy');assert.equal(new URL(destination).search,'?utm_source=test');
+  }
+  const routes=JSON.parse(readFileSync(new URL('../_routes.json',import.meta.url),'utf8'));
+  for(const path of ['/home/legacy','/home/legacy.html'])assert.ok(routes.include.includes(path));
+});

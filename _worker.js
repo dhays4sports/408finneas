@@ -1810,7 +1810,7 @@ export default {
       const entry=parseEntryRoute(url.pathname);
       if(entry&&!entry.market&&ACTIVE_ENTRY_ROUTES.has(entry.entry))return entryPage(request,entry);
       if(['/buyer/continue.html','/buyer/continue'].includes(url.pathname))return entryPage(request,{entry:'buyer'});
-      if(url.pathname==='/home/legacy.html')return env.ASSETS.fetch(request);
+      if(['/home/legacy.html','/home/legacy'].includes(url.pathname))return env.ASSETS.fetch(assetRequestFor(request,'/home/legacy'));
     }
     if (url.pathname === '/api/signal/home-contact') return handleHomeContact(request, env);
     if (url.pathname === '/api/signal/life-handoff-staging') return handleSignalLifeHandoffPreview(request, env);

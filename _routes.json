@@ -24,7 +24,9 @@
     "/local/*",
     "/home/",
     "/buyer/continue",
-    "/buyer/continue.html"
+    "/buyer/continue.html",
+    "/home/legacy",
+    "/home/legacy.html"
   ],
   "exclude": []
 }

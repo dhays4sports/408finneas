@@ -39,3 +39,12 @@ saved, next canonical question, and reload resuming that next question without
 repeating the first. No contact details submitted or provider messages sent.
 Activate only Home; other public entries and QR remain unchanged. Home hosted
 verification is pending deployment. Rollback: empty ACTIVE_ENTRY_ROUTES set.
+
+### Hosted Home verification and compatibility correction
+Home activation is live. Existing anonymous buyer session resumed on Home,
+accepted its second answer, stopped at researching completion, and retained that
+completion after reload. No contact or SMS sent. Compatibility link exposed an
+asset-normalization issue: legacy.html normalizes to legacy, which previously
+fell through Home campaign fallback. Both aliases now dispatch to the pretty
+legacy asset path and are in Pages include routes. Buyer activation remains on
+hold until this compatibility correction is verified hosted. 33 local tests pass.

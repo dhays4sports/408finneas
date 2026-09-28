@@ -2,6 +2,8 @@
 // session mutations happen in CoverageFit. No provider or CRM adapter here.
 export const COVERAGEFIT_ENTRY_BASE='https://coveragefit.com/api/distribution/';
 export const ACTIVE_ENTRY_ROUTES=new Set(['home','buyer','condo','tech','teachers','healthcare']);
+export const ACTIVE_QR_PRODUCTS=new Set(['home','condo']);
+export function isActiveEntry(entry){return !!entry&&(entry.market?ACTIVE_QR_PRODUCTS:ACTIVE_ENTRY_ROUTES).has(entry.entry);}
 export function parseEntryRoute(path){
   const direct=path.match(/^\/(home|buyer|condo|auto-bundle|tech|teachers|healthcare|engineers)\/?$/);
   if(direct)return {entry:direct[1]};

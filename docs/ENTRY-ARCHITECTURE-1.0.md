@@ -89,3 +89,7 @@ Tech hosted source/evidence receipt certified. Teachers alone activates using th
 
 ### Healthcare promotion
 Teachers hosted receipt/source/answers certified. Healthcare alone joins the active set; original form and legacy aliases preserved. Engineers/QR remain inactive. Canonical engine and profession governance unchanged.
+
+## QR rollout — 2026-09-28
+
+Validated Home/Condo QR routes now use the canonical presentation adapter immediately. ACTIVE_QR_PRODUCTS is separate from ordinary route activation. Engineers stays inactive by operator decision; Healthcare hosted test is waived, not certified. Deploy the CoverageFit QR attribution SQL-compatibility fix first. No Cloudflare configuration changes. Roll back by emptying ACTIVE_QR_PRODUCTS; keep historic routes and session data. Local suite: 39 passed, 0 failed/skipped. Hosted QR certification remains pending.

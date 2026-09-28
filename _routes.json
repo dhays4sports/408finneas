@@ -41,7 +41,8 @@
     "/teachers/legacy.html",
     "/healthcare/",
     "/healthcare/legacy",
-    "/healthcare/legacy.html"
+    "/healthcare/legacy.html",
+    "/condo/qr/*"
   ],
   "exclude": []
 }

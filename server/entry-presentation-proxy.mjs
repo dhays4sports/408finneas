@@ -1,7 +1,8 @@
+import {professionalPresentation,PROFESSIONS} from './professional-presentation.mjs';
 // Presentation/transport only. All question selection, evidence and durable
 // session mutations happen in CoverageFit. No provider or CRM adapter here.
 export const COVERAGEFIT_ENTRY_BASE='https://coveragefit.com/api/distribution/';
-export const ACTIVE_ENTRY_ROUTES=new Set(['home','buyer','condo','tech','teachers','healthcare']);
+export const ACTIVE_ENTRY_ROUTES=new Set(['home','buyer','condo','tech','teachers','healthcare','engineers']);
 export const ACTIVE_QR_PRODUCTS=new Set(['home','condo']);
 export function isActiveEntry(entry){return !!entry&&(entry.market?ACTIVE_QR_PRODUCTS:ACTIVE_ENTRY_ROUTES).has(entry.entry);}
 export function parseEntryRoute(path){
@@ -31,7 +32,10 @@ export async function entryPage(request,context,options={}){
     const headers=new Headers(upstream.headers);headers.delete('X-Robots-Tag');
     headers.set('Cache-Control','private, no-store');headers.set('Referrer-Policy','no-referrer');
     headers.set('Content-Security-Policy',"default-src 'none'; script-src 'self' https://coveragefit.com; style-src https://coveragefit.com; connect-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'");
-    return new Response(request.method==='HEAD'?null:upstream.body,{status:200,headers});
+    if(PROFESSIONS[context.entry])headers.set('Content-Security-Policy',headers.get('Content-Security-Policy').replace('style-src https://coveragefit.com;', "style-src 'self' https://coveragefit.com; img-src 'self';"));
+    const body=PROFESSIONS[context.entry]?professionalPresentation(await upstream.text(),context.entry):upstream.body;
+    if(PROFESSIONS[context.entry]){headers.delete('Content-Length');headers.delete('ETag');}
+    return new Response(request.method==='HEAD'?null:body,{status:200,headers});
   }catch(error){console.warn('entry_presentation_upstream_failure',JSON.stringify({status,stage,name:error?.name||'Error'}));return new Response('<!doctype html><html lang="en"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Review with Dylan — 408FARMERS</title><main><h1>Let’s pick up with Dylan</h1><p>The quick review is temporarily unavailable. You can still contact Dylan directly.</p><a href="/contact/">Contact Dylan</a></main></html>',{status:503,headers:{'Content-Type':'text/html; charset=utf-8','Cache-Control':'no-store'}});}
 }
 export async function entryAction(request,options={}){

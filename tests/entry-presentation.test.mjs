@@ -1,7 +1,7 @@
 import test from 'node:test';import assert from 'node:assert/strict';
 import {entryPage,entryAction,parseEntryRoute,ACTIVE_ENTRY_ROUTES,isActiveEntry} from '../server/entry-presentation-proxy.mjs';
-test('Home, Buyer and Condo are the active staged entries; QR parser is bounded',()=>{
-  assert.deepEqual([...ACTIVE_ENTRY_ROUTES],['home','buyer','condo','tech','teachers','healthcare']);assert.deepEqual(parseEntryRoute('/home/qr/95118/rate'),{entry:'home',market:'95118',campaign:'rate'});
+test('candidate route set includes four professions; QR parser is bounded',()=>{
+  assert.deepEqual([...ACTIVE_ENTRY_ROUTES],['home','buyer','condo','tech','teachers','healthcare','engineers']);assert.deepEqual(parseEntryRoute('/home/qr/95118/rate'),{entry:'home',market:'95118',campaign:'rate'});
   assert.equal(parseEntryRoute('/home/qr/person@example.com/rate'),null);assert.equal(parseEntryRoute('/home/qr/95118/unknown'),null);assert.equal(parseEntryRoute('/life/'),null);
 });
 test('408 renders canonical questions without a redirect or local question engine',async()=>{
@@ -98,21 +98,21 @@ test('Tech compatibility preserves historical links while public Tech remains ga
  for(const p of ['/tech/legacy','/tech/legacy.html'])assert.ok(routes.include.includes(p));
 });
 
-test('Teachers activates after Tech receipt while later affinity stays staged',async()=>{
+test('Teachers compatibility survives candidate Engineers activation',async()=>{
  const {readFileSync}=await import('node:fs');
  assert.equal(readFileSync(new URL('../teachers/legacy.html',import.meta.url),'utf8'),readFileSync(new URL('../teachers/index.html',import.meta.url),'utf8'));
  const routes=JSON.parse(readFileSync(new URL('../_routes.json',import.meta.url),'utf8'));
  for(const p of ['/teachers/','/teachers/legacy','/teachers/legacy.html'])assert.ok(routes.include.includes(p));
  assert.equal(ACTIVE_ENTRY_ROUTES.has('teachers'),true);
- for(const p of ['engineers'])assert.equal(ACTIVE_ENTRY_ROUTES.has(p),false);
+ for(const p of ['engineers'])assert.equal(ACTIVE_ENTRY_ROUTES.has(p),true);
 });
 
-test('Healthcare activates after Teachers receipt and retains its original form',async()=>{
+test('Healthcare retains its original form alongside professional candidate routes',async()=>{
  const {readFileSync}=await import('node:fs');
  assert.equal(readFileSync(new URL('../healthcare/legacy.html',import.meta.url),'utf8'),readFileSync(new URL('../healthcare/index.html',import.meta.url),'utf8'));
  const routes=JSON.parse(readFileSync(new URL('../_routes.json',import.meta.url),'utf8'));
  for(const p of ['/healthcare/','/healthcare/legacy','/healthcare/legacy.html'])assert.ok(routes.include.includes(p));
- assert.equal(ACTIVE_ENTRY_ROUTES.has('healthcare'),true);assert.equal(ACTIVE_ENTRY_ROUTES.has('engineers'),false);
+ assert.equal(ACTIVE_ENTRY_ROUTES.has('healthcare'),true);assert.equal(ACTIVE_ENTRY_ROUTES.has('engineers'),true);
 });
 
 test('QR activation is bounded and forwards market/campaign without client PII',async()=>{
@@ -122,7 +122,7 @@ test('QR activation is bounded and forwards market/campaign without client PII',
   const response=await entryPage(new Request('https://408farmers.com'+path+'?email=private@example.com'),context,{fetch:async(url)=>{target=new URL(url);return new Response('<main>Question</main>');}});
   assert.equal(response.status,200);assert.equal(target.searchParams.get('market'),context.market);assert.equal(target.searchParams.get('qr_campaign'),context.campaign);assert.equal(target.searchParams.get('entry'),context.entry);assert.equal(target.searchParams.has('email'),false);
  }
- assert.equal(isActiveEntry(parseEntryRoute('/engineers/')),false);
+ assert.equal(isActiveEntry(parseEntryRoute('/engineers/')),true);
  assert.equal(isActiveEntry(parseEntryRoute('/tech/qr/95118/rate')),false);
  assert.equal(isActiveEntry(parseEntryRoute('/home/qr/person@example.com/rate')),false);
  const {readFileSync}=await import('node:fs');const routes=JSON.parse(readFileSync(new URL('../_routes.json',import.meta.url),'utf8'));

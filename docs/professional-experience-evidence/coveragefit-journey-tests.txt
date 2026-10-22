@@ -1,0 +1,33 @@
+✔ contract keeps campaign audience separate from evidence and rejects PII/authority injection (3.804856ms)
+✔ buyer POST uses a private cookie; known evidence is not asked again; no opportunity before permission (20.241154ms)
+✔ answers persist, resume does not restart, Back retains imported facts, revisions reject stale changes (12.43654ms)
+✔ sufficient evidence ends questions and explicit contact reaches one producer opportunity with attribution (21.485961ms)
+✔ failed producer delivery stays pending and retry recovers without duplicate lead (11.695038ms)
+✔ cross-origin, expired capability, unsupported routes and malformed inputs fail closed (6.392696ms)
+✔ cross-domain retry with same bootstrap identity reuses same journey capability (6.915901ms)
+✔ a changed handoff under the same key cannot silently overwrite attribution (7.130743ms)
+✔ research answers exit without implying buying intent; route audience does not change the decision (5.656142ms)
+✔ Home shows a canonical question before a session; first answer is the session boundary (9.205625ms)
+✔ buyer presentation asks the next useful purchase question without granting intent or priority (0.693841ms)
+✔ QR market and affinity audience are attribution, never quality evidence (0.505708ms)
+✔ Meta has a direct agency-contextualized presentation and preserved paid source (0.83383ms)
+✔ presentation contains immediate semantic options and no transition-only gate (0.252308ms)
+✔ observed view events are idempotent and do not establish buying intent or a session (5.908571ms)
+✔ resumed measurement retains original acquisition instead of a new landing campaign (6.524655ms)
+✔ direct entry is included in Pages function routing (0.277266ms)
+✔ real canonical buyer handoff continues on the same opportunity with original source and no repeated first answer (40.301557ms)
+✔ Buyer entry keeps the preserved appointment destination separate from canonical intake (0.542865ms)
+✔ Condo context survives entry without asking property type or adding intent (0.307111ms)
+✔ Condo answer resumes and reaches one WEB_DIRECT record with source and evidence (16.513414ms)
+✔ Tech presentation starts with insurance evidence, not a profession gate (0.655944ms)
+✔ Teachers presentation starts with insurance evidence, not a profession gate (0.464476ms)
+✔ Healthcare presentation starts with insurance evidence, not a profession gate (0.441482ms)
+✔ QR first answer persists original campaign and market through producer receipt (15.549608ms)
+ℹ tests 25
+ℹ suites 0
+ℹ pass 25
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 296.552412

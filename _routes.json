@@ -42,7 +42,10 @@
     "/healthcare/",
     "/healthcare/legacy",
     "/healthcare/legacy.html",
-    "/condo/qr/*"
+    "/condo/qr/*",
+    "/engineers/",
+    "/engineers/legacy",
+    "/engineers/legacy.html"
   ],
   "exclude": []
 }

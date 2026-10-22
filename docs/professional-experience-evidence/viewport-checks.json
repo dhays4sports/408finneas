@@ -1,0 +1,626 @@
+[
+  {
+    "route": "tech",
+    "width": 320,
+    "buttons": [
+      {
+        "h": 69.375,
+        "label": "Home coverage",
+        "w": 117
+      },
+      {
+        "h": 69.375,
+        "label": "Auto coverage",
+        "w": 117
+      },
+      {
+        "h": 69.375,
+        "label": "Life coverage",
+        "w": 117
+      },
+      {
+        "h": 69.375,
+        "label": "Business coverage",
+        "w": 117
+      }
+    ],
+    "heading": "Your career may come with an insurance perk.",
+    "images": [
+      {
+        "loaded": true,
+        "src": "/shared/assets/farmers-insurance-official.svg"
+      },
+      {
+        "loaded": true,
+        "src": "/shared/images/dylan-headshot-160.webp"
+      }
+    ],
+    "scroll": 320,
+    "viewport": 320
+  },
+  {
+    "route": "tech",
+    "width": 390,
+    "buttons": [
+      {
+        "h": 52,
+        "label": "Home coverage",
+        "w": 152
+      },
+      {
+        "h": 52,
+        "label": "Auto coverage",
+        "w": 152
+      },
+      {
+        "h": 52,
+        "label": "Life coverage",
+        "w": 152
+      },
+      {
+        "h": 52,
+        "label": "Business coverage",
+        "w": 152
+      }
+    ],
+    "heading": "Your career may come with an insurance perk.",
+    "images": [
+      {
+        "loaded": true,
+        "src": "/shared/assets/farmers-insurance-official.svg"
+      },
+      {
+        "loaded": true,
+        "src": "/shared/images/dylan-headshot-160.webp"
+      }
+    ],
+    "scroll": 390,
+    "viewport": 390
+  },
+  {
+    "route": "tech",
+    "width": 768,
+    "buttons": [
+      {
+        "h": 52.796875,
+        "label": "Home coverage",
+        "w": 306
+      },
+      {
+        "h": 52.796875,
+        "label": "Auto coverage",
+        "w": 306
+      },
+      {
+        "h": 52.796875,
+        "label": "Life coverage",
+        "w": 306
+      },
+      {
+        "h": 52.796875,
+        "label": "Business coverage",
+        "w": 306
+      }
+    ],
+    "heading": "Your career may come with an insurance perk.",
+    "images": [
+      {
+        "loaded": true,
+        "src": "/shared/assets/farmers-insurance-official.svg"
+      },
+      {
+        "loaded": true,
+        "src": "/shared/images/dylan-headshot-160.webp"
+      }
+    ],
+    "scroll": 768,
+    "viewport": 768
+  },
+  {
+    "route": "tech",
+    "width": 1280,
+    "buttons": [
+      {
+        "h": 52.796875,
+        "label": "Home coverage",
+        "w": 306
+      },
+      {
+        "h": 52.796875,
+        "label": "Auto coverage",
+        "w": 306
+      },
+      {
+        "h": 52.796875,
+        "label": "Life coverage",
+        "w": 306
+      },
+      {
+        "h": 52.796875,
+        "label": "Business coverage",
+        "w": 306
+      }
+    ],
+    "heading": "Your career may come with an insurance perk.",
+    "images": [
+      {
+        "loaded": true,
+        "src": "/shared/assets/farmers-insurance-official.svg"
+      },
+      {
+        "loaded": true,
+        "src": "/shared/images/dylan-headshot-160.webp"
+      }
+    ],
+    "scroll": 1280,
+    "viewport": 1280
+  },
+  {
+    "route": "healthcare",
+    "width": 320,
+    "buttons": [
+      {
+        "h": 69.375,
+        "label": "Home coverage",
+        "w": 117
+      },
+      {
+        "h": 69.375,
+        "label": "Auto coverage",
+        "w": 117
+      },
+      {
+        "h": 69.375,
+        "label": "Life coverage",
+        "w": 117
+      },
+      {
+        "h": 69.375,
+        "label": "Business coverage",
+        "w": 117
+      }
+    ],
+    "heading": "Your career may come with an insurance perk.",
+    "images": [
+      {
+        "loaded": true,
+        "src": "/shared/assets/farmers-insurance-official.svg"
+      },
+      {
+        "loaded": true,
+        "src": "/shared/images/dylan-headshot-160.webp"
+      }
+    ],
+    "scroll": 320,
+    "viewport": 320
+  },
+  {
+    "route": "healthcare",
+    "width": 390,
+    "buttons": [
+      {
+        "h": 52,
+        "label": "Home coverage",
+        "w": 152
+      },
+      {
+        "h": 52,
+        "label": "Auto coverage",
+        "w": 152
+      },
+      {
+        "h": 52,
+        "label": "Life coverage",
+        "w": 152
+      },
+      {
+        "h": 52,
+        "label": "Business coverage",
+        "w": 152
+      }
+    ],
+    "heading": "Your career may come with an insurance perk.",
+    "images": [
+      {
+        "loaded": true,
+        "src": "/shared/assets/farmers-insurance-official.svg"
+      },
+      {
+        "loaded": true,
+        "src": "/shared/images/dylan-headshot-160.webp"
+      }
+    ],
+    "scroll": 390,
+    "viewport": 390
+  },
+  {
+    "route": "healthcare",
+    "width": 768,
+    "buttons": [
+      {
+        "h": 52.796875,
+        "label": "Home coverage",
+        "w": 306
+      },
+      {
+        "h": 52.796875,
+        "label": "Auto coverage",
+        "w": 306
+      },
+      {
+        "h": 52.796875,
+        "label": "Life coverage",
+        "w": 306
+      },
+      {
+        "h": 52.796875,
+        "label": "Business coverage",
+        "w": 306
+      }
+    ],
+    "heading": "Your career may come with an insurance perk.",
+    "images": [
+      {
+        "loaded": true,
+        "src": "/shared/assets/farmers-insurance-official.svg"
+      },
+      {
+        "loaded": true,
+        "src": "/shared/images/dylan-headshot-160.webp"
+      }
+    ],
+    "scroll": 768,
+    "viewport": 768
+  },
+  {
+    "route": "healthcare",
+    "width": 1280,
+    "buttons": [
+      {
+        "h": 52.796875,
+        "label": "Home coverage",
+        "w": 306
+      },
+      {
+        "h": 52.796875,
+        "label": "Auto coverage",
+        "w": 306
+      },
+      {
+        "h": 52.796875,
+        "label": "Life coverage",
+        "w": 306
+      },
+      {
+        "h": 52.796875,
+        "label": "Business coverage",
+        "w": 306
+      }
+    ],
+    "heading": "Your career may come with an insurance perk.",
+    "images": [
+      {
+        "loaded": true,
+        "src": "/shared/assets/farmers-insurance-official.svg"
+      },
+      {
+        "loaded": true,
+        "src": "/shared/images/dylan-headshot-160.webp"
+      }
+    ],
+    "scroll": 1280,
+    "viewport": 1280
+  },
+  {
+    "route": "engineers",
+    "width": 320,
+    "buttons": [
+      {
+        "h": 69.375,
+        "label": "Home coverage",
+        "w": 117
+      },
+      {
+        "h": 69.375,
+        "label": "Auto coverage",
+        "w": 117
+      },
+      {
+        "h": 69.375,
+        "label": "Life coverage",
+        "w": 117
+      },
+      {
+        "h": 69.375,
+        "label": "Business coverage",
+        "w": 117
+      }
+    ],
+    "heading": "Your career may come with an insurance perk.",
+    "images": [
+      {
+        "loaded": true,
+        "src": "/shared/assets/farmers-insurance-official.svg"
+      },
+      {
+        "loaded": true,
+        "src": "/shared/images/dylan-headshot-160.webp"
+      }
+    ],
+    "scroll": 320,
+    "viewport": 320
+  },
+  {
+    "route": "engineers",
+    "width": 390,
+    "buttons": [
+      {
+        "h": 52,
+        "label": "Home coverage",
+        "w": 152
+      },
+      {
+        "h": 52,
+        "label": "Auto coverage",
+        "w": 152
+      },
+      {
+        "h": 52,
+        "label": "Life coverage",
+        "w": 152
+      },
+      {
+        "h": 52,
+        "label": "Business coverage",
+        "w": 152
+      }
+    ],
+    "heading": "Your career may come with an insurance perk.",
+    "images": [
+      {
+        "loaded": true,
+        "src": "/shared/assets/farmers-insurance-official.svg"
+      },
+      {
+        "loaded": true,
+        "src": "/shared/images/dylan-headshot-160.webp"
+      }
+    ],
+    "scroll": 390,
+    "viewport": 390
+  },
+  {
+    "route": "engineers",
+    "width": 768,
+    "buttons": [
+      {
+        "h": 52.796875,
+        "label": "Home coverage",
+        "w": 306
+      },
+      {
+        "h": 52.796875,
+        "label": "Auto coverage",
+        "w": 306
+      },
+      {
+        "h": 52.796875,
+        "label": "Life coverage",
+        "w": 306
+      },
+      {
+        "h": 52.796875,
+        "label": "Business coverage",
+        "w": 306
+      }
+    ],
+    "heading": "Your career may come with an insurance perk.",
+    "images": [
+      {
+        "loaded": true,
+        "src": "/shared/assets/farmers-insurance-official.svg"
+      },
+      {
+        "loaded": true,
+        "src": "/shared/images/dylan-headshot-160.webp"
+      }
+    ],
+    "scroll": 768,
+    "viewport": 768
+  },
+  {
+    "route": "engineers",
+    "width": 1280,
+    "buttons": [
+      {
+        "h": 52.796875,
+        "label": "Home coverage",
+        "w": 306
+      },
+      {
+        "h": 52.796875,
+        "label": "Auto coverage",
+        "w": 306
+      },
+      {
+        "h": 52.796875,
+        "label": "Life coverage",
+        "w": 306
+      },
+      {
+        "h": 52.796875,
+        "label": "Business coverage",
+        "w": 306
+      }
+    ],
+    "heading": "Your career may come with an insurance perk.",
+    "images": [
+      {
+        "loaded": true,
+        "src": "/shared/assets/farmers-insurance-official.svg"
+      },
+      {
+        "loaded": true,
+        "src": "/shared/images/dylan-headshot-160.webp"
+      }
+    ],
+    "scroll": 1280,
+    "viewport": 1280
+  },
+  {
+    "route": "teachers",
+    "width": 320,
+    "buttons": [
+      {
+        "h": 69.375,
+        "label": "Home coverage",
+        "w": 117
+      },
+      {
+        "h": 69.375,
+        "label": "Auto coverage",
+        "w": 117
+      },
+      {
+        "h": 69.375,
+        "label": "Life coverage",
+        "w": 117
+      },
+      {
+        "h": 69.375,
+        "label": "Business coverage",
+        "w": 117
+      }
+    ],
+    "heading": "Your career may come with an insurance perk.",
+    "images": [
+      {
+        "loaded": true,
+        "src": "/shared/assets/farmers-insurance-official.svg"
+      },
+      {
+        "loaded": true,
+        "src": "/shared/images/dylan-headshot-160.webp"
+      }
+    ],
+    "scroll": 320,
+    "viewport": 320
+  },
+  {
+    "route": "teachers",
+    "width": 390,
+    "buttons": [
+      {
+        "h": 52,
+        "label": "Home coverage",
+        "w": 152
+      },
+      {
+        "h": 52,
+        "label": "Auto coverage",
+        "w": 152
+      },
+      {
+        "h": 52,
+        "label": "Life coverage",
+        "w": 152
+      },
+      {
+        "h": 52,
+        "label": "Business coverage",
+        "w": 152
+      }
+    ],
+    "heading": "Your career may come with an insurance perk.",
+    "images": [
+      {
+        "loaded": true,
+        "src": "/shared/assets/farmers-insurance-official.svg"
+      },
+      {
+        "loaded": true,
+        "src": "/shared/images/dylan-headshot-160.webp"
+      }
+    ],
+    "scroll": 390,
+    "viewport": 390
+  },
+  {
+    "route": "teachers",
+    "width": 768,
+    "buttons": [
+      {
+        "h": 52.796875,
+        "label": "Home coverage",
+        "w": 306
+      },
+      {
+        "h": 52.796875,
+        "label": "Auto coverage",
+        "w": 306
+      },
+      {
+        "h": 52.796875,
+        "label": "Life coverage",
+        "w": 306
+      },
+      {
+        "h": 52.796875,
+        "label": "Business coverage",
+        "w": 306
+      }
+    ],
+    "heading": "Your career may come with an insurance perk.",
+    "images": [
+      {
+        "loaded": true,
+        "src": "/shared/assets/farmers-insurance-official.svg"
+      },
+      {
+        "loaded": true,
+        "src": "/shared/images/dylan-headshot-160.webp"
+      }
+    ],
+    "scroll": 768,
+    "viewport": 768
+  },
+  {
+    "route": "teachers",
+    "width": 1280,
+    "buttons": [
+      {
+        "h": 52.796875,
+        "label": "Home coverage",
+        "w": 306
+      },
+      {
+        "h": 52.796875,
+        "label": "Auto coverage",
+        "w": 306
+      },
+      {
+        "h": 52.796875,
+        "label": "Life coverage",
+        "w": 306
+      },
+      {
+        "h": 52.796875,
+        "label": "Business coverage",
+        "w": 306
+      }
+    ],
+    "heading": "Your career may come with an insurance perk.",
+    "images": [
+      {
+        "loaded": true,
+        "src": "/shared/assets/farmers-insurance-official.svg"
+      },
+      {
+        "loaded": true,
+        "src": "/shared/images/dylan-headshot-160.webp"
+      }
+    ],
+    "scroll": 1280,
+    "viewport": 1280
+  }
+]

@@ -1,0 +1,132 @@
+✔ thin buyer sends bounded campaign context by POST without identity or a local engine (2.048773ms)
+✔ candidate preserves active buyer, campaign references and specialized life (0.483505ms)
+✔ candidate route set includes four professions; QR parser is bounded (1.968242ms)
+✔ 408 renders canonical questions without a redirect or local question engine (5.131867ms)
+✔ same-origin action proxy forwards only the opaque capability and fixed CoverageFit destination (1.752528ms)
+✔ Pages dispatch includes the active trailing-slash and compatibility entry URLs (1.047611ms)
+✔ upstream failure gives a safe contact fallback and logs only status/stage/type (1.058106ms)
+✔ native fetch keeps its global receiver and rejects redirects on page and action paths (1.152478ms)
+✔ fetch exception is distinguished without logging URLs, tokens or exception messages (0.511797ms)
+✔ manual redirects fail closed without forwarding location, cookies or bodies (4.468992ms)
+✔ Home compatibility bypasses campaign fallback and uses the pretty asset path (2.035713ms)
+✔ Buyer compatibility retains the original appointment form with independent canonical entry (1.104597ms)
+✔ Condo retains the appointment form and routes both legacy aliases (0.780991ms)
+✔ Tech compatibility preserves historical links while public Tech remains gated (0.468843ms)
+✔ Teachers compatibility survives candidate Engineers activation (0.409544ms)
+✔ Healthcare retains its original form alongside professional candidate routes (0.464727ms)
+✔ QR activation is bounded and forwards market/campaign without client PII (1.321282ms)
+✔ tech/home: adapter → canonical journey → durable producer receipt (92.632072ms)
+✔ tech/auto: adapter → canonical journey → durable producer receipt (33.441944ms)
+✔ tech/life: adapter → canonical journey → durable producer receipt (33.525168ms)
+✔ tech/commercial: adapter → canonical journey → durable producer receipt (33.945799ms)
+✔ healthcare/home: adapter → canonical journey → durable producer receipt (20.595768ms)
+✔ healthcare/auto: adapter → canonical journey → durable producer receipt (23.013984ms)
+✔ healthcare/life: adapter → canonical journey → durable producer receipt (23.928807ms)
+✔ healthcare/commercial: adapter → canonical journey → durable producer receipt (19.668898ms)
+✔ engineers/home: adapter → canonical journey → durable producer receipt (17.996119ms)
+✔ engineers/auto: adapter → canonical journey → durable producer receipt (17.580135ms)
+✔ engineers/life: adapter → canonical journey → durable producer receipt (20.035051ms)
+✔ engineers/commercial: adapter → canonical journey → durable producer receipt (20.371942ms)
+✔ teachers/home: adapter → canonical journey → durable producer receipt (19.833756ms)
+✔ teachers/auto: adapter → canonical journey → durable producer receipt (19.234096ms)
+✔ teachers/life: adapter → canonical journey → durable producer receipt (21.764361ms)
+✔ teachers/commercial: adapter → canonical journey → durable producer receipt (30.174993ms)
+✔ tech presentation preserves canonical state and actionable controls (8.376643ms)
+✔ healthcare presentation preserves canonical state and actionable controls (0.950335ms)
+✔ engineers presentation preserves canonical state and actionable controls (0.669104ms)
+✔ teachers presentation preserves canonical state and actionable controls (0.607241ms)
+✔ unrelated routes and unknown upstream markup are untouched (0.147942ms)
+✔ engineers compatibility keeps original assets and explicit worker route (1.415814ms)
+PASS exact lab CSP and unchanged Life route connection restrictions (source check)
+✔ tests/signal-csp.test.cjs (88.803123ms)
+SIGNAL-DECISION-BRIDGE-1.0 tests passed
+✔ tests/signal-decision-bridge.test.cjs (84.788372ms)
+✔ endpoint resolution: production default, configured override, explicit test override (6.319237ms)
+✔ unsafe protocols rejected; explicit loopback test endpoint supported (3.619999ms)
+✔ registry owns routes only; both shells delegate transport and load shared config first (1.397987ms)
+✔ Signal CSP permits exact production authority without wildcard or obsolete preview origin (0.496595ms)
+SIGNAL-FOUNDATION-1.0 core tests passed
+✔ tests/signal-foundation.test.cjs (82.161318ms)
+✔ proxy fails closed on missing configuration, cross-origin and upstream false success (19.72326ms)
+(node:81) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///workspace/scratch/a00481aeef9f/coveragefit/functions/api/signal/decision.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /workspace/scratch/a00481aeef9f/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS Life HTTP happy path, public response and guardrails
+PASS session reload, Back, changed evidence, low intent and local/remote isolation
+PASS weak/existing Life, Home, both Auto paths and mandatory business type
+CoverageFit rate limiter unavailable { reason: 'binding_missing' }
+PASS real HTTP failure/retry, preserved answers, exact CORS, preflight and fail-closed missing DB
+PASS rate limit and minimal SQLite schema; no business tables or external business services
+{
+  "publicLifeResponse": {
+    "ok": true,
+    "schemaVersion": "1.0",
+    "engine": "CF-SIGNAL-DECISION-1.0",
+    "priorityEngine": "CF-OPPORTUNITY-PRIORITY-1.0",
+    "signalSessionId": "6e4ab5b1-953c-46e6-9380-b412c6bb308d",
+    "flowId": "foundation_demo_remote",
+    "flowVersion": "1.0",
+    "decision": "OFFER_HUMAN",
+    "state": "qualified_signal",
+    "nextQuestionId": null,
+    "missingDimension": null,
+    "nextQuestion": null,
+    "publicExperience": {
+      "eyebrow": "Next step",
+      "headline": "This looks worth a quick conversation.",
+      "body": "A licensed agent can pick up from what you already shared instead of starting over.",
+      "actions": [
+        "talk_now",
+        "choose_time",
+        "text"
+      ]
+    },
+    "evaluatedAt": "2026-10-22T21:42:08.609Z",
+    "guardrails": {
+      "anonymous": true,
+      "persisted": false,
+      "leadCreated": false,
+      "opportunityCreated": false,
+      "contactPermissionGranted": false,
+      "consumerScoreExposed": false,
+      "underwritingDecision": false,
+      "eligibilityDecision": false,
+      "pricingDecision": false,
+      "bindAuthorized": false
+    }
+  }
+}
+✔ tests/signal-http-integration.test.mjs (574.056604ms)
+(node:88) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///workspace/scratch/a00481aeef9f/408finneas/_worker.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /workspace/scratch/a00481aeef9f/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ all contact modes preserve evidence and remain stateless; retries have stable receipt (31.119329ms)
+✔ rejects missing permission, real contacts, PII, tampered signals, expired handoff and invalid timing (11.15571ms)
+✔ exact host/origin, method and body size gates (5.979107ms)
+✔ human override carries an empty anonymous Life session without invented answers (2.700821ms)
+✔ browser Back restoration shows the restored method and resets permission (5.543013ms)
+PASS Life adaptive routing, three-answer happy path, Back, learn/later, explicit-action handoff, retained evidence, mapped coverage/goal and non-submitting preview
+✔ tests/signal-life-preview.test.cjs (104.155192ms)
+(node:92) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///workspace/scratch/a00481aeef9f/408finneas/_worker.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /workspace/scratch/a00481aeef9f/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ durable row survives reopen, preserving answers and scoped permission atomically (25.272982ms)
+✔ concurrent duplicates create one immutable row; lost acknowledgement retries recover (28.330819ms)
+✔ mode, time and evidence changes create distinct requests (3.772007ms)
+✔ missing/unverified DB fails closed; validation rejects before any database access (4.588211ms)
+✔ expiry pruning, bounded staging capacity, and no mutation of original receipt on retry (30.840102ms)
+PASS 11 routes, 58 engine paths, Back, isolation, privacy, terminal decisions, offline/retry and non-delivering human preview
+✔ tests/signal-routes.test.cjs (149.719758ms)
+PASS shell fresh URL consumption and refresh/resume control flow (VM DOM stub, not browser QA)
+✔ tests/signal-shell-resume.test.cjs (105.2802ms)
+ℹ tests 61
+ℹ suites 0
+ℹ pass 61
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 689.960632

@@ -1,0 +1,30 @@
+[
+  {
+    "frameWidth": 320,
+    "minimumButtonHeight": 91.0625,
+    "questionTop": 379.515625,
+    "scrollWidth": 305,
+    "width": 305
+  },
+  {
+    "frameWidth": 390,
+    "minimumButtonHeight": 69.375,
+    "questionTop": 347.046875,
+    "scrollWidth": 390,
+    "width": 390
+  },
+  {
+    "frameWidth": 768,
+    "minimumButtonHeight": 77.59375,
+    "questionTop": 399.390625,
+    "scrollWidth": 768,
+    "width": 768
+  },
+  {
+    "frameWidth": 1280,
+    "minimumButtonHeight": 77.59375,
+    "questionTop": 399.390625,
+    "scrollWidth": 1280,
+    "width": 1280
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "url": "https://408farmers.com/buyer/",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://408farmers.com/buyer/legacy.html",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://408farmers.com/tech",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://408farmers.com/healthcare",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://408farmers.com/engineers",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://408farmers.com/teachers",
+    "error": "HTTP Error 403: Forbidden"
+  }
+]

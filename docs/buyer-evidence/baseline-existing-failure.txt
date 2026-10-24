@@ -1,0 +1,52 @@
+✔ RAW allowlist keeps insurance evidence, excludes sensitive values and infers no consent (4.16624ms)
+✔ RAW parser accepts BOM and exact observed header defect; rejects malformed, oversized and empty headers (1.638522ms)
+✔ RAW batch creates one durable enrollment per stable key, retries dedupe, and only SIGNAL gets priority (37.181455ms)
+✔ RAW one bad file does not drop good files; phone collision blocks both; TEST excluded from report (7.439277ms)
+✖ RAW fingerprint prevents changed confirmation; old leads cannot be silently enrolled (6.78322ms)
+✔ real priority projection remains incomplete after RAW; CONTROL has no projection or priority queue (21.300897ms)
+✔ RAW facts feed SIGNAL zero-repeat without enrollment creating a reply; CONTROL stays isolated (12.097169ms)
+Synthetic machine rehearsal only: 20 worked + 10 silent; elapsed 82ms. NOT a producer administrative-burden timing trial.
+✔ synthetic system rehearsal: 10 CONTROL, 10 SIGNAL and silent batch through import/reconcile/export (86.314422ms)
+✔ observed home placeholder and unlabeled padding align facts semantically, not just rectangularly (14.761661ms)
+✔ AWL repeated vehicle groups auto-one retain permitted evidence and zero-repeat count (1.306057ms)
+✔ AWL repeated vehicle groups auto-two retain permitted evidence and zero-repeat count (0.793142ms)
+✔ numbered vehicle groups share the same collection contract (0.693864ms)
+✔ unproven home alignment and external union schema hold without repairing guesses (1.580756ms)
+✔ unlabeled nonempty values are never mapped, and malformed quotes fail safely (0.202031ms)
+✔ batch row isolation, 100-lead bound, Unicode byte limit, CSV quoted newline (22.079597ms)
+✔ old leads import to OTHER, retain evidence, never enroll/project/send or become first-party (16.660961ms)
+✔ future timestamps hold with retained identity and actionable correction; missing phone is not parser failure (5.668659ms)
+✔ valid source identities and dates cannot be overridden to shop cohorts or eligibility (1.110405ms)
+✔ optional date validation retains identity, phone and source instead of blanking preview (0.286427ms)
+✔ same-key contradictory rows block both rather than silently choosing a cohort input (8.541531ms)
+✔ legacy scalar RAW records remain unchanged on duplicate reimport (8.70246ms)
+✔ old district SMS hold preserves STOP and producer takeover precedence (10.184038ms)
+✔ UI only offers actionable field corrections and clearly separates old inventory (5.71672ms)
+✔ six-day district leads remain eligible for NEW_LEAD while eight-day leads stay outside (9.474421ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 23
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 408.892555
+
+✖ failing tests:
+
+test at ../cf-baseline/tests/agencyzoom-raw.test.mjs:13:1
+✖ RAW fingerprint prevents changed confirmation; old leads cannot be silently enrolled (6.78322ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /48 hours/. Input:
+  
+  'READY — outside 7 days; import outside NEW_LEAD pilot'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/42799c8cb1cb/cf-baseline/tests/agencyzoom-raw.test.mjs:13:389)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'READY — outside 7 days; import outside NEW_LEAD pilot',
+    expected: /48 hours/,
+    operator: 'match',
+    diff: 'simple'
+  }

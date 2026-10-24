@@ -1,0 +1,139 @@
+✔ buyer presentation preserves canonical payload and semantic first question (4.94248ms)
+✔ buyer proxy permits reused assets, drops stale entity headers and retains only accepted attribution (5.168967ms)
+✔ thin buyer sends bounded campaign context by POST without identity or a local engine (3.480023ms)
+✔ candidate preserves active buyer, campaign references and specialized life (0.683167ms)
+✔ candidate route set includes four professions; QR parser is bounded (2.228448ms)
+✔ 408 renders canonical questions without a redirect or local question engine (5.688282ms)
+✔ same-origin action proxy forwards only the opaque capability and fixed CoverageFit destination (1.936554ms)
+✔ Pages dispatch includes the active trailing-slash and compatibility entry URLs (1.236712ms)
+✔ upstream failure gives a safe contact fallback and logs only status/stage/type (1.257373ms)
+✔ native fetch keeps its global receiver and rejects redirects on page and action paths (1.666332ms)
+✔ fetch exception is distinguished without logging URLs, tokens or exception messages (0.56416ms)
+✔ manual redirects fail closed without forwarding location, cookies or bodies (5.853187ms)
+✔ Home compatibility bypasses campaign fallback and uses the pretty asset path (1.984856ms)
+✔ Buyer compatibility retains the original appointment form with independent canonical entry (1.116773ms)
+✔ Condo retains the appointment form and routes both legacy aliases (0.768535ms)
+✔ Tech compatibility preserves historical links while public Tech remains gated (0.518032ms)
+✔ Teachers compatibility survives candidate Engineers activation (0.519614ms)
+✔ Healthcare retains its original form alongside professional candidate routes (0.551521ms)
+✔ QR activation is bounded and forwards market/campaign without client PII (4.773058ms)
+✔ preview fails closed before network for absent, production, arbitrary, or mutable upstream (12.099149ms)
+✔ production ignores staging configuration; unknown hosts cannot select an upstream (0.521937ms)
+✔ preview presentation pins script, styles, CSP and noindex to configured backend (1.624749ms)
+✔ preview rejects mixed production assets and stale client versions (1.317533ms)
+✔ preview POST Origin and private cookie stay on the pinned pair (1.122972ms)
+✔ tech/home: adapter → canonical journey → durable producer receipt (83.451992ms)
+✔ tech/auto: adapter → canonical journey → durable producer receipt (36.352168ms)
+✔ tech/life: adapter → canonical journey → durable producer receipt (46.110115ms)
+✔ tech/commercial: adapter → canonical journey → durable producer receipt (41.969964ms)
+✔ healthcare/home: adapter → canonical journey → durable producer receipt (22.347692ms)
+✔ healthcare/auto: adapter → canonical journey → durable producer receipt (26.514296ms)
+✔ healthcare/life: adapter → canonical journey → durable producer receipt (24.902536ms)
+✔ healthcare/commercial: adapter → canonical journey → durable producer receipt (27.056384ms)
+✔ engineers/home: adapter → canonical journey → durable producer receipt (26.470612ms)
+✔ engineers/auto: adapter → canonical journey → durable producer receipt (20.940796ms)
+✔ engineers/life: adapter → canonical journey → durable producer receipt (27.314007ms)
+✔ engineers/commercial: adapter → canonical journey → durable producer receipt (23.336759ms)
+✔ teachers/home: adapter → canonical journey → durable producer receipt (23.537283ms)
+✔ teachers/auto: adapter → canonical journey → durable producer receipt (17.375687ms)
+✔ teachers/life: adapter → canonical journey → durable producer receipt (21.178991ms)
+✔ teachers/commercial: adapter → canonical journey → durable producer receipt (37.706049ms)
+✔ tech presentation preserves canonical state and actionable controls (8.112903ms)
+✔ healthcare presentation preserves canonical state and actionable controls (1.635275ms)
+✔ engineers presentation preserves canonical state and actionable controls (1.046929ms)
+✔ teachers presentation preserves canonical state and actionable controls (0.96052ms)
+✔ unrelated routes and unknown upstream markup are untouched (0.703117ms)
+✔ engineers compatibility keeps original assets and explicit worker route (1.071977ms)
+PASS exact lab CSP and unchanged Life route connection restrictions (source check)
+✔ tests/signal-csp.test.cjs (74.950887ms)
+SIGNAL-DECISION-BRIDGE-1.0 tests passed
+✔ tests/signal-decision-bridge.test.cjs (89.1577ms)
+✔ endpoint resolution: production default, configured override, explicit test override (3.845366ms)
+✔ unsafe protocols rejected; explicit loopback test endpoint supported (3.065375ms)
+✔ registry owns routes only; both shells delegate transport and load shared config first (1.420485ms)
+✔ Signal CSP permits exact production authority without wildcard or obsolete preview origin (0.466345ms)
+SIGNAL-FOUNDATION-1.0 core tests passed
+✔ tests/signal-foundation.test.cjs (78.429583ms)
+✔ proxy fails closed on missing configuration, cross-origin and upstream false success (14.664529ms)
+(node:93) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///workspace/scratch/42799c8cb1cb/CoverageFit/functions/api/signal/decision.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /workspace/scratch/42799c8cb1cb/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS Life HTTP happy path, public response and guardrails
+PASS session reload, Back, changed evidence, low intent and local/remote isolation
+PASS weak/existing Life, Home, both Auto paths and mandatory business type
+CoverageFit rate limiter unavailable { reason: 'binding_missing' }
+PASS real HTTP failure/retry, preserved answers, exact CORS, preflight and fail-closed missing DB
+PASS rate limit and minimal SQLite schema; no business tables or external business services
+{
+  "publicLifeResponse": {
+    "ok": true,
+    "schemaVersion": "1.0",
+    "engine": "CF-SIGNAL-DECISION-1.0",
+    "priorityEngine": "CF-OPPORTUNITY-PRIORITY-1.0",
+    "signalSessionId": "97b3843b-2f87-427b-8647-43e70523f89a",
+    "flowId": "foundation_demo_remote",
+    "flowVersion": "1.0",
+    "decision": "OFFER_HUMAN",
+    "state": "qualified_signal",
+    "nextQuestionId": null,
+    "missingDimension": null,
+    "nextQuestion": null,
+    "publicExperience": {
+      "eyebrow": "Next step",
+      "headline": "This looks worth a quick conversation.",
+      "body": "A licensed agent can pick up from what you already shared instead of starting over.",
+      "actions": [
+        "talk_now",
+        "choose_time",
+        "text"
+      ]
+    },
+    "evaluatedAt": "2026-10-24T15:51:18.131Z",
+    "guardrails": {
+      "anonymous": true,
+      "persisted": false,
+      "leadCreated": false,
+      "opportunityCreated": false,
+      "contactPermissionGranted": false,
+      "consumerScoreExposed": false,
+      "underwritingDecision": false,
+      "eligibilityDecision": false,
+      "pricingDecision": false,
+      "bindAuthorized": false
+    }
+  }
+}
+✔ tests/signal-http-integration.test.mjs (588.334432ms)
+(node:100) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///workspace/scratch/42799c8cb1cb/408finneas/_worker.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /workspace/scratch/42799c8cb1cb/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ all contact modes preserve evidence and remain stateless; retries have stable receipt (30.453513ms)
+✔ rejects missing permission, real contacts, PII, tampered signals, expired handoff and invalid timing (9.958782ms)
+✔ exact host/origin, method and body size gates (7.010119ms)
+✔ human override carries an empty anonymous Life session without invented answers (2.852323ms)
+✔ browser Back restoration shows the restored method and resets permission (5.011243ms)
+PASS Life adaptive routing, three-answer happy path, Back, learn/later, explicit-action handoff, retained evidence, mapped coverage/goal and non-submitting preview
+✔ tests/signal-life-preview.test.cjs (107.360669ms)
+(node:126) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///workspace/scratch/42799c8cb1cb/408finneas/_worker.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /workspace/scratch/42799c8cb1cb/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ durable row survives reopen, preserving answers and scoped permission atomically (25.604733ms)
+✔ concurrent duplicates create one immutable row; lost acknowledgement retries recover (22.89068ms)
+✔ mode, time and evidence changes create distinct requests (4.058925ms)
+✔ missing/unverified DB fails closed; validation rejects before any database access (3.270842ms)
+✔ expiry pruning, bounded staging capacity, and no mutation of original receipt on retry (22.24946ms)
+PASS 11 routes, 58 engine paths, Back, isolation, privacy, terminal decisions, offline/retry and non-delivering human preview
+✔ tests/signal-routes.test.cjs (145.841436ms)
+PASS shell fresh URL consumption and refresh/resume control flow (VM DOM stub, not browser QA)
+✔ tests/signal-shell-resume.test.cjs (87.299522ms)
+ℹ tests 68
+ℹ suites 0
+ℹ pass 68
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 740.817889

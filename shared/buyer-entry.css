@@ -1,0 +1,14 @@
+/* Same affinity family, compact buyer opening with the question above the fold. */
+.buyer-entry .professional-brand{padding-bottom:14px}
+.buyer-entry .professional-intro{margin-top:20px}
+.buyer-entry .professional-audience{margin-bottom:8px}
+.buyer-entry h1{font-size:clamp(1.8rem,5.8vw,2.7rem);margin-bottom:12px}
+.buyer-entry .professional-summary{margin-bottom:0}
+.buyer-entry .professional-advisor{margin:16px 0}
+.buyer-entry #entry-review{margin-top:16px}
+.buyer-entry .professional-footer{font-size:14px}
+.buyer-entry .professional-trust a{font-size:14px}
+.buyer-entry #entry-review form{width:100%}
+.buyer-entry #entry-review form button{width:100%}
+.buyer-entry #entry-review input{box-sizing:border-box;max-width:100%}
+@media(max-width:479px){.buyer-entry main{padding:12px 16px 24px}.buyer-entry h1{font-size:29px}.buyer-entry .professional-summary{font-size:14px}.buyer-entry #entry-review{padding:16px}.buyer-entry .professional-brand{padding-bottom:10px}.buyer-entry .professional-intro{margin-top:16px}}

@@ -1,0 +1,42 @@
+✔ buyer: urgent house reaches one durable producer request (47.823585ms)
+✔ buyer: near-term condo reaches one durable producer request (17.941308ms)
+✔ buyer: early planning without address reaches one durable producer request (20.400443ms)
+✔ buyer: coverage review townhome reaches one durable producer request (19.44884ms)
+✔ buyer: longer-term buyer reaches one durable producer request (19.364615ms)
+✔ buyer Back corrects context, same-browser resume retains answers; no cookie exposes no record (8.4992ms)
+✔ known exact closing date and type are retained and not requested again (7.043285ms)
+✔ failed delivery is truthful, retry and concurrent contact requests create one opportunity (19.663572ms)
+✔ exact past date requests confirmation; urgency is not inferred from campaign (0.357574ms)
+✔ contract keeps campaign audience separate from evidence and rejects PII/authority injection (3.781971ms)
+✔ buyer POST uses a private cookie; known evidence is not asked again; no opportunity before permission (21.987624ms)
+✔ answers persist, resume does not restart, Back retains imported facts, revisions reject stale changes (12.403103ms)
+✔ sufficient evidence ends questions and explicit contact reaches one producer opportunity with attribution (21.808327ms)
+✔ failed producer delivery stays pending and retry recovers without duplicate lead (13.68635ms)
+✔ cross-origin, expired capability, unsupported routes and malformed inputs fail closed (7.058127ms)
+✔ cross-domain retry with same bootstrap identity reuses same journey capability (8.098331ms)
+✔ a changed handoff under the same key cannot silently overwrite attribution (7.173659ms)
+✔ research answers exit without implying buying intent; route audience does not change the decision (5.484465ms)
+✔ Home shows a canonical question before a session; first answer is the session boundary (8.940549ms)
+✔ buyer presentation asks the next useful purchase question without granting intent or priority (0.796771ms)
+✔ QR market and affinity audience are attribution, never quality evidence (0.456272ms)
+✔ Meta has a direct agency-contextualized presentation and preserved paid source (0.925012ms)
+✔ presentation contains immediate semantic options and no transition-only gate (0.3011ms)
+✔ observed view events are idempotent and do not establish buying intent or a session (6.314205ms)
+✔ resumed measurement retains original acquisition instead of a new landing campaign (8.012783ms)
+✔ direct entry is included in Pages function routing (0.245807ms)
+✔ real canonical buyer handoff continues on the same opportunity with original source and no repeated first answer (39.347534ms)
+✔ Buyer entry keeps the preserved appointment destination separate from canonical intake (0.526737ms)
+✔ Condo context survives entry without asking property type or adding intent (0.464113ms)
+✔ Condo answer resumes and reaches one WEB_DIRECT record with source and evidence (17.25315ms)
+✔ Tech presentation starts with insurance evidence, not a profession gate (0.89003ms)
+✔ Teachers presentation starts with insurance evidence, not a profession gate (0.653286ms)
+✔ Healthcare presentation starts with insurance evidence, not a profession gate (0.319017ms)
+✔ QR first answer persists original campaign and market through producer receipt (14.99111ms)
+ℹ tests 34
+ℹ suites 0
+ℹ pass 34
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 314.328186

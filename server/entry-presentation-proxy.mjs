@@ -1,3 +1,4 @@
+import {condoPresentation} from './condo-presentation.mjs';
 import {buyerPresentation} from './buyer-presentation.mjs';
 import {professionalPresentation,PROFESSIONS} from './professional-presentation.mjs';
 // Presentation/transport only. All question selection, evidence and durable
@@ -44,11 +45,11 @@ export async function entryPage(request,context,options={}){
     const headers=new Headers(upstream.headers);if(base.origin==='https://coveragefit.com')headers.delete('X-Robots-Tag');else headers.set('X-Robots-Tag','noindex, nofollow, noarchive');
     headers.set('Cache-Control','private, no-store');headers.set('Referrer-Policy','no-referrer');
     headers.set('Content-Security-Policy',`default-src 'none'; script-src 'self' ${base.origin}; style-src ${base.origin}; connect-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'`);
-    if(PROFESSIONS[context.entry]||context.entry==='buyer')headers.set('Content-Security-Policy',headers.get('Content-Security-Policy').replace(`style-src ${base.origin};`, `style-src 'self' ${base.origin}; img-src 'self';`));
+    if(PROFESSIONS[context.entry]||context.entry==='buyer'||context.entry==='condo')headers.set('Content-Security-Policy',headers.get('Content-Security-Policy').replace(`style-src ${base.origin};`, `style-src 'self' ${base.origin}; img-src 'self';`));
     const html=await upstream.text();
     if(base.origin!=='https://coveragefit.com'&&(html.includes('https://coveragefit.com/assets/')||!html.includes(`${base.origin}/assets/js/entry-client.js?v=BUYER-1.0`)))throw Error('preview_assets');
-    const body=context.entry==='buyer'?buyerPresentation(html):PROFESSIONS[context.entry]?professionalPresentation(html,context.entry):html;
-    if(PROFESSIONS[context.entry]||context.entry==='buyer'){headers.delete('Content-Length');headers.delete('ETag');}
+    const body=context.entry==='condo'?condoPresentation(html):context.entry==='buyer'?buyerPresentation(html):PROFESSIONS[context.entry]?professionalPresentation(html,context.entry):html;
+    if(PROFESSIONS[context.entry]||context.entry==='buyer'||context.entry==='condo'){headers.delete('Content-Length');headers.delete('ETag');}
     return new Response(request.method==='HEAD'?null:body,{status:200,headers});
   }catch(error){console.warn('entry_presentation_upstream_failure',JSON.stringify({status,stage,name:error?.name||'Error'}));return new Response('<!doctype html><html lang="en"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Review with Dylan — 408FARMERS</title><main><h1>Let’s pick up with Dylan</h1><p>The quick review is temporarily unavailable. You can still contact Dylan directly.</p><a href="/contact/">Contact Dylan</a></main></html>',{status:503,headers:{'Content-Type':'text/html; charset=utf-8','Cache-Control':'no-store'}});}
 }

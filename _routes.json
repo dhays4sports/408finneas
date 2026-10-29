@@ -47,7 +47,9 @@
     "/engineers/legacy",
     "/engineers/legacy.html",
     "/business",
-    "/business/"
+    "/business/",
+    "/restaurant",
+    "/restaurant/"
   ],
   "exclude": []
 }

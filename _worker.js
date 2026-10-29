@@ -1754,7 +1754,7 @@ async function persistSignalLifeStaging(env, body, signals, origin) {
   }catch{return {error:'staging_storage_unavailable',statusCode:503};}
 }
 
-async function handleSignalLifeHandoffPreview(request, stagingEnv = null) {
+export async function handleSignalLifeHandoffPreview(request, stagingEnv = null) {
   const durable = new URL(request.url).pathname === '/api/signal/life-handoff-staging';
   const origin = 'https://signal-life-1-0.408farmers-v2.pages.dev';
   const reply = (status, body) => new Response(JSON.stringify(body), {status, headers:{'Content-Type':'application/json','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'}});
@@ -1805,6 +1805,13 @@ async function handleSignalLifeHandoffPreview(request, stagingEnv = null) {
 export default {
   async fetch(request, env, executionContext) {
     const url = new URL(request.url);
+    if(url.hostname.endsWith('.408farmers-v2.pages.dev')){
+      const read=['GET','HEAD'].includes(request.method);
+      const entry=isActiveEntry(parseEntryRoute(url.pathname));
+      const action=request.method==='POST'&&['/api/entry/interact','/api/entry/events'].includes(url.pathname);
+      const staticAsset=read&&/^\/(shared|assets)\/[^?]+\.(css|svg|png|jpg|jpeg|webp|ico)$/.test(url.pathname);
+      if(!(read&&entry)&&!action&&!staticAsset)return new Response('This route is disabled in the synthetic preview.',{status:403,headers:{'Cache-Control':'no-store','X-Robots-Tag':'noindex, nofollow'}});
+    }
     if(url.pathname.startsWith('/api/entry/'))return entryAction(request,{env});
     if(['GET','HEAD'].includes(request.method)){
       const entry=parseEntryRoute(url.pathname);

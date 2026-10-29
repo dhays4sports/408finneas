@@ -14,16 +14,24 @@ export function entryUpstream(request,env={}){
   if(env.BUYER_STAGING_ISOLATED!=='1'||!/^https:\/\/[a-f0-9]{8}\.coveragefit\.pages\.dev$/.test(upstream||''))throw Error('preview_configuration');
   return new URL('/api/distribution/',upstream);
 }
-export const ACTIVE_ENTRY_ROUTES=new Set(['business','home','buyer','condo','tech','teachers','healthcare','engineers']);
+export const ACTIVE_ENTRY_ROUTES=new Set(['restaurant','business','home','buyer','condo','tech','teachers','healthcare','engineers']);
 export const ACTIVE_QR_PRODUCTS=new Set(['home','condo']);
 export function isActiveEntry(entry){return !!entry&&(entry.market?ACTIVE_QR_PRODUCTS:ACTIVE_ENTRY_ROUTES).has(entry.entry);}
 export function parseEntryRoute(path){
-  const direct=path.match(/^\/(business|home|buyer|condo|auto-bundle|tech|teachers|healthcare|engineers)\/?$/);
+  const direct=path.match(/^\/(restaurant|business|home|buyer|condo|auto-bundle|tech|teachers|healthcare|engineers)\/?$/);
   if(direct)return {entry:direct[1]};
   const qr=path.match(/^\/(home|condo)\/qr\/(\d{5})\/(rate|review|fit)\/?$/);
   return qr?{entry:qr[1],market:qr[2],campaign:qr[3]}:null;
 }
 const cookie=request=>(request.headers.get('cookie')||'').split(';').map(x=>x.trim()).filter(x=>/^cf_distribution_resume(?:_[a-z_-]+)?=pvxw_[A-Za-z0-9_-]{43}$/.test(x)).join('; ');
+// Access service credentials belong only to the immutable preview backend.
+// Never copy client-supplied Access headers or send preview secrets to production.
+function previewAccess(base,env={}){
+  if(base.origin==='https://coveragefit.com')return {};
+  const id=env.COVERAGEFIT_PREVIEW_ACCESS_CLIENT_ID,secret=env.COVERAGEFIT_PREVIEW_ACCESS_CLIENT_SECRET;
+  if(typeof id!=='string'||!id||typeof secret!=='string'||!secret)throw Error('preview_access_configuration');
+  return {'CF-Access-Client-Id':id,'CF-Access-Client-Secret':secret};
+}
 // Invoke the runtime method with its global receiver. Cloudflare runtimes may
 // reject detached native fetch calls; use a string input at the transport boundary.
 const upstreamFetch=(url,init,options)=>options.fetch
@@ -39,13 +47,13 @@ export async function entryPage(request,context,options={}){
     }
     target.searchParams.set('entry',context.entry);target.searchParams.set('presentation','408_contextual');
     if(context.market){target.searchParams.set('market',context.market);target.searchParams.set('qr_campaign',context.campaign);}
-    const upstream=await upstreamFetch(target,{headers:{Cookie:cookie(request)},redirect:'manual'},options);
+    const upstream=await upstreamFetch(target,{headers:{Cookie:cookie(request),...previewAccess(base,options.env)},redirect:'manual'},options);
     status=upstream.status;stage='response';
     if(!upstream.ok)throw Object.assign(Error('upstream'),{upstreamStatus:upstream.status});
     const headers=new Headers(upstream.headers);if(base.origin==='https://coveragefit.com')headers.delete('X-Robots-Tag');else headers.set('X-Robots-Tag','noindex, nofollow, noarchive');
     headers.set('Cache-Control','private, no-store');headers.set('Referrer-Policy','no-referrer');
     headers.set('Content-Security-Policy',`default-src 'none'; script-src 'self' ${base.origin}; style-src ${base.origin}; connect-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'`);
-    if(PROFESSIONS[context.entry]||context.entry==='buyer'||context.entry==='condo')headers.set('Content-Security-Policy',headers.get('Content-Security-Policy').replace(`style-src ${base.origin};`, `style-src 'self' ${base.origin}; img-src 'self';`));
+    if(PROFESSIONS[context.entry]||context.entry==='buyer'||context.entry==='condo'||context.entry==='restaurant')headers.set('Content-Security-Policy',headers.get('Content-Security-Policy').replace(`style-src ${base.origin};`, `style-src 'self' ${base.origin}; img-src 'self';`));
     const html=await upstream.text();
     if(base.origin!=='https://coveragefit.com'&&(html.includes('https://coveragefit.com/assets/')||!html.includes(`${base.origin}/assets/js/entry-client.js?v=BUYER-1.0`)))throw Error('preview_assets');
     const body=context.entry==='condo'?condoPresentation(html):context.entry==='buyer'?buyerPresentation(html):PROFESSIONS[context.entry]?professionalPresentation(html,context.entry):html;
@@ -60,7 +68,7 @@ export async function entryAction(request,options={}){
   const body=await request.text();if(body.length>8192)return new Response(null,{status:413});
   try{
     const base=entryUpstream(request,options.env);
-    const upstream=await upstreamFetch(new URL(action,base),{method:'POST',redirect:'manual',headers:{'Content-Type':'application/json',Origin:base.origin,Cookie:cookie(request)},body},options);
+    const upstream=await upstreamFetch(new URL(action,base),{method:'POST',redirect:'manual',headers:{'Content-Type':'application/json',Origin:base.origin,Cookie:cookie(request),...previewAccess(base,options.env)},body},options);
     if(upstream.status>=300&&upstream.status<400)throw Object.assign(Error('upstream_redirect'),{upstreamStatus:upstream.status});
     const headers=new Headers({'Content-Type':'application/json','Cache-Control':'private, no-store','Referrer-Policy':'no-referrer'});
     const session=upstream.headers.get('set-cookie');

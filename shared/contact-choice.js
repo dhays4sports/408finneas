@@ -19,6 +19,7 @@
       message: 'Hi Dylan, I would like an insurance review.',
       subject: 'Coverage review'
     },
+    restaurant: {kicker:'Restaurant insurance review',intro:'Start a short restaurant insurance inquiry with Dylan.',message:'Hi Dylan, I would like a restaurant insurance review.',subject:'Restaurant insurance review'},
     business: {
       kicker: 'Business coverage conversation',
       intro: 'Tell Dylan a little about your operations and what prompted the review. Choose text, call, or email to start the conversation.',
@@ -61,7 +62,7 @@
     if(reference)context.message+=' I found your information through '+reference.replace(/_/g,' ')+'.';
     var query=new URLSearchParams(attribution).toString();
     return { intent:intent, context:context, attribution:attribution, reference:reference,
-      callbackHref:(intent==='business'?'/business/':'/home/')+(query?'?'+query:'') };
+      callbackHref:(intent==='restaurant'?'/restaurant/':intent==='business'?'/business/':'/home/')+(query?'?'+query:'') };
   }
 
   function smsHref(context) {
@@ -89,7 +90,7 @@
       document.querySelectorAll('a[href^="mailto:'+EMAIL+'"]').forEach(function(link){link.setAttribute('href',emailHref(result.context));});
     }
     var callback=document.querySelector('[data-contact-callback]');
-    if(callback && result.intent==='business')callback.setAttribute('href',result.callbackHref);
+    if(callback && ['business','restaurant'].includes(result.intent))callback.setAttribute('href',result.callbackHref);
     var sourceNote=document.querySelector('[data-contact-source]');
     if(sourceNote)sourceNote.textContent=result.reference?'Calling instead? Mention this source to Dylan: '+result.reference+'. Phone calls are not automatically attributed.':'';
     if (document.body) document.body.setAttribute('data-contact-intent', result.intent);

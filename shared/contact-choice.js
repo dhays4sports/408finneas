@@ -83,6 +83,11 @@
     if (intro) intro.textContent = result.context.intro;
     if (sms) sms.setAttribute('href', smsHref(result.context));
     if (email) email.setAttribute('href', emailHref(result.context));
+    // The signature and footer expose the same contact actions as the cards.
+    if (typeof document.querySelectorAll === 'function') {
+      document.querySelectorAll('a[href^="sms:'+PHONE+'"]').forEach(function(link){link.setAttribute('href',smsHref(result.context));});
+      document.querySelectorAll('a[href^="mailto:'+EMAIL+'"]').forEach(function(link){link.setAttribute('href',emailHref(result.context));});
+    }
     var callback=document.querySelector('[data-contact-callback]');
     if(callback && result.intent==='business')callback.setAttribute('href',result.callbackHref);
     var sourceNote=document.querySelector('[data-contact-source]');

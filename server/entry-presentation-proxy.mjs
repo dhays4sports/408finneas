@@ -24,6 +24,14 @@ export function parseEntryRoute(path){
   return qr?{entry:qr[1],market:qr[2],campaign:qr[3]}:null;
 }
 const cookie=request=>(request.headers.get('cookie')||'').split(';').map(x=>x.trim()).filter(x=>/^cf_distribution_resume(?:_[a-z_-]+)?=pvxw_[A-Za-z0-9_-]{43}$/.test(x)).join('; ');
+// Access service credentials belong only to the immutable preview backend.
+// Never copy client-supplied Access headers or send preview secrets to production.
+function previewAccess(base,env={}){
+  if(base.origin==='https://coveragefit.com')return {};
+  const id=env.COVERAGEFIT_PREVIEW_ACCESS_CLIENT_ID,secret=env.COVERAGEFIT_PREVIEW_ACCESS_CLIENT_SECRET;
+  if(typeof id!=='string'||!id||typeof secret!=='string'||!secret)throw Error('preview_access_configuration');
+  return {'CF-Access-Client-Id':id,'CF-Access-Client-Secret':secret};
+}
 // Invoke the runtime method with its global receiver. Cloudflare runtimes may
 // reject detached native fetch calls; use a string input at the transport boundary.
 const upstreamFetch=(url,init,options)=>options.fetch
@@ -39,7 +47,7 @@ export async function entryPage(request,context,options={}){
     }
     target.searchParams.set('entry',context.entry);target.searchParams.set('presentation','408_contextual');
     if(context.market){target.searchParams.set('market',context.market);target.searchParams.set('qr_campaign',context.campaign);}
-    const upstream=await upstreamFetch(target,{headers:{Cookie:cookie(request)},redirect:'manual'},options);
+    const upstream=await upstreamFetch(target,{headers:{Cookie:cookie(request),...previewAccess(base,options.env)},redirect:'manual'},options);
     status=upstream.status;stage='response';
     if(!upstream.ok)throw Object.assign(Error('upstream'),{upstreamStatus:upstream.status});
     const headers=new Headers(upstream.headers);if(base.origin==='https://coveragefit.com')headers.delete('X-Robots-Tag');else headers.set('X-Robots-Tag','noindex, nofollow, noarchive');
@@ -60,7 +68,7 @@ export async function entryAction(request,options={}){
   const body=await request.text();if(body.length>8192)return new Response(null,{status:413});
   try{
     const base=entryUpstream(request,options.env);
-    const upstream=await upstreamFetch(new URL(action,base),{method:'POST',redirect:'manual',headers:{'Content-Type':'application/json',Origin:base.origin,Cookie:cookie(request)},body},options);
+    const upstream=await upstreamFetch(new URL(action,base),{method:'POST',redirect:'manual',headers:{'Content-Type':'application/json',Origin:base.origin,Cookie:cookie(request),...previewAccess(base,options.env)},body},options);
     if(upstream.status>=300&&upstream.status<400)throw Object.assign(Error('upstream_redirect'),{upstreamStatus:upstream.status});
     const headers=new Headers({'Content-Type':'application/json','Cache-Control':'private, no-store','Referrer-Policy':'no-referrer'});
     const session=upstream.headers.get('set-cookie');

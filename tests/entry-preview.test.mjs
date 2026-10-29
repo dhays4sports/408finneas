@@ -1,7 +1,7 @@
 import test from 'node:test';import assert from 'node:assert/strict';
 import {entryPage,entryAction,entryUpstream} from '../server/entry-presentation-proxy.mjs';
 const origin='https://candidate.408farmers-v2.pages.dev',backend='https://1234abcd.coveragefit.pages.dev';
-const env={BUYER_STAGING_ISOLATED:'1',COVERAGEFIT_PREVIEW_ORIGIN:backend};
+const env={BUYER_STAGING_ISOLATED:'1',COVERAGEFIT_PREVIEW_ORIGIN:backend,COVERAGEFIT_PREVIEW_ACCESS_CLIENT_ID:'synthetic-id',COVERAGEFIT_PREVIEW_ACCESS_CLIENT_SECRET:'synthetic-secret'};
 const action=()=>new Request(origin+'/api/entry/interact',{method:'POST',headers:{Origin:origin,'Content-Type':'application/json'},body:'{"action":"load"}'});
 test('preview fails closed before network for absent, production, arbitrary, or mutable upstream',async(t)=>{
  t.mock.method(console,'warn',()=>{});
@@ -17,10 +17,15 @@ test('production ignores staging configuration; unknown hosts cannot select an u
 });
 test('preview presentation pins script, styles, CSP and noindex to configured backend',async()=>{
  const response=await entryPage(new Request(origin+'/tech/'),{entry:'tech'},{env,fetch:async(url,init)=>{
- assert.equal(new URL(url).origin,backend);assert.equal(init.redirect,'manual');
+ assert.equal(new URL(url).origin,backend);assert.equal(init.redirect,'manual');assert.equal(init.headers['CF-Access-Client-Id'],'synthetic-id');assert.equal(init.headers['CF-Access-Client-Secret'],'synthetic-secret');
  return new Response(`<link rel="stylesheet" href="${backend}/assets/css/distribution-check-in.css"><script defer src="${backend}/assets/js/entry-client.js?v=BUYER-1.0"></script><fieldset>Question</fieldset>`);
  }});
  assert.equal(response.status,200);assert.match(response.headers.get('X-Robots-Tag'),/noindex/);assert.ok(response.headers.get('Content-Security-Policy').includes(backend));assert.doesNotMatch(response.headers.get('Content-Security-Policy'),/https:\/\/coveragefit\.com|\*/);
+});
+test('missing preview service credentials fail before network; production never receives them',async(t)=>{
+ t.mock.method(console,'warn',()=>{});let calls=0;
+ assert.equal((await entryAction(action(),{env:{...env,COVERAGEFIT_PREVIEW_ACCESS_CLIENT_SECRET:''},fetch:()=>{calls++;}})).status,503);assert.equal(calls,0);
+ await entryPage(new Request('https://408farmers.com/restaurant/'),{entry:'restaurant'},{env,fetch:async(url,init)=>{assert.equal(new URL(url).origin,'https://coveragefit.com');assert.equal(init.headers['CF-Access-Client-Secret'],undefined);assert.equal(init.headers['CF-Access-Client-Id'],undefined);return new Response('ok');}});
 });
 test('preview rejects mixed production assets and stale client versions',async(t)=>{
  t.mock.method(console,'warn',()=>{});

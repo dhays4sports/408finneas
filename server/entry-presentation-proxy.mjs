@@ -23,7 +23,7 @@ export function parseEntryRoute(path){
   const qr=path.match(/^\/(home|condo)\/qr\/(\d{5})\/(rate|review|fit)\/?$/);
   return qr?{entry:qr[1],market:qr[2],campaign:qr[3]}:null;
 }
-const cookie=request=>(request.headers.get('cookie')||'').split(';').map(x=>x.trim()).find(x=>/^cf_distribution_resume=pvxw_[A-Za-z0-9_-]{43}$/.test(x))||'';
+const cookie=request=>(request.headers.get('cookie')||'').split(';').map(x=>x.trim()).filter(x=>/^cf_distribution_resume(?:_[a-z_-]+)?=pvxw_[A-Za-z0-9_-]{43}$/.test(x)).join('; ');
 // Invoke the runtime method with its global receiver. Cloudflare runtimes may
 // reject detached native fetch calls; use a string input at the transport boundary.
 const upstreamFetch=(url,init,options)=>options.fetch
@@ -64,7 +64,7 @@ export async function entryAction(request,options={}){
     if(upstream.status>=300&&upstream.status<400)throw Object.assign(Error('upstream_redirect'),{upstreamStatus:upstream.status});
     const headers=new Headers({'Content-Type':'application/json','Cache-Control':'private, no-store','Referrer-Policy':'no-referrer'});
     const session=upstream.headers.get('set-cookie');
-    if(session&&/^cf_distribution_resume=pvxw_[A-Za-z0-9_-]{43};/.test(session))headers.set('Set-Cookie',session);
+    if(session&&/^cf_distribution_resume(?:_[a-z_-]+)?=pvxw_[A-Za-z0-9_-]{43};/.test(session))headers.set('Set-Cookie',session);
     return new Response(upstream.body,{status:upstream.status,headers});
   }catch(error){console.warn('entry_action_upstream_failure',JSON.stringify({name:error?.name||'Error'}));return Response.json({ok:false,message:'Please retry or contact Dylan.'},{status:503,headers:{'Cache-Control':'no-store'}});}
 }

@@ -14,11 +14,11 @@ export function entryUpstream(request,env={}){
   if(env.BUYER_STAGING_ISOLATED!=='1'||!/^https:\/\/[a-f0-9]{8}\.coveragefit\.pages\.dev$/.test(upstream||''))throw Error('preview_configuration');
   return new URL('/api/distribution/',upstream);
 }
-export const ACTIVE_ENTRY_ROUTES=new Set(['business','home','buyer','condo','tech','teachers','healthcare','engineers']);
+export const ACTIVE_ENTRY_ROUTES=new Set(['restaurant','business','home','buyer','condo','tech','teachers','healthcare','engineers']);
 export const ACTIVE_QR_PRODUCTS=new Set(['home','condo']);
 export function isActiveEntry(entry){return !!entry&&(entry.market?ACTIVE_QR_PRODUCTS:ACTIVE_ENTRY_ROUTES).has(entry.entry);}
 export function parseEntryRoute(path){
-  const direct=path.match(/^\/(business|home|buyer|condo|auto-bundle|tech|teachers|healthcare|engineers)\/?$/);
+  const direct=path.match(/^\/(restaurant|business|home|buyer|condo|auto-bundle|tech|teachers|healthcare|engineers)\/?$/);
   if(direct)return {entry:direct[1]};
   const qr=path.match(/^\/(home|condo)\/qr\/(\d{5})\/(rate|review|fit)\/?$/);
   return qr?{entry:qr[1],market:qr[2],campaign:qr[3]}:null;
@@ -45,7 +45,7 @@ export async function entryPage(request,context,options={}){
     const headers=new Headers(upstream.headers);if(base.origin==='https://coveragefit.com')headers.delete('X-Robots-Tag');else headers.set('X-Robots-Tag','noindex, nofollow, noarchive');
     headers.set('Cache-Control','private, no-store');headers.set('Referrer-Policy','no-referrer');
     headers.set('Content-Security-Policy',`default-src 'none'; script-src 'self' ${base.origin}; style-src ${base.origin}; connect-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'`);
-    if(PROFESSIONS[context.entry]||context.entry==='buyer'||context.entry==='condo')headers.set('Content-Security-Policy',headers.get('Content-Security-Policy').replace(`style-src ${base.origin};`, `style-src 'self' ${base.origin}; img-src 'self';`));
+    if(PROFESSIONS[context.entry]||context.entry==='buyer'||context.entry==='condo'||context.entry==='restaurant')headers.set('Content-Security-Policy',headers.get('Content-Security-Policy').replace(`style-src ${base.origin};`, `style-src 'self' ${base.origin}; img-src 'self';`));
     const html=await upstream.text();
     if(base.origin!=='https://coveragefit.com'&&(html.includes('https://coveragefit.com/assets/')||!html.includes(`${base.origin}/assets/js/entry-client.js?v=BUYER-1.0`)))throw Error('preview_assets');
     const body=context.entry==='condo'?condoPresentation(html):context.entry==='buyer'?buyerPresentation(html):PROFESSIONS[context.entry]?professionalPresentation(html,context.entry):html;

@@ -4,13 +4,15 @@ import {DatabaseSync} from 'node:sqlite';
 import {readFileSync,mkdtempSync,rmSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
-import worker from '../_worker.js';
+import {handleSignalLifeHandoffPreview} from '../_worker.js';
+// Exercise durable storage independently of the public route, which remains
+// blocked by the distribution preview firewall (covered in its routing tests).
 const origin='https://signal-life-1-0.408farmers-v2.pages.dev';
 const migration=readFileSync(new URL('../migrations/signal-preview/0001_handoff_staging.sql',import.meta.url),'utf8');
 function fixture(){const at=new Date().toISOString();const answers=[['life_coverage_status','lifeCoverageStatus','employer_only'],['life_shopping_intent','shoppingIntent','open_to_review'],['life_decision_timing','decisionTiming','within_30']].map(([questionId,field,code])=>({questionId,questionVersion:'1.0',optionCode:code,signals:{[field]:code},answeredAt:at}));return {schemaVersion:'SIGNAL-LIFE-1.2',mode:'call_now',phone:'+12025550123',timePreference:'',permission:{version:'preview-permission-v1',channel:'phone',checked:true},handoff:{schemaVersion:'1.0',previewOnly:true,signalSessionId:crypto.randomUUID(),canonicalSignals:{product:'life',lifeCoverageStatus:'employer_only',shoppingIntent:'open_to_review',decisionTiming:'within_30'},answers,action:'human',contactPermissionGranted:false,createdAt:at,expiresAt:new Date(Date.parse(at)+1800000).toISOString()}};}
 function adapter(sql,hook=()=>{}){return {prepare(query){return {bind(...args){return {async run(){const result=sql.prepare(query).run(...args);hook(query);return result;},async first(){return sql.prepare(query).get(...args);}};},async first(){return sql.prepare(query).get();}};}};}
 function database(){const sql=new DatabaseSync(':memory:');sql.exec(migration);return sql;}
-async function request(body,db,overrides={}){return worker.fetch(new Request((overrides.host||origin)+'/api/signal/life-handoff-staging',{method:'POST',headers:{Origin:overrides.origin||origin,'Content-Type':'application/json'},body:JSON.stringify(body)}),{SIGNAL_HANDOFF_PREVIEW_DB:db});}
+async function request(body,db,overrides={}){return handleSignalLifeHandoffPreview(new Request((overrides.host||origin)+'/api/signal/life-handoff-staging',{method:'POST',headers:{Origin:overrides.origin||origin,'Content-Type':'application/json'},body:JSON.stringify(body)}),{SIGNAL_HANDOFF_PREVIEW_DB:db});}
 test('durable row survives reopen, preserving answers and scoped permission atomically',async()=>{
  const dir=mkdtempSync(join(tmpdir(),'signal12-')),file=join(dir,'test.sqlite');let sql=new DatabaseSync(file);sql.exec(migration);
  try{const b=fixture();const r=await request(b,adapter(sql));assert.equal(r.status,200);const result=await r.json();assert.equal(result.status,'staging_recorded');sql.close();sql=new DatabaseSync(file);

@@ -1754,7 +1754,7 @@ async function persistSignalLifeStaging(env, body, signals, origin) {
   }catch{return {error:'staging_storage_unavailable',statusCode:503};}
 }
 
-async function handleSignalLifeHandoffPreview(request, stagingEnv = null) {
+export async function handleSignalLifeHandoffPreview(request, stagingEnv = null) {
   const durable = new URL(request.url).pathname === '/api/signal/life-handoff-staging';
   const origin = 'https://signal-life-1-0.408farmers-v2.pages.dev';
   const reply = (status, body) => new Response(JSON.stringify(body), {status, headers:{'Content-Type':'application/json','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'}});

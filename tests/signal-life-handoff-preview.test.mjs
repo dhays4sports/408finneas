@@ -1,6 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import worker from '../_worker.js';
+import {handleSignalLifeHandoffPreview} from '../_worker.js';
+// Handler contract only: the synthetic distribution preview blocks this legacy
+// endpoint at the Worker boundary; preview-firewall.test.mjs asserts that denial.
 import sessionApi from '../shared/signal-session.js';
 import pilot from '../signal-life-preview/core.js';
 import remote from '../shared/signal-decision-remote.js';
@@ -17,7 +19,7 @@ function fixture(){
 }
 const env=new Proxy({}, {get(){throw Error('Preview must never access bindings or integrations');}});
 async function send(body,overrides={}){
- return worker.fetch(new Request((overrides.host||origin)+'/api/signal/life-handoff-preview',{method:overrides.method||'POST',headers:{Origin:overrides.origin||origin,'Content-Type':'application/json'},...((overrides.method||'POST')==='POST'?{body:typeof body==='string'?body:JSON.stringify(body)}:{})}),env);
+ return handleSignalLifeHandoffPreview(new Request((overrides.host||origin)+'/api/signal/life-handoff-preview',{method:overrides.method||'POST',headers:{Origin:overrides.origin||origin,'Content-Type':'application/json'},...((overrides.method||'POST')==='POST'?{body:typeof body==='string'?body:JSON.stringify(body)}:{})}),env);
 }
 test('all contact modes preserve evidence and remain stateless; retries have stable receipt',async()=>{
  for(const mode of ['call_now','choose_time','text']){

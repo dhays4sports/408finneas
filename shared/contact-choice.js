@@ -49,7 +49,19 @@
     var params = new URLSearchParams(String(search || '').replace(/^\?/, ''));
     var intent = String(params.get('intent') || '').toLowerCase();
     if (!Object.prototype.hasOwnProperty.call(CONTEXTS, intent)) intent = 'general';
-    return { intent: intent, context: CONTEXTS[intent] };
+    var attribution = {};
+    ['utm_source','utm_medium','utm_campaign','utm_content','partner_id','placement_id'].forEach(function(key){
+      var value=params.get(key);
+      if(value && /^[A-Za-z0-9][A-Za-z0-9_.-]{0,79}$/.test(value) && !/[0-9]{7,}/.test(value)) attribution[key]=value;
+    });
+    var source=attribution.partner_id||attribution.utm_source;
+    var placement=attribution.placement_id||attribution.utm_content;
+    var reference=[source,placement].filter(Boolean).join(' / ');
+    var context=Object.assign({},CONTEXTS[intent]);
+    if(reference)context.message+=' I found your information through '+reference.replace(/_/g,' ')+'.';
+    var query=new URLSearchParams(attribution).toString();
+    return { intent:intent, context:context, attribution:attribution, reference:reference,
+      callbackHref:(intent==='business'?'/business/':'/home/')+(query?'?'+query:'') };
   }
 
   function smsHref(context) {
@@ -71,6 +83,10 @@
     if (intro) intro.textContent = result.context.intro;
     if (sms) sms.setAttribute('href', smsHref(result.context));
     if (email) email.setAttribute('href', emailHref(result.context));
+    var callback=document.querySelector('[data-contact-callback]');
+    if(callback && result.intent==='business')callback.setAttribute('href',result.callbackHref);
+    var sourceNote=document.querySelector('[data-contact-source]');
+    if(sourceNote)sourceNote.textContent=result.reference?'Calling instead? Mention this source to Dylan: '+result.reference+'. Phone calls are not automatically attributed.':'';
     if (document.body) document.body.setAttribute('data-contact-intent', result.intent);
     return result;
   }

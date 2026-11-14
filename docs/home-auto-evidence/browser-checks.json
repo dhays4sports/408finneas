@@ -1,0 +1,16 @@
+{
+  "combinedSixQuestions": true,
+  "refreshResume": true,
+  "requiredFieldsAndPermission": true,
+  "oneAuthoritativeProducerOpportunity": true,
+  "backAndChangeToSingle": true,
+  "combinedLabelClearedAfterChange": true,
+  "restart": true,
+  "restartedCombinedAndBack": true,
+  "keyboardFocus": {
+    "color": "#85652c",
+    "width": "3px"
+  },
+  "physicalIOS": false,
+  "hostedAcceptance": false
+}

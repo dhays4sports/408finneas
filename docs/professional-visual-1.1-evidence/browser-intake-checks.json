@@ -1,0 +1,22 @@
+[
+  {
+    "route": "tech",
+    "advanced": true,
+    "backRestored": true
+  },
+  {
+    "route": "healthcare",
+    "advanced": true,
+    "backRestored": true
+  },
+  {
+    "route": "engineers",
+    "advanced": true,
+    "backRestored": true
+  },
+  {
+    "route": "teachers",
+    "advanced": true,
+    "backRestored": true
+  }
+]

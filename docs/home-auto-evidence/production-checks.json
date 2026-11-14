@@ -1,0 +1,147 @@
+{
+  "frontendMerge": "569d3209d0ab05852332654a30b4a08bd8687ad9",
+  "backendMerge": "29b5839ab23eabfd663975d0fa1014655b5ef88c",
+  "routes": [
+    {
+      "route": "tech",
+      "assetsLoaded": true,
+      "choices": [
+        {
+          "height": 52.796875,
+          "text": "Home + auto",
+          "width": 622
+        },
+        {
+          "height": 52.796875,
+          "text": "Home coverage",
+          "width": 306
+        },
+        {
+          "height": 52.796875,
+          "text": "Auto coverage",
+          "width": 306
+        },
+        {
+          "height": 52.796875,
+          "text": "Life coverage",
+          "width": 306
+        },
+        {
+          "height": 52.796875,
+          "text": "Business coverage",
+          "width": 306
+        }
+      ],
+      "overflow": false,
+      "stylesheet": "/shared/professional-entry.css?v=1.2",
+      "url": "https://www.408farmers.com/tech"
+    },
+    {
+      "route": "healthcare",
+      "assetsLoaded": true,
+      "choices": [
+        {
+          "height": 52.796875,
+          "text": "Home + auto",
+          "width": 622
+        },
+        {
+          "height": 52.796875,
+          "text": "Home coverage",
+          "width": 306
+        },
+        {
+          "height": 52.796875,
+          "text": "Auto coverage",
+          "width": 306
+        },
+        {
+          "height": 52.796875,
+          "text": "Life coverage",
+          "width": 306
+        },
+        {
+          "height": 52.796875,
+          "text": "Business coverage",
+          "width": 306
+        }
+      ],
+      "overflow": false,
+      "stylesheet": "/shared/professional-entry.css?v=1.2",
+      "url": "https://www.408farmers.com/healthcare"
+    },
+    {
+      "route": "engineers",
+      "assetsLoaded": true,
+      "choices": [
+        {
+          "height": 52.796875,
+          "text": "Home + auto",
+          "width": 622
+        },
+        {
+          "height": 52.796875,
+          "text": "Home coverage",
+          "width": 306
+        },
+        {
+          "height": 52.796875,
+          "text": "Auto coverage",
+          "width": 306
+        },
+        {
+          "height": 52.796875,
+          "text": "Life coverage",
+          "width": 306
+        },
+        {
+          "height": 52.796875,
+          "text": "Business coverage",
+          "width": 306
+        }
+      ],
+      "overflow": false,
+      "stylesheet": "/shared/professional-entry.css?v=1.2",
+      "url": "https://www.408farmers.com/engineers"
+    },
+    {
+      "route": "teachers",
+      "assetsLoaded": true,
+      "choices": [
+        {
+          "height": 52.796875,
+          "text": "Home + auto",
+          "width": 622
+        },
+        {
+          "height": 52.796875,
+          "text": "Home coverage",
+          "width": 306
+        },
+        {
+          "height": 52.796875,
+          "text": "Auto coverage",
+          "width": 306
+        },
+        {
+          "height": 52.796875,
+          "text": "Life coverage",
+          "width": 306
+        },
+        {
+          "height": 52.796875,
+          "text": "Business coverage",
+          "width": 306
+        }
+      ],
+      "overflow": false,
+      "stylesheet": "/shared/professional-entry.css?v=1.2",
+      "url": "https://www.408farmers.com/teachers"
+    }
+  ],
+  "liveSixQuestionProgression": true,
+  "liveSharedContactForm": true,
+  "liveBackToOpening": true,
+  "productionContactSubmitted": false,
+  "legacySavedReviewRetained": true
+}

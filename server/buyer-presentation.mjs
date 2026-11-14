@@ -2,7 +2,7 @@
 export function buyerPresentation(html){
  if(!html.includes('id="entry-data"')||!html.includes('id="entry-review"'))return html;
  return html.replace(/<title>[^<]*<\/title>/,'<title>Buying a home? Review insurance with Dylan — 408FARMERS</title>')
- .replace('</head>','<link rel="stylesheet" href="/shared/professional-entry.css?v=1"><link rel="stylesheet" href="/shared/buyer-entry.css?v=1"></head>')
+ .replace('</head>','<link rel="stylesheet" href="/shared/professional-entry.css?v=1.3"><link rel="stylesheet" href="/shared/buyer-entry.css?v=1"></head>')
  .replace('<body>','<body class="professional-entry buyer-entry">')
  .replace('<a href="/">408FARMERS</a>','<header class="professional-brand"><a href="/" aria-label="408FARMERS home">408<span>FARMERS</span></a><img src="/shared/assets/farmers-insurance-official.svg" alt="Farmers Insurance" width="100" height="54"></header>')
  .replace(/<h1>[^<]*<\/h1><p>[^<]*<\/p>/,'<div class="professional-intro"><p class="professional-audience">Buying a home in California?</p><h1>Let’s get the insurance side ready for closing.</h1><p class="professional-summary">Tell me where you are in the buying process. I’ll personally help you review your insurance options and next steps.</p></div>')

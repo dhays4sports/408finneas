@@ -1,0 +1,614 @@
+[
+  {
+    "route": "tech",
+    "width": 375,
+    "buttons": [
+      {
+        "height": 52.796875,
+        "text": "Send my request"
+      },
+      {
+        "height": 52.796875,
+        "text": "Back to my answers"
+      }
+    ],
+    "client": 375,
+    "headingFocused": "H2",
+    "scroll": 375
+  },
+  {
+    "route": "tech",
+    "width": 390,
+    "buttons": [
+      {
+        "height": 52.796875,
+        "text": "Send my request"
+      },
+      {
+        "height": 52.796875,
+        "text": "Back to my answers"
+      }
+    ],
+    "client": 390,
+    "headingFocused": "H2",
+    "scroll": 390
+  },
+  {
+    "route": "tech",
+    "width": 430,
+    "buttons": [
+      {
+        "height": 52.796875,
+        "text": "Send my request"
+      },
+      {
+        "height": 52.796875,
+        "text": "Back to my answers"
+      }
+    ],
+    "client": 430,
+    "headingFocused": "H2",
+    "scroll": 430
+  },
+  {
+    "route": "tech",
+    "width": 1280,
+    "buttons": [
+      {
+        "height": 52.796875,
+        "text": "Send my request"
+      },
+      {
+        "height": 52.796875,
+        "text": "Back to my answers"
+      }
+    ],
+    "client": 1280,
+    "headingFocused": "H2",
+    "scroll": 1280
+  },
+  {
+    "route": "healthcare",
+    "width": 375,
+    "buttons": [
+      {
+        "height": 52.796875,
+        "text": "Send my request"
+      },
+      {
+        "height": 52.796875,
+        "text": "Back to my answers"
+      }
+    ],
+    "client": 375,
+    "headingFocused": "H2",
+    "scroll": 375
+  },
+  {
+    "route": "healthcare",
+    "width": 390,
+    "buttons": [
+      {
+        "height": 52.796875,
+        "text": "Send my request"
+      },
+      {
+        "height": 52.796875,
+        "text": "Back to my answers"
+      }
+    ],
+    "client": 390,
+    "headingFocused": "H2",
+    "scroll": 390
+  },
+  {
+    "route": "healthcare",
+    "width": 430,
+    "buttons": [
+      {
+        "height": 52.796875,
+        "text": "Send my request"
+      },
+      {
+        "height": 52.796875,
+        "text": "Back to my answers"
+      }
+    ],
+    "client": 430,
+    "headingFocused": "H2",
+    "scroll": 430
+  },
+  {
+    "route": "healthcare",
+    "width": 1280,
+    "buttons": [
+      {
+        "height": 52.796875,
+        "text": "Send my request"
+      },
+      {
+        "height": 52.796875,
+        "text": "Back to my answers"
+      }
+    ],
+    "client": 1280,
+    "headingFocused": "H2",
+    "scroll": 1280
+  },
+  {
+    "route": "engineers",
+    "width": 375,
+    "buttons": [
+      {
+        "height": 52.796875,
+        "text": "Send my request"
+      },
+      {
+        "height": 52.796875,
+        "text": "Back to my answers"
+      }
+    ],
+    "client": 375,
+    "headingFocused": "H2",
+    "scroll": 375
+  },
+  {
+    "route": "engineers",
+    "width": 390,
+    "buttons": [
+      {
+        "height": 52.796875,
+        "text": "Send my request"
+      },
+      {
+        "height": 52.796875,
+        "text": "Back to my answers"
+      }
+    ],
+    "client": 390,
+    "headingFocused": "H2",
+    "scroll": 390
+  },
+  {
+    "route": "engineers",
+    "width": 430,
+    "buttons": [
+      {
+        "height": 52.796875,
+        "text": "Send my request"
+      },
+      {
+        "height": 52.796875,
+        "text": "Back to my answers"
+      }
+    ],
+    "client": 430,
+    "headingFocused": "H2",
+    "scroll": 430
+  },
+  {
+    "route": "engineers",
+    "width": 1280,
+    "buttons": [
+      {
+        "height": 52.796875,
+        "text": "Send my request"
+      },
+      {
+        "height": 52.796875,
+        "text": "Back to my answers"
+      }
+    ],
+    "client": 1280,
+    "headingFocused": "H2",
+    "scroll": 1280
+  },
+  {
+    "route": "teachers",
+    "width": 375,
+    "buttons": [
+      {
+        "height": 52.796875,
+        "text": "Send my request"
+      },
+      {
+        "height": 52.796875,
+        "text": "Back to my answers"
+      }
+    ],
+    "client": 375,
+    "headingFocused": "H2",
+    "scroll": 375
+  },
+  {
+    "route": "teachers",
+    "width": 390,
+    "buttons": [
+      {
+        "height": 52.796875,
+        "text": "Send my request"
+      },
+      {
+        "height": 52.796875,
+        "text": "Back to my answers"
+      }
+    ],
+    "client": 390,
+    "headingFocused": "H2",
+    "scroll": 390
+  },
+  {
+    "route": "teachers",
+    "width": 430,
+    "buttons": [
+      {
+        "height": 52.796875,
+        "text": "Send my request"
+      },
+      {
+        "height": 52.796875,
+        "text": "Back to my answers"
+      }
+    ],
+    "client": 430,
+    "headingFocused": "H2",
+    "scroll": 430
+  },
+  {
+    "route": "teachers",
+    "width": 1280,
+    "buttons": [
+      {
+        "height": 52.796875,
+        "text": "Send my request"
+      },
+      {
+        "height": 52.796875,
+        "text": "Back to my answers"
+      }
+    ],
+    "client": 1280,
+    "headingFocused": "H2",
+    "scroll": 1280
+  },
+  {
+    "route": "home",
+    "width": 375,
+    "buttons": [
+      {
+        "height": 46,
+        "text": "Send my request"
+      },
+      {
+        "height": 46,
+        "text": "Back to my answers"
+      }
+    ],
+    "client": 375,
+    "headingFocused": "H2",
+    "scroll": 375
+  },
+  {
+    "route": "home",
+    "width": 390,
+    "buttons": [
+      {
+        "height": 46,
+        "text": "Send my request"
+      },
+      {
+        "height": 46,
+        "text": "Back to my answers"
+      }
+    ],
+    "client": 390,
+    "headingFocused": "H2",
+    "scroll": 390
+  },
+  {
+    "route": "home",
+    "width": 430,
+    "buttons": [
+      {
+        "height": 46,
+        "text": "Send my request"
+      },
+      {
+        "height": 46,
+        "text": "Back to my answers"
+      }
+    ],
+    "client": 430,
+    "headingFocused": "H2",
+    "scroll": 430
+  },
+  {
+    "route": "home",
+    "width": 1280,
+    "buttons": [
+      {
+        "height": 46,
+        "text": "Send my request"
+      },
+      {
+        "height": 46,
+        "text": "Back to my answers"
+      }
+    ],
+    "client": 1280,
+    "headingFocused": "H2",
+    "scroll": 1280
+  },
+  {
+    "route": "buyer",
+    "width": 375,
+    "buttons": [
+      {
+        "height": 52.796875,
+        "text": "Send my request"
+      },
+      {
+        "height": 52.796875,
+        "text": "Back to my answers"
+      }
+    ],
+    "client": 375,
+    "headingFocused": "H2",
+    "scroll": 375
+  },
+  {
+    "route": "buyer",
+    "width": 390,
+    "buttons": [
+      {
+        "height": 52.796875,
+        "text": "Send my request"
+      },
+      {
+        "height": 52.796875,
+        "text": "Back to my answers"
+      }
+    ],
+    "client": 390,
+    "headingFocused": "H2",
+    "scroll": 390
+  },
+  {
+    "route": "buyer",
+    "width": 430,
+    "buttons": [
+      {
+        "height": 52.796875,
+        "text": "Send my request"
+      },
+      {
+        "height": 52.796875,
+        "text": "Back to my answers"
+      }
+    ],
+    "client": 430,
+    "headingFocused": "H2",
+    "scroll": 430
+  },
+  {
+    "route": "buyer",
+    "width": 1280,
+    "buttons": [
+      {
+        "height": 52.796875,
+        "text": "Send my request"
+      },
+      {
+        "height": 52.796875,
+        "text": "Back to my answers"
+      }
+    ],
+    "client": 1280,
+    "headingFocused": "H2",
+    "scroll": 1280
+  },
+  {
+    "route": "condo",
+    "width": 375,
+    "buttons": [
+      {
+        "height": 52.796875,
+        "text": "Send my request"
+      },
+      {
+        "height": 52.796875,
+        "text": "Back to my answers"
+      }
+    ],
+    "client": 375,
+    "headingFocused": "H2",
+    "scroll": 375
+  },
+  {
+    "route": "condo",
+    "width": 390,
+    "buttons": [
+      {
+        "height": 52.796875,
+        "text": "Send my request"
+      },
+      {
+        "height": 52.796875,
+        "text": "Back to my answers"
+      }
+    ],
+    "client": 390,
+    "headingFocused": "H2",
+    "scroll": 390
+  },
+  {
+    "route": "condo",
+    "width": 430,
+    "buttons": [
+      {
+        "height": 52.796875,
+        "text": "Send my request"
+      },
+      {
+        "height": 52.796875,
+        "text": "Back to my answers"
+      }
+    ],
+    "client": 430,
+    "headingFocused": "H2",
+    "scroll": 430
+  },
+  {
+    "route": "condo",
+    "width": 1280,
+    "buttons": [
+      {
+        "height": 52.796875,
+        "text": "Send my request"
+      },
+      {
+        "height": 52.796875,
+        "text": "Back to my answers"
+      }
+    ],
+    "client": 1280,
+    "headingFocused": "H2",
+    "scroll": 1280
+  },
+  {
+    "route": "home_qr",
+    "width": 375,
+    "buttons": [
+      {
+        "height": 46,
+        "text": "Send my request"
+      },
+      {
+        "height": 46,
+        "text": "Back to my answers"
+      }
+    ],
+    "client": 375,
+    "headingFocused": "H2",
+    "scroll": 375
+  },
+  {
+    "route": "home_qr",
+    "width": 390,
+    "buttons": [
+      {
+        "height": 46,
+        "text": "Send my request"
+      },
+      {
+        "height": 46,
+        "text": "Back to my answers"
+      }
+    ],
+    "client": 390,
+    "headingFocused": "H2",
+    "scroll": 390
+  },
+  {
+    "route": "home_qr",
+    "width": 430,
+    "buttons": [
+      {
+        "height": 46,
+        "text": "Send my request"
+      },
+      {
+        "height": 46,
+        "text": "Back to my answers"
+      }
+    ],
+    "client": 430,
+    "headingFocused": "H2",
+    "scroll": 430
+  },
+  {
+    "route": "home_qr",
+    "width": 1280,
+    "buttons": [
+      {
+        "height": 46,
+        "text": "Send my request"
+      },
+      {
+        "height": 46,
+        "text": "Back to my answers"
+      }
+    ],
+    "client": 1280,
+    "headingFocused": "H2",
+    "scroll": 1280
+  },
+  {
+    "route": "condo_qr",
+    "width": 375,
+    "buttons": [
+      {
+        "height": 52.796875,
+        "text": "Send my request"
+      },
+      {
+        "height": 52.796875,
+        "text": "Back to my answers"
+      }
+    ],
+    "client": 375,
+    "headingFocused": "H2",
+    "scroll": 375
+  },
+  {
+    "route": "condo_qr",
+    "width": 390,
+    "buttons": [
+      {
+        "height": 52.796875,
+        "text": "Send my request"
+      },
+      {
+        "height": 52.796875,
+        "text": "Back to my answers"
+      }
+    ],
+    "client": 390,
+    "headingFocused": "H2",
+    "scroll": 390
+  },
+  {
+    "route": "condo_qr",
+    "width": 430,
+    "buttons": [
+      {
+        "height": 52.796875,
+        "text": "Send my request"
+      },
+      {
+        "height": 52.796875,
+        "text": "Back to my answers"
+      }
+    ],
+    "client": 430,
+    "headingFocused": "H2",
+    "scroll": 430
+  },
+  {
+    "route": "condo_qr",
+    "width": 1280,
+    "buttons": [
+      {
+        "height": 52.796875,
+        "text": "Send my request"
+      },
+      {
+        "height": 52.796875,
+        "text": "Back to my answers"
+      }
+    ],
+    "client": 1280,
+    "headingFocused": "H2",
+    "scroll": 1280
+  }
+]

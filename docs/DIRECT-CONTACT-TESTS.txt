@@ -1,0 +1,132 @@
+✔ buyer presentation preserves canonical payload and semantic first question (8.9313ms)
+✔ buyer proxy permits reused assets, drops stale entity headers and retains only accepted attribution (12.186871ms)
+✔ condo shares buyer shell with agency primary and canonical questionnaire intact (7.043627ms)
+✔ condo proxy allows only same-origin approved assets and preserves safe source parameters (10.104971ms)
+✔ tech contact-first uses canonical proxy and explicit permission once (144.033877ms)
+✔ healthcare contact-first uses canonical proxy and explicit permission once (31.495621ms)
+✔ engineers contact-first uses canonical proxy and explicit permission once (34.392102ms)
+✔ teachers contact-first uses canonical proxy and explicit permission once (47.644337ms)
+✔ home contact-first uses canonical proxy and explicit permission once (30.666001ms)
+✔ buyer contact-first uses canonical proxy and explicit permission once (24.013759ms)
+✔ condo contact-first uses canonical proxy and explicit permission once (58.821289ms)
+✔ home_qr contact-first uses canonical proxy and explicit permission once (39.944471ms)
+✔ condo_qr contact-first uses canonical proxy and explicit permission once (28.335912ms)
+✔ candidate route set includes four professions; QR parser is bounded (21.269095ms)
+✔ 408 renders canonical questions without a redirect or local question engine (7.825704ms)
+✔ same-origin action proxy forwards only the opaque capability and fixed CoverageFit destination (4.988918ms)
+✔ Pages dispatch includes the active trailing-slash and compatibility entry URLs (1.995044ms)
+✔ upstream failure gives a safe contact fallback and logs only status/stage/type (2.296672ms)
+✔ native fetch keeps its global receiver and rejects redirects on page and action paths (4.763646ms)
+✔ fetch exception is distinguished without logging URLs, tokens or exception messages (0.966682ms)
+✔ manual redirects fail closed without forwarding location, cookies or bodies (11.668355ms)
+✔ Home compatibility bypasses campaign fallback and uses the pretty asset path (6.006548ms)
+✔ Buyer compatibility retains the original appointment form with independent canonical entry (3.336936ms)
+✔ Condo retains the appointment form and routes both legacy aliases (1.963586ms)
+✔ Tech compatibility preserves historical links while public Tech remains gated (1.422224ms)
+✔ Teachers compatibility survives candidate Engineers activation (3.161162ms)
+✔ Healthcare retains its original form alongside professional candidate routes (6.488926ms)
+✔ QR activation is bounded and forwards market/campaign without client PII (1.489909ms)
+✔ preview fails closed before network for absent, production, arbitrary, or mutable upstream (42.368886ms)
+✔ production ignores staging configuration; unknown hosts cannot select an upstream (0.448983ms)
+✔ preview presentation pins script, styles, CSP and noindex to configured backend (5.637131ms)
+✔ preview rejects mixed production assets and stale client versions (7.650059ms)
+✔ preview POST Origin and private cookie stay on the pinned pair (1.888605ms)
+✔ tech combined review preserves both products through frontend proxy (132.776418ms)
+✔ healthcare combined review preserves both products through frontend proxy (65.349858ms)
+✔ engineers combined review preserves both products through frontend proxy (45.329888ms)
+✔ teachers combined review preserves both products through frontend proxy (43.641297ms)
+✔ tech/home: adapter → canonical journey → durable producer receipt (68.254647ms)
+✔ tech/auto: adapter → canonical journey → durable producer receipt (32.803178ms)
+✔ tech/life: adapter → canonical journey → durable producer receipt (42.184593ms)
+✔ tech/commercial: adapter → canonical journey → durable producer receipt (31.298941ms)
+✔ healthcare/home: adapter → canonical journey → durable producer receipt (29.604984ms)
+✔ healthcare/auto: adapter → canonical journey → durable producer receipt (36.175917ms)
+✔ healthcare/life: adapter → canonical journey → durable producer receipt (37.044859ms)
+✔ healthcare/commercial: adapter → canonical journey → durable producer receipt (30.339949ms)
+✔ engineers/home: adapter → canonical journey → durable producer receipt (44.783833ms)
+✔ engineers/auto: adapter → canonical journey → durable producer receipt (23.825651ms)
+✔ engineers/life: adapter → canonical journey → durable producer receipt (23.989435ms)
+✔ engineers/commercial: adapter → canonical journey → durable producer receipt (28.876635ms)
+✔ teachers/home: adapter → canonical journey → durable producer receipt (23.422646ms)
+✔ teachers/auto: adapter → canonical journey → durable producer receipt (40.240768ms)
+✔ teachers/life: adapter → canonical journey → durable producer receipt (42.354315ms)
+✔ teachers/commercial: adapter → canonical journey → durable producer receipt (34.025478ms)
+✔ tech presentation preserves canonical state and actionable controls (32.784898ms)
+✔ healthcare presentation preserves canonical state and actionable controls (2.375509ms)
+✔ engineers presentation preserves canonical state and actionable controls (4.36906ms)
+✔ teachers presentation preserves canonical state and actionable controls (3.155543ms)
+✔ unrelated routes and unknown upstream markup are untouched (2.112627ms)
+✔ engineers compatibility keeps original assets and explicit worker route (5.381898ms)
+✔ proxy fails closed on missing configuration, cross-origin and upstream false success (22.170624ms)
+PASS Life HTTP happy path, public response and guardrails
+PASS session reload, Back, changed evidence, low intent and local/remote isolation
+PASS weak/existing Life, Home, both Auto paths and mandatory business type
+CoverageFit rate limiter unavailable { reason: 'binding_missing' }
+PASS real HTTP failure/retry, preserved answers, exact CORS, preflight and fail-closed missing DB
+PASS rate limit and minimal SQLite schema; no business tables or external business services
+{
+  "publicLifeResponse": {
+    "ok": true,
+    "schemaVersion": "1.0",
+    "engine": "CF-SIGNAL-DECISION-1.0",
+    "priorityEngine": "CF-OPPORTUNITY-PRIORITY-1.0",
+    "signalSessionId": "28f48c1f-4d17-45a7-a166-e974e7a51f62",
+    "flowId": "foundation_demo_remote",
+    "flowVersion": "1.0",
+    "decision": "OFFER_HUMAN",
+    "state": "qualified_signal",
+    "nextQuestionId": null,
+    "missingDimension": null,
+    "nextQuestion": null,
+    "publicExperience": {
+      "eyebrow": "Next step",
+      "headline": "This looks worth a quick conversation.",
+      "body": "A licensed agent can pick up from what you already shared instead of starting over.",
+      "actions": [
+        "talk_now",
+        "choose_time",
+        "text"
+      ]
+    },
+    "evaluatedAt": "2026-11-14T19:24:16.553Z",
+    "guardrails": {
+      "anonymous": true,
+      "persisted": false,
+      "leadCreated": false,
+      "opportunityCreated": false,
+      "contactPermissionGranted": false,
+      "consumerScoreExposed": false,
+      "underwritingDecision": false,
+      "eligibilityDecision": false,
+      "pricingDecision": false,
+      "bindAuthorized": false
+    }
+  }
+}
+✔ tests/signal-http-integration.test.mjs (556.185974ms)
+(node:91) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///workspace/scratch/b207df76cb09/direct/408finneas/_worker.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /workspace/scratch/b207df76cb09/direct/408finneas/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ all contact modes preserve evidence and remain stateless; retries have stable receipt (52.977898ms)
+✔ rejects missing permission, real contacts, PII, tampered signals, expired handoff and invalid timing (31.155892ms)
+✔ exact host/origin, method and body size gates (15.850459ms)
+✔ human override carries an empty anonymous Life session without invented answers (3.421828ms)
+✔ browser Back restoration shows the restored method and resets permission (7.018881ms)
+(node:96) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///workspace/scratch/b207df76cb09/direct/408finneas/_worker.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /workspace/scratch/b207df76cb09/direct/408finneas/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ durable row survives reopen, preserving answers and scoped permission atomically (21.888015ms)
+✔ concurrent duplicates create one immutable row; lost acknowledgement retries recover (23.146903ms)
+✔ mode, time and evidence changes create distinct requests (7.77939ms)
+✔ missing/unverified DB fails closed; validation rejects before any database access (5.061599ms)
+✔ expiry pruning, bounded staging capacity, and no mutation of original receipt on retry (31.995396ms)
+ℹ tests 71
+ℹ suites 0
+ℹ pass 71
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 982.075023

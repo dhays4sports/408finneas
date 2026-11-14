@@ -77,3 +77,8 @@ body.professional-entry {
 /* Explicit combined choice spans both columns; other choices retain equal weight. */
 .professional-entry #entry-review fieldset > button[data-product-combined]{width:100%}
 .professional-entry .entry-reviewing{font-size:12px;font-weight:600;margin:0 0 12px;color:var(--muted)}
+
+/* Shared contact access remains secondary to the coverage questions. */
+.professional-entry #entry-review > button.entry-contact-toggle{color:var(--navy);font-weight:500}
+.professional-entry #entry-review .entry-contact-intro{color:var(--muted);margin:0 0 16px}
+.professional-entry #entry-review h2{scroll-margin-top:24px}

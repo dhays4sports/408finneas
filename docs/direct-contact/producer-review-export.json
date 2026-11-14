@@ -1,0 +1,165 @@
+{
+  "schemaVersion": "home-auto-review-1.0",
+  "opportunityId": "opp_src_81c154a201950bea64da5578fe8f7d77",
+  "sourceId": "408d_pvxj_a8c867c0001a4b6f91c59e37c3fe7bd2",
+  "contactEntry": {
+    "version": 1,
+    "stage": "after_questionnaire",
+    "questionnaireComplete": true,
+    "answeredCount": 6
+  },
+  "requestedProducts": [
+    "home",
+    "auto"
+  ],
+  "selectionSource": {
+    "questionId": "signal_product",
+    "optionCode": "home_auto",
+    "source": "consumer_answer",
+    "occurredAt": "2026-11-14T19:24:36.461Z"
+  },
+  "productEvidence": {
+    "home": {
+      "reviewReason": "renewal_change",
+      "reasonCode": "renewal_change",
+      "decisionTiming": "within_30",
+      "propertyType": "condo"
+    },
+    "auto": {
+      "autoNeed": "add_driver",
+      "reasonCode": "add_driver",
+      "decisionTiming": "within_14"
+    }
+  },
+  "earliestReportedTiming": {
+    "product": "auto",
+    "window": "within_14"
+  },
+  "contact": {
+    "name": "Synthetic Direct QA",
+    "email": "",
+    "mobile": "2025550123"
+  },
+  "permission": {
+    "basis": "explicit_agency_contact_consent",
+    "callPermitted": false,
+    "personalTextPermitted": true,
+    "emailPermitted": false
+  },
+  "attribution": {
+    "sourceKey": "web_408_tech",
+    "sourceLabel": "Web — 408farmers.com Technology",
+    "pipeline": "personal",
+    "source": "",
+    "campaign": "",
+    "campaignId": "",
+    "campaignVariant": "immediate_question_v1",
+    "partnerId": "",
+    "batchId": "",
+    "creative": "",
+    "utm": {
+      "source": "preview",
+      "medium": "paid_social",
+      "campaign": "direct_qa",
+      "content": "",
+      "term": ""
+    },
+    "landingPage": "/tech/",
+    "sourceFamily": "paid_social",
+    "audience": "tech",
+    "marketContext": "",
+    "occurredAt": "2026-11-14T19:23:48.766Z",
+    "referralContext": ""
+  },
+  "firstTouch": {
+    "utmSource": "preview",
+    "utmMedium": "paid_social",
+    "utmCampaign": "direct_qa",
+    "campaignVariant": "immediate_question_v1",
+    "source": "408farmers",
+    "sourceFamily": "paid_social",
+    "sourceKey": "web_408_tech",
+    "landingPage": "/tech/",
+    "occurredAt": "2026-11-14T19:23:48.766Z"
+  },
+  "answers": [
+    {
+      "questionId": "signal_product",
+      "optionCode": "home_auto",
+      "signals": {
+        "product": "home"
+      },
+      "professional": {
+        "requestedProducts": [
+          "home",
+          "auto"
+        ]
+      },
+      "source": "coveragefit_signal",
+      "occurredAt": "2026-11-14T19:24:36.461Z"
+    },
+    {
+      "questionId": "combined_home_reason",
+      "optionCode": "renewal_change",
+      "signals": {},
+      "professional": {
+        "home": {
+          "reviewReason": "renewal_change",
+          "reasonCode": "renewal_change"
+        }
+      },
+      "source": "coveragefit_signal",
+      "occurredAt": "2026-11-14T19:25:05.099Z"
+    },
+    {
+      "questionId": "combined_auto_reason",
+      "optionCode": "add_driver",
+      "signals": {},
+      "professional": {
+        "auto": {
+          "autoNeed": "add_driver",
+          "reasonCode": "add_driver"
+        }
+      },
+      "source": "coveragefit_signal",
+      "occurredAt": "2026-11-14T19:25:09.243Z"
+    },
+    {
+      "questionId": "combined_home_timing",
+      "optionCode": "within_30",
+      "signals": {},
+      "professional": {
+        "home": {
+          "decisionTiming": "within_30"
+        }
+      },
+      "source": "coveragefit_signal",
+      "occurredAt": "2026-11-14T19:25:24.761Z"
+    },
+    {
+      "questionId": "combined_auto_timing",
+      "optionCode": "within_14",
+      "signals": {},
+      "professional": {
+        "auto": {
+          "decisionTiming": "within_14"
+        }
+      },
+      "source": "coveragefit_signal",
+      "occurredAt": "2026-11-14T19:25:40.861Z"
+    },
+    {
+      "questionId": "combined_property",
+      "optionCode": "condo",
+      "signals": {},
+      "professional": {
+        "home": {
+          "propertyType": "condo"
+        }
+      },
+      "source": "coveragefit_signal",
+      "occurredAt": "2026-11-14T19:26:02.224Z"
+    }
+  ],
+  "nextAction": "Review home + auto; confirm auto timing (within 14)."
+}

@@ -7,7 +7,7 @@ export function professionalPresentation(html, entry) {
   if(!html.includes('id="entry-data"') || !html.includes('id="entry-review"'))return html;
   const headline='Your career may come with an insurance perk.';
   return html.replace(/<title>[^<]*<\/title>/,`<title>${profession[0].toUpperCase()+profession.slice(1)} professionals — 408FARMERS</title>`)
-    .replace('</head>','<link rel="stylesheet" href="/shared/professional-entry.css?v=1.2"></head>')
+    .replace('</head>','<link rel="stylesheet" href="/shared/professional-entry.css?v=1.3"></head>')
     .replace('<body>','<body class="professional-entry">')
     .replace('<a href="/">408FARMERS</a>', '<header class="professional-brand"><a href="/" aria-label="408FARMERS home">408<span>FARMERS</span></a><img src="/shared/assets/farmers-insurance-official.svg" alt="Farmers Insurance" width="100" height="54"></header>')
     .replace(/<h1>[^<]*<\/h1><p>[^<]*<\/p>/,`<div class="professional-intro"><p class="professional-audience">For ${profession} professionals</p><h1>${headline}</h1><p class="professional-summary">Some ${profession} professionals may qualify for additional insurance discounts. I’ll personally review what may apply to your coverage.</p><p class="professional-reassurance">Personalized review <span>·</span> No obligation <span>·</span> Quick review</p></div>`)

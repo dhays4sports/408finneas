@@ -1,0 +1,562 @@
+[
+  {
+    "route": "tech",
+    "width": 375,
+    "buttons": [
+      {
+        "height": 52,
+        "text": "Home + auto",
+        "width": 297
+      },
+      {
+        "height": 52,
+        "text": "Home coverage",
+        "width": 144.5
+      },
+      {
+        "height": 52,
+        "text": "Auto coverage",
+        "width": 144.5
+      },
+      {
+        "height": 69.375,
+        "text": "Life coverage",
+        "width": 144.5
+      },
+      {
+        "height": 69.375,
+        "text": "Business coverage",
+        "width": 144.5
+      }
+    ],
+    "documentWidth": 375,
+    "images": true,
+    "labelVisible": false,
+    "viewport": 375
+  },
+  {
+    "route": "tech",
+    "width": 390,
+    "buttons": [
+      {
+        "height": 52,
+        "text": "Home + auto",
+        "width": 312
+      },
+      {
+        "height": 52,
+        "text": "Home coverage",
+        "width": 152
+      },
+      {
+        "height": 52,
+        "text": "Auto coverage",
+        "width": 152
+      },
+      {
+        "height": 52,
+        "text": "Life coverage",
+        "width": 152
+      },
+      {
+        "height": 52,
+        "text": "Business coverage",
+        "width": 152
+      }
+    ],
+    "documentWidth": 390,
+    "images": true,
+    "labelVisible": false,
+    "viewport": 390
+  },
+  {
+    "route": "tech",
+    "width": 430,
+    "buttons": [
+      {
+        "height": 52,
+        "text": "Home + auto",
+        "width": 352
+      },
+      {
+        "height": 52,
+        "text": "Home coverage",
+        "width": 172
+      },
+      {
+        "height": 52,
+        "text": "Auto coverage",
+        "width": 172
+      },
+      {
+        "height": 52,
+        "text": "Life coverage",
+        "width": 172
+      },
+      {
+        "height": 52,
+        "text": "Business coverage",
+        "width": 172
+      }
+    ],
+    "documentWidth": 430,
+    "images": true,
+    "labelVisible": false,
+    "viewport": 430
+  },
+  {
+    "route": "tech",
+    "width": 1280,
+    "buttons": [
+      {
+        "height": 52.796875,
+        "text": "Home + auto",
+        "width": 622
+      },
+      {
+        "height": 52.796875,
+        "text": "Home coverage",
+        "width": 306
+      },
+      {
+        "height": 52.796875,
+        "text": "Auto coverage",
+        "width": 306
+      },
+      {
+        "height": 52.796875,
+        "text": "Life coverage",
+        "width": 306
+      },
+      {
+        "height": 52.796875,
+        "text": "Business coverage",
+        "width": 306
+      }
+    ],
+    "documentWidth": 1280,
+    "images": true,
+    "labelVisible": false,
+    "viewport": 1280
+  },
+  {
+    "route": "healthcare",
+    "width": 375,
+    "buttons": [
+      {
+        "height": 52,
+        "text": "Home + auto",
+        "width": 297
+      },
+      {
+        "height": 52,
+        "text": "Home coverage",
+        "width": 144.5
+      },
+      {
+        "height": 52,
+        "text": "Auto coverage",
+        "width": 144.5
+      },
+      {
+        "height": 69.375,
+        "text": "Life coverage",
+        "width": 144.5
+      },
+      {
+        "height": 69.375,
+        "text": "Business coverage",
+        "width": 144.5
+      }
+    ],
+    "documentWidth": 375,
+    "images": true,
+    "labelVisible": false,
+    "viewport": 375
+  },
+  {
+    "route": "healthcare",
+    "width": 390,
+    "buttons": [
+      {
+        "height": 52,
+        "text": "Home + auto",
+        "width": 312
+      },
+      {
+        "height": 52,
+        "text": "Home coverage",
+        "width": 152
+      },
+      {
+        "height": 52,
+        "text": "Auto coverage",
+        "width": 152
+      },
+      {
+        "height": 52,
+        "text": "Life coverage",
+        "width": 152
+      },
+      {
+        "height": 52,
+        "text": "Business coverage",
+        "width": 152
+      }
+    ],
+    "documentWidth": 390,
+    "images": true,
+    "labelVisible": false,
+    "viewport": 390
+  },
+  {
+    "route": "healthcare",
+    "width": 430,
+    "buttons": [
+      {
+        "height": 52,
+        "text": "Home + auto",
+        "width": 352
+      },
+      {
+        "height": 52,
+        "text": "Home coverage",
+        "width": 172
+      },
+      {
+        "height": 52,
+        "text": "Auto coverage",
+        "width": 172
+      },
+      {
+        "height": 52,
+        "text": "Life coverage",
+        "width": 172
+      },
+      {
+        "height": 52,
+        "text": "Business coverage",
+        "width": 172
+      }
+    ],
+    "documentWidth": 430,
+    "images": true,
+    "labelVisible": false,
+    "viewport": 430
+  },
+  {
+    "route": "healthcare",
+    "width": 1280,
+    "buttons": [
+      {
+        "height": 52.796875,
+        "text": "Home + auto",
+        "width": 622
+      },
+      {
+        "height": 52.796875,
+        "text": "Home coverage",
+        "width": 306
+      },
+      {
+        "height": 52.796875,
+        "text": "Auto coverage",
+        "width": 306
+      },
+      {
+        "height": 52.796875,
+        "text": "Life coverage",
+        "width": 306
+      },
+      {
+        "height": 52.796875,
+        "text": "Business coverage",
+        "width": 306
+      }
+    ],
+    "documentWidth": 1280,
+    "images": true,
+    "labelVisible": false,
+    "viewport": 1280
+  },
+  {
+    "route": "engineers",
+    "width": 375,
+    "buttons": [
+      {
+        "height": 52,
+        "text": "Home + auto",
+        "width": 297
+      },
+      {
+        "height": 52,
+        "text": "Home coverage",
+        "width": 144.5
+      },
+      {
+        "height": 52,
+        "text": "Auto coverage",
+        "width": 144.5
+      },
+      {
+        "height": 69.375,
+        "text": "Life coverage",
+        "width": 144.5
+      },
+      {
+        "height": 69.375,
+        "text": "Business coverage",
+        "width": 144.5
+      }
+    ],
+    "documentWidth": 375,
+    "images": true,
+    "labelVisible": false,
+    "viewport": 375
+  },
+  {
+    "route": "engineers",
+    "width": 390,
+    "buttons": [
+      {
+        "height": 52,
+        "text": "Home + auto",
+        "width": 312
+      },
+      {
+        "height": 52,
+        "text": "Home coverage",
+        "width": 152
+      },
+      {
+        "height": 52,
+        "text": "Auto coverage",
+        "width": 152
+      },
+      {
+        "height": 52,
+        "text": "Life coverage",
+        "width": 152
+      },
+      {
+        "height": 52,
+        "text": "Business coverage",
+        "width": 152
+      }
+    ],
+    "documentWidth": 390,
+    "images": true,
+    "labelVisible": false,
+    "viewport": 390
+  },
+  {
+    "route": "engineers",
+    "width": 430,
+    "buttons": [
+      {
+        "height": 52,
+        "text": "Home + auto",
+        "width": 352
+      },
+      {
+        "height": 52,
+        "text": "Home coverage",
+        "width": 172
+      },
+      {
+        "height": 52,
+        "text": "Auto coverage",
+        "width": 172
+      },
+      {
+        "height": 52,
+        "text": "Life coverage",
+        "width": 172
+      },
+      {
+        "height": 52,
+        "text": "Business coverage",
+        "width": 172
+      }
+    ],
+    "documentWidth": 430,
+    "images": true,
+    "labelVisible": false,
+    "viewport": 430
+  },
+  {
+    "route": "engineers",
+    "width": 1280,
+    "buttons": [
+      {
+        "height": 52.796875,
+        "text": "Home + auto",
+        "width": 622
+      },
+      {
+        "height": 52.796875,
+        "text": "Home coverage",
+        "width": 306
+      },
+      {
+        "height": 52.796875,
+        "text": "Auto coverage",
+        "width": 306
+      },
+      {
+        "height": 52.796875,
+        "text": "Life coverage",
+        "width": 306
+      },
+      {
+        "height": 52.796875,
+        "text": "Business coverage",
+        "width": 306
+      }
+    ],
+    "documentWidth": 1280,
+    "images": true,
+    "labelVisible": false,
+    "viewport": 1280
+  },
+  {
+    "route": "teachers",
+    "width": 375,
+    "buttons": [
+      {
+        "height": 52,
+        "text": "Home + auto",
+        "width": 297
+      },
+      {
+        "height": 52,
+        "text": "Home coverage",
+        "width": 144.5
+      },
+      {
+        "height": 52,
+        "text": "Auto coverage",
+        "width": 144.5
+      },
+      {
+        "height": 69.375,
+        "text": "Life coverage",
+        "width": 144.5
+      },
+      {
+        "height": 69.375,
+        "text": "Business coverage",
+        "width": 144.5
+      }
+    ],
+    "documentWidth": 375,
+    "images": true,
+    "labelVisible": false,
+    "viewport": 375
+  },
+  {
+    "route": "teachers",
+    "width": 390,
+    "buttons": [
+      {
+        "height": 52,
+        "text": "Home + auto",
+        "width": 312
+      },
+      {
+        "height": 52,
+        "text": "Home coverage",
+        "width": 152
+      },
+      {
+        "height": 52,
+        "text": "Auto coverage",
+        "width": 152
+      },
+      {
+        "height": 52,
+        "text": "Life coverage",
+        "width": 152
+      },
+      {
+        "height": 52,
+        "text": "Business coverage",
+        "width": 152
+      }
+    ],
+    "documentWidth": 390,
+    "images": true,
+    "labelVisible": false,
+    "viewport": 390
+  },
+  {
+    "route": "teachers",
+    "width": 430,
+    "buttons": [
+      {
+        "height": 52,
+        "text": "Home + auto",
+        "width": 352
+      },
+      {
+        "height": 52,
+        "text": "Home coverage",
+        "width": 172
+      },
+      {
+        "height": 52,
+        "text": "Auto coverage",
+        "width": 172
+      },
+      {
+        "height": 52,
+        "text": "Life coverage",
+        "width": 172
+      },
+      {
+        "height": 52,
+        "text": "Business coverage",
+        "width": 172
+      }
+    ],
+    "documentWidth": 430,
+    "images": true,
+    "labelVisible": false,
+    "viewport": 430
+  },
+  {
+    "route": "teachers",
+    "width": 1280,
+    "buttons": [
+      {
+        "height": 52.796875,
+        "text": "Home + auto",
+        "width": 622
+      },
+      {
+        "height": 52.796875,
+        "text": "Home coverage",
+        "width": 306
+      },
+      {
+        "height": 52.796875,
+        "text": "Auto coverage",
+        "width": 306
+      },
+      {
+        "height": 52.796875,
+        "text": "Life coverage",
+        "width": 306
+      },
+      {
+        "height": 52.796875,
+        "text": "Business coverage",
+        "width": 306
+      }
+    ],
+    "documentWidth": 1280,
+    "images": true,
+    "labelVisible": false,
+    "viewport": 1280
+  }
+]

@@ -73,3 +73,7 @@ body.professional-entry {
   .professional-trust { padding-top: 16px; margin-bottom: 22px; }
 }
 @media (prefers-reduced-motion: reduce) { .professional-entry button { transition: none; } }
+
+/* Explicit combined choice spans both columns; other choices retain equal weight. */
+.professional-entry #entry-review fieldset > button[data-product-combined]{width:100%}
+.professional-entry .entry-reviewing{font-size:12px;font-weight:600;margin:0 0 12px;color:var(--muted)}

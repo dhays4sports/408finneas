@@ -1,0 +1,1390 @@
+[
+  {
+    "route": "tech",
+    "width": 375,
+    "buttons": [
+      {
+        "height": 52,
+        "text": "Home + auto",
+        "width": 297
+      },
+      {
+        "height": 52,
+        "text": "Home coverage",
+        "width": 144.5
+      },
+      {
+        "height": 52,
+        "text": "Auto coverage",
+        "width": 144.5
+      },
+      {
+        "height": 69.375,
+        "text": "Life coverage",
+        "width": 144.5
+      },
+      {
+        "height": 69.375,
+        "text": "Business coverage",
+        "width": 144.5
+      },
+      {
+        "height": 44,
+        "text": "Prefer to talk? Have Dylan contact me.",
+        "width": 297
+      }
+    ],
+    "client": 375,
+    "scroll": 375
+  },
+  {
+    "route": "tech",
+    "width": 390,
+    "buttons": [
+      {
+        "height": 52,
+        "text": "Home + auto",
+        "width": 312
+      },
+      {
+        "height": 52,
+        "text": "Home coverage",
+        "width": 152
+      },
+      {
+        "height": 52,
+        "text": "Auto coverage",
+        "width": 152
+      },
+      {
+        "height": 52,
+        "text": "Life coverage",
+        "width": 152
+      },
+      {
+        "height": 52,
+        "text": "Business coverage",
+        "width": 152
+      },
+      {
+        "height": 44,
+        "text": "Prefer to talk? Have Dylan contact me.",
+        "width": 312
+      }
+    ],
+    "client": 390,
+    "scroll": 390
+  },
+  {
+    "route": "tech",
+    "width": 430,
+    "buttons": [
+      {
+        "height": 52,
+        "text": "Home + auto",
+        "width": 352
+      },
+      {
+        "height": 52,
+        "text": "Home coverage",
+        "width": 172
+      },
+      {
+        "height": 52,
+        "text": "Auto coverage",
+        "width": 172
+      },
+      {
+        "height": 52,
+        "text": "Life coverage",
+        "width": 172
+      },
+      {
+        "height": 52,
+        "text": "Business coverage",
+        "width": 172
+      },
+      {
+        "height": 44,
+        "text": "Prefer to talk? Have Dylan contact me.",
+        "width": 352
+      }
+    ],
+    "client": 430,
+    "scroll": 430
+  },
+  {
+    "route": "tech",
+    "width": 1280,
+    "buttons": [
+      {
+        "height": 52.796875,
+        "text": "Home + auto",
+        "width": 622
+      },
+      {
+        "height": 52.796875,
+        "text": "Home coverage",
+        "width": 306
+      },
+      {
+        "height": 52.796875,
+        "text": "Auto coverage",
+        "width": 306
+      },
+      {
+        "height": 52.796875,
+        "text": "Life coverage",
+        "width": 306
+      },
+      {
+        "height": 52.796875,
+        "text": "Business coverage",
+        "width": 306
+      },
+      {
+        "height": 44,
+        "text": "Prefer to talk? Have Dylan contact me.",
+        "width": 622
+      }
+    ],
+    "client": 1280,
+    "scroll": 1280
+  },
+  {
+    "route": "healthcare",
+    "width": 375,
+    "buttons": [
+      {
+        "height": 52,
+        "text": "Home + auto",
+        "width": 297
+      },
+      {
+        "height": 52,
+        "text": "Home coverage",
+        "width": 144.5
+      },
+      {
+        "height": 52,
+        "text": "Auto coverage",
+        "width": 144.5
+      },
+      {
+        "height": 69.375,
+        "text": "Life coverage",
+        "width": 144.5
+      },
+      {
+        "height": 69.375,
+        "text": "Business coverage",
+        "width": 144.5
+      },
+      {
+        "height": 44,
+        "text": "Prefer to talk? Have Dylan contact me.",
+        "width": 297
+      }
+    ],
+    "client": 375,
+    "scroll": 375
+  },
+  {
+    "route": "healthcare",
+    "width": 390,
+    "buttons": [
+      {
+        "height": 52,
+        "text": "Home + auto",
+        "width": 312
+      },
+      {
+        "height": 52,
+        "text": "Home coverage",
+        "width": 152
+      },
+      {
+        "height": 52,
+        "text": "Auto coverage",
+        "width": 152
+      },
+      {
+        "height": 52,
+        "text": "Life coverage",
+        "width": 152
+      },
+      {
+        "height": 52,
+        "text": "Business coverage",
+        "width": 152
+      },
+      {
+        "height": 44,
+        "text": "Prefer to talk? Have Dylan contact me.",
+        "width": 312
+      }
+    ],
+    "client": 390,
+    "scroll": 390
+  },
+  {
+    "route": "healthcare",
+    "width": 430,
+    "buttons": [
+      {
+        "height": 52,
+        "text": "Home + auto",
+        "width": 352
+      },
+      {
+        "height": 52,
+        "text": "Home coverage",
+        "width": 172
+      },
+      {
+        "height": 52,
+        "text": "Auto coverage",
+        "width": 172
+      },
+      {
+        "height": 52,
+        "text": "Life coverage",
+        "width": 172
+      },
+      {
+        "height": 52,
+        "text": "Business coverage",
+        "width": 172
+      },
+      {
+        "height": 44,
+        "text": "Prefer to talk? Have Dylan contact me.",
+        "width": 352
+      }
+    ],
+    "client": 430,
+    "scroll": 430
+  },
+  {
+    "route": "healthcare",
+    "width": 1280,
+    "buttons": [
+      {
+        "height": 52.796875,
+        "text": "Home + auto",
+        "width": 622
+      },
+      {
+        "height": 52.796875,
+        "text": "Home coverage",
+        "width": 306
+      },
+      {
+        "height": 52.796875,
+        "text": "Auto coverage",
+        "width": 306
+      },
+      {
+        "height": 52.796875,
+        "text": "Life coverage",
+        "width": 306
+      },
+      {
+        "height": 52.796875,
+        "text": "Business coverage",
+        "width": 306
+      },
+      {
+        "height": 44,
+        "text": "Prefer to talk? Have Dylan contact me.",
+        "width": 622
+      }
+    ],
+    "client": 1280,
+    "scroll": 1280
+  },
+  {
+    "route": "engineers",
+    "width": 375,
+    "buttons": [
+      {
+        "height": 52,
+        "text": "Home + auto",
+        "width": 297
+      },
+      {
+        "height": 52,
+        "text": "Home coverage",
+        "width": 144.5
+      },
+      {
+        "height": 52,
+        "text": "Auto coverage",
+        "width": 144.5
+      },
+      {
+        "height": 69.375,
+        "text": "Life coverage",
+        "width": 144.5
+      },
+      {
+        "height": 69.375,
+        "text": "Business coverage",
+        "width": 144.5
+      },
+      {
+        "height": 44,
+        "text": "Prefer to talk? Have Dylan contact me.",
+        "width": 297
+      }
+    ],
+    "client": 375,
+    "scroll": 375
+  },
+  {
+    "route": "engineers",
+    "width": 390,
+    "buttons": [
+      {
+        "height": 52,
+        "text": "Home + auto",
+        "width": 312
+      },
+      {
+        "height": 52,
+        "text": "Home coverage",
+        "width": 152
+      },
+      {
+        "height": 52,
+        "text": "Auto coverage",
+        "width": 152
+      },
+      {
+        "height": 52,
+        "text": "Life coverage",
+        "width": 152
+      },
+      {
+        "height": 52,
+        "text": "Business coverage",
+        "width": 152
+      },
+      {
+        "height": 44,
+        "text": "Prefer to talk? Have Dylan contact me.",
+        "width": 312
+      }
+    ],
+    "client": 390,
+    "scroll": 390
+  },
+  {
+    "route": "engineers",
+    "width": 430,
+    "buttons": [
+      {
+        "height": 52,
+        "text": "Home + auto",
+        "width": 352
+      },
+      {
+        "height": 52,
+        "text": "Home coverage",
+        "width": 172
+      },
+      {
+        "height": 52,
+        "text": "Auto coverage",
+        "width": 172
+      },
+      {
+        "height": 52,
+        "text": "Life coverage",
+        "width": 172
+      },
+      {
+        "height": 52,
+        "text": "Business coverage",
+        "width": 172
+      },
+      {
+        "height": 44,
+        "text": "Prefer to talk? Have Dylan contact me.",
+        "width": 352
+      }
+    ],
+    "client": 430,
+    "scroll": 430
+  },
+  {
+    "route": "engineers",
+    "width": 1280,
+    "buttons": [
+      {
+        "height": 52.796875,
+        "text": "Home + auto",
+        "width": 622
+      },
+      {
+        "height": 52.796875,
+        "text": "Home coverage",
+        "width": 306
+      },
+      {
+        "height": 52.796875,
+        "text": "Auto coverage",
+        "width": 306
+      },
+      {
+        "height": 52.796875,
+        "text": "Life coverage",
+        "width": 306
+      },
+      {
+        "height": 52.796875,
+        "text": "Business coverage",
+        "width": 306
+      },
+      {
+        "height": 44,
+        "text": "Prefer to talk? Have Dylan contact me.",
+        "width": 622
+      }
+    ],
+    "client": 1280,
+    "scroll": 1280
+  },
+  {
+    "route": "teachers",
+    "width": 375,
+    "buttons": [
+      {
+        "height": 52,
+        "text": "Home + auto",
+        "width": 297
+      },
+      {
+        "height": 52,
+        "text": "Home coverage",
+        "width": 144.5
+      },
+      {
+        "height": 52,
+        "text": "Auto coverage",
+        "width": 144.5
+      },
+      {
+        "height": 69.375,
+        "text": "Life coverage",
+        "width": 144.5
+      },
+      {
+        "height": 69.375,
+        "text": "Business coverage",
+        "width": 144.5
+      },
+      {
+        "height": 44,
+        "text": "Prefer to talk? Have Dylan contact me.",
+        "width": 297
+      }
+    ],
+    "client": 375,
+    "scroll": 375
+  },
+  {
+    "route": "teachers",
+    "width": 390,
+    "buttons": [
+      {
+        "height": 52,
+        "text": "Home + auto",
+        "width": 312
+      },
+      {
+        "height": 52,
+        "text": "Home coverage",
+        "width": 152
+      },
+      {
+        "height": 52,
+        "text": "Auto coverage",
+        "width": 152
+      },
+      {
+        "height": 52,
+        "text": "Life coverage",
+        "width": 152
+      },
+      {
+        "height": 52,
+        "text": "Business coverage",
+        "width": 152
+      },
+      {
+        "height": 44,
+        "text": "Prefer to talk? Have Dylan contact me.",
+        "width": 312
+      }
+    ],
+    "client": 390,
+    "scroll": 390
+  },
+  {
+    "route": "teachers",
+    "width": 430,
+    "buttons": [
+      {
+        "height": 52,
+        "text": "Home + auto",
+        "width": 352
+      },
+      {
+        "height": 52,
+        "text": "Home coverage",
+        "width": 172
+      },
+      {
+        "height": 52,
+        "text": "Auto coverage",
+        "width": 172
+      },
+      {
+        "height": 52,
+        "text": "Life coverage",
+        "width": 172
+      },
+      {
+        "height": 52,
+        "text": "Business coverage",
+        "width": 172
+      },
+      {
+        "height": 44,
+        "text": "Prefer to talk? Have Dylan contact me.",
+        "width": 352
+      }
+    ],
+    "client": 430,
+    "scroll": 430
+  },
+  {
+    "route": "teachers",
+    "width": 1280,
+    "buttons": [
+      {
+        "height": 52.796875,
+        "text": "Home + auto",
+        "width": 622
+      },
+      {
+        "height": 52.796875,
+        "text": "Home coverage",
+        "width": 306
+      },
+      {
+        "height": 52.796875,
+        "text": "Auto coverage",
+        "width": 306
+      },
+      {
+        "height": 52.796875,
+        "text": "Life coverage",
+        "width": 306
+      },
+      {
+        "height": 52.796875,
+        "text": "Business coverage",
+        "width": 306
+      },
+      {
+        "height": 44,
+        "text": "Prefer to talk? Have Dylan contact me.",
+        "width": 622
+      }
+    ],
+    "client": 1280,
+    "scroll": 1280
+  },
+  {
+    "route": "home",
+    "width": 375,
+    "buttons": [
+      {
+        "height": 70,
+        "text": "I am being cancelled or nonrenewed",
+        "width": 293
+      },
+      {
+        "height": 46,
+        "text": "My renewal or price changed",
+        "width": 293
+      },
+      {
+        "height": 46,
+        "text": "I am buying a home",
+        "width": 293
+      },
+      {
+        "height": 46,
+        "text": "I am comparing options",
+        "width": 293
+      },
+      {
+        "height": 46,
+        "text": "I want a coverage review",
+        "width": 293
+      },
+      {
+        "height": 46,
+        "text": "I am just researching",
+        "width": 293
+      },
+      {
+        "height": 44,
+        "text": "Prefer to talk? Have Dylan contact me.",
+        "width": 293
+      }
+    ],
+    "client": 375,
+    "scroll": 375
+  },
+  {
+    "route": "home",
+    "width": 390,
+    "buttons": [
+      {
+        "height": 46,
+        "text": "I am being cancelled or nonrenewed",
+        "width": 308
+      },
+      {
+        "height": 46,
+        "text": "My renewal or price changed",
+        "width": 308
+      },
+      {
+        "height": 46,
+        "text": "I am buying a home",
+        "width": 308
+      },
+      {
+        "height": 46,
+        "text": "I am comparing options",
+        "width": 308
+      },
+      {
+        "height": 46,
+        "text": "I want a coverage review",
+        "width": 308
+      },
+      {
+        "height": 46,
+        "text": "I am just researching",
+        "width": 308
+      },
+      {
+        "height": 44,
+        "text": "Prefer to talk? Have Dylan contact me.",
+        "width": 308
+      }
+    ],
+    "client": 390,
+    "scroll": 390
+  },
+  {
+    "route": "home",
+    "width": 430,
+    "buttons": [
+      {
+        "height": 46,
+        "text": "I am being cancelled or nonrenewed",
+        "width": 348
+      },
+      {
+        "height": 46,
+        "text": "My renewal or price changed",
+        "width": 348
+      },
+      {
+        "height": 46,
+        "text": "I am buying a home",
+        "width": 348
+      },
+      {
+        "height": 46,
+        "text": "I am comparing options",
+        "width": 348
+      },
+      {
+        "height": 46,
+        "text": "I want a coverage review",
+        "width": 348
+      },
+      {
+        "height": 46,
+        "text": "I am just researching",
+        "width": 348
+      },
+      {
+        "height": 44,
+        "text": "Prefer to talk? Have Dylan contact me.",
+        "width": 348
+      }
+    ],
+    "client": 430,
+    "scroll": 430
+  },
+  {
+    "route": "home",
+    "width": 1280,
+    "buttons": [
+      {
+        "height": 46,
+        "text": "I am being cancelled or nonrenewed",
+        "width": 558
+      },
+      {
+        "height": 46,
+        "text": "My renewal or price changed",
+        "width": 558
+      },
+      {
+        "height": 46,
+        "text": "I am buying a home",
+        "width": 558
+      },
+      {
+        "height": 46,
+        "text": "I am comparing options",
+        "width": 558
+      },
+      {
+        "height": 46,
+        "text": "I want a coverage review",
+        "width": 558
+      },
+      {
+        "height": 46,
+        "text": "I am just researching",
+        "width": 558
+      },
+      {
+        "height": 44,
+        "text": "Prefer to talk? Have Dylan contact me.",
+        "width": 558
+      }
+    ],
+    "client": 1280,
+    "scroll": 1280
+  },
+  {
+    "route": "buyer",
+    "width": 375,
+    "buttons": [
+      {
+        "height": 69.375,
+        "text": "Coverage for an upcoming closing",
+        "width": 150.5
+      },
+      {
+        "height": 69.375,
+        "text": "Compare options for the new home",
+        "width": 150.5
+      },
+      {
+        "height": 91.0625,
+        "text": "Understand the coverage I may need",
+        "width": 150.5
+      },
+      {
+        "height": 91.0625,
+        "text": "I am planning ahead",
+        "width": 150.5
+      },
+      {
+        "height": 44,
+        "text": "Prefer to talk? Have Dylan contact me.",
+        "width": 309
+      }
+    ],
+    "client": 375,
+    "scroll": 375
+  },
+  {
+    "route": "buyer",
+    "width": 390,
+    "buttons": [
+      {
+        "height": 69.375,
+        "text": "Coverage for an upcoming closing",
+        "width": 158
+      },
+      {
+        "height": 69.375,
+        "text": "Compare options for the new home",
+        "width": 158
+      },
+      {
+        "height": 91.0625,
+        "text": "Understand the coverage I may need",
+        "width": 158
+      },
+      {
+        "height": 91.0625,
+        "text": "I am planning ahead",
+        "width": 158
+      },
+      {
+        "height": 44,
+        "text": "Prefer to talk? Have Dylan contact me.",
+        "width": 324
+      }
+    ],
+    "client": 390,
+    "scroll": 390
+  },
+  {
+    "route": "buyer",
+    "width": 430,
+    "buttons": [
+      {
+        "height": 69.375,
+        "text": "Coverage for an upcoming closing",
+        "width": 178
+      },
+      {
+        "height": 69.375,
+        "text": "Compare options for the new home",
+        "width": 178
+      },
+      {
+        "height": 69.375,
+        "text": "Understand the coverage I may need",
+        "width": 178
+      },
+      {
+        "height": 69.375,
+        "text": "I am planning ahead",
+        "width": 178
+      },
+      {
+        "height": 44,
+        "text": "Prefer to talk? Have Dylan contact me.",
+        "width": 364
+      }
+    ],
+    "client": 430,
+    "scroll": 430
+  },
+  {
+    "route": "buyer",
+    "width": 1280,
+    "buttons": [
+      {
+        "height": 77.59375,
+        "text": "Coverage for an upcoming closing",
+        "width": 306
+      },
+      {
+        "height": 77.59375,
+        "text": "Compare options for the new home",
+        "width": 306
+      },
+      {
+        "height": 77.59375,
+        "text": "Understand the coverage I may need",
+        "width": 306
+      },
+      {
+        "height": 77.59375,
+        "text": "I am planning ahead",
+        "width": 306
+      },
+      {
+        "height": 44,
+        "text": "Prefer to talk? Have Dylan contact me.",
+        "width": 622
+      }
+    ],
+    "client": 1280,
+    "scroll": 1280
+  },
+  {
+    "route": "condo",
+    "width": 375,
+    "buttons": [
+      {
+        "height": 52,
+        "text": "I’m buying a condo.",
+        "width": 309
+      },
+      {
+        "height": 69.375,
+        "text": "My policy is renewing or getting more expensive.",
+        "width": 309
+      },
+      {
+        "height": 69.375,
+        "text": "I received a cancellation or non-renewal notice.",
+        "width": 309
+      },
+      {
+        "height": 69.375,
+        "text": "I want to review my coverage or HOA gaps.",
+        "width": 309
+      },
+      {
+        "height": 52,
+        "text": "I’m just exploring options.",
+        "width": 309
+      },
+      {
+        "height": 44,
+        "text": "Prefer to talk? Have Dylan contact me.",
+        "width": 309
+      }
+    ],
+    "client": 375,
+    "scroll": 375
+  },
+  {
+    "route": "condo",
+    "width": 390,
+    "buttons": [
+      {
+        "height": 52,
+        "text": "I’m buying a condo.",
+        "width": 324
+      },
+      {
+        "height": 69.375,
+        "text": "My policy is renewing or getting more expensive.",
+        "width": 324
+      },
+      {
+        "height": 69.375,
+        "text": "I received a cancellation or non-renewal notice.",
+        "width": 324
+      },
+      {
+        "height": 52,
+        "text": "I want to review my coverage or HOA gaps.",
+        "width": 324
+      },
+      {
+        "height": 52,
+        "text": "I’m just exploring options.",
+        "width": 324
+      },
+      {
+        "height": 44,
+        "text": "Prefer to talk? Have Dylan contact me.",
+        "width": 324
+      }
+    ],
+    "client": 390,
+    "scroll": 390
+  },
+  {
+    "route": "condo",
+    "width": 430,
+    "buttons": [
+      {
+        "height": 52,
+        "text": "I’m buying a condo.",
+        "width": 364
+      },
+      {
+        "height": 69.375,
+        "text": "My policy is renewing or getting more expensive.",
+        "width": 364
+      },
+      {
+        "height": 52,
+        "text": "I received a cancellation or non-renewal notice.",
+        "width": 364
+      },
+      {
+        "height": 52,
+        "text": "I want to review my coverage or HOA gaps.",
+        "width": 364
+      },
+      {
+        "height": 52,
+        "text": "I’m just exploring options.",
+        "width": 364
+      },
+      {
+        "height": 44,
+        "text": "Prefer to talk? Have Dylan contact me.",
+        "width": 364
+      }
+    ],
+    "client": 430,
+    "scroll": 430
+  },
+  {
+    "route": "condo",
+    "width": 1280,
+    "buttons": [
+      {
+        "height": 52.796875,
+        "text": "I’m buying a condo.",
+        "width": 622
+      },
+      {
+        "height": 52.796875,
+        "text": "My policy is renewing or getting more expensive.",
+        "width": 622
+      },
+      {
+        "height": 52.796875,
+        "text": "I received a cancellation or non-renewal notice.",
+        "width": 622
+      },
+      {
+        "height": 52.796875,
+        "text": "I want to review my coverage or HOA gaps.",
+        "width": 622
+      },
+      {
+        "height": 52.796875,
+        "text": "I’m just exploring options.",
+        "width": 622
+      },
+      {
+        "height": 44,
+        "text": "Prefer to talk? Have Dylan contact me.",
+        "width": 622
+      }
+    ],
+    "client": 1280,
+    "scroll": 1280
+  },
+  {
+    "route": "home_qr",
+    "width": 375,
+    "buttons": [
+      {
+        "height": 70,
+        "text": "I am being cancelled or nonrenewed",
+        "width": 293
+      },
+      {
+        "height": 46,
+        "text": "My renewal or price changed",
+        "width": 293
+      },
+      {
+        "height": 46,
+        "text": "I am buying a home",
+        "width": 293
+      },
+      {
+        "height": 46,
+        "text": "I am comparing options",
+        "width": 293
+      },
+      {
+        "height": 46,
+        "text": "I want a coverage review",
+        "width": 293
+      },
+      {
+        "height": 46,
+        "text": "I am just researching",
+        "width": 293
+      },
+      {
+        "height": 44,
+        "text": "Prefer to talk? Have Dylan contact me.",
+        "width": 293
+      }
+    ],
+    "client": 375,
+    "scroll": 375
+  },
+  {
+    "route": "home_qr",
+    "width": 390,
+    "buttons": [
+      {
+        "height": 46,
+        "text": "I am being cancelled or nonrenewed",
+        "width": 308
+      },
+      {
+        "height": 46,
+        "text": "My renewal or price changed",
+        "width": 308
+      },
+      {
+        "height": 46,
+        "text": "I am buying a home",
+        "width": 308
+      },
+      {
+        "height": 46,
+        "text": "I am comparing options",
+        "width": 308
+      },
+      {
+        "height": 46,
+        "text": "I want a coverage review",
+        "width": 308
+      },
+      {
+        "height": 46,
+        "text": "I am just researching",
+        "width": 308
+      },
+      {
+        "height": 44,
+        "text": "Prefer to talk? Have Dylan contact me.",
+        "width": 308
+      }
+    ],
+    "client": 390,
+    "scroll": 390
+  },
+  {
+    "route": "home_qr",
+    "width": 430,
+    "buttons": [
+      {
+        "height": 46,
+        "text": "I am being cancelled or nonrenewed",
+        "width": 348
+      },
+      {
+        "height": 46,
+        "text": "My renewal or price changed",
+        "width": 348
+      },
+      {
+        "height": 46,
+        "text": "I am buying a home",
+        "width": 348
+      },
+      {
+        "height": 46,
+        "text": "I am comparing options",
+        "width": 348
+      },
+      {
+        "height": 46,
+        "text": "I want a coverage review",
+        "width": 348
+      },
+      {
+        "height": 46,
+        "text": "I am just researching",
+        "width": 348
+      },
+      {
+        "height": 44,
+        "text": "Prefer to talk? Have Dylan contact me.",
+        "width": 348
+      }
+    ],
+    "client": 430,
+    "scroll": 430
+  },
+  {
+    "route": "home_qr",
+    "width": 1280,
+    "buttons": [
+      {
+        "height": 46,
+        "text": "I am being cancelled or nonrenewed",
+        "width": 558
+      },
+      {
+        "height": 46,
+        "text": "My renewal or price changed",
+        "width": 558
+      },
+      {
+        "height": 46,
+        "text": "I am buying a home",
+        "width": 558
+      },
+      {
+        "height": 46,
+        "text": "I am comparing options",
+        "width": 558
+      },
+      {
+        "height": 46,
+        "text": "I want a coverage review",
+        "width": 558
+      },
+      {
+        "height": 46,
+        "text": "I am just researching",
+        "width": 558
+      },
+      {
+        "height": 44,
+        "text": "Prefer to talk? Have Dylan contact me.",
+        "width": 558
+      }
+    ],
+    "client": 1280,
+    "scroll": 1280
+  },
+  {
+    "route": "condo_qr",
+    "width": 375,
+    "buttons": [
+      {
+        "height": 52,
+        "text": "I’m buying a condo.",
+        "width": 309
+      },
+      {
+        "height": 69.375,
+        "text": "My policy is renewing or getting more expensive.",
+        "width": 309
+      },
+      {
+        "height": 69.375,
+        "text": "I received a cancellation or non-renewal notice.",
+        "width": 309
+      },
+      {
+        "height": 69.375,
+        "text": "I want to review my coverage or HOA gaps.",
+        "width": 309
+      },
+      {
+        "height": 52,
+        "text": "I’m just exploring options.",
+        "width": 309
+      },
+      {
+        "height": 44,
+        "text": "Prefer to talk? Have Dylan contact me.",
+        "width": 309
+      }
+    ],
+    "client": 375,
+    "scroll": 375
+  },
+  {
+    "route": "condo_qr",
+    "width": 390,
+    "buttons": [
+      {
+        "height": 52,
+        "text": "I’m buying a condo.",
+        "width": 324
+      },
+      {
+        "height": 69.375,
+        "text": "My policy is renewing or getting more expensive.",
+        "width": 324
+      },
+      {
+        "height": 69.375,
+        "text": "I received a cancellation or non-renewal notice.",
+        "width": 324
+      },
+      {
+        "height": 52,
+        "text": "I want to review my coverage or HOA gaps.",
+        "width": 324
+      },
+      {
+        "height": 52,
+        "text": "I’m just exploring options.",
+        "width": 324
+      },
+      {
+        "height": 44,
+        "text": "Prefer to talk? Have Dylan contact me.",
+        "width": 324
+      }
+    ],
+    "client": 390,
+    "scroll": 390
+  },
+  {
+    "route": "condo_qr",
+    "width": 430,
+    "buttons": [
+      {
+        "height": 52,
+        "text": "I’m buying a condo.",
+        "width": 364
+      },
+      {
+        "height": 69.375,
+        "text": "My policy is renewing or getting more expensive.",
+        "width": 364
+      },
+      {
+        "height": 52,
+        "text": "I received a cancellation or non-renewal notice.",
+        "width": 364
+      },
+      {
+        "height": 52,
+        "text": "I want to review my coverage or HOA gaps.",
+        "width": 364
+      },
+      {
+        "height": 52,
+        "text": "I’m just exploring options.",
+        "width": 364
+      },
+      {
+        "height": 44,
+        "text": "Prefer to talk? Have Dylan contact me.",
+        "width": 364
+      }
+    ],
+    "client": 430,
+    "scroll": 430
+  },
+  {
+    "route": "condo_qr",
+    "width": 1280,
+    "buttons": [
+      {
+        "height": 52.796875,
+        "text": "I’m buying a condo.",
+        "width": 622
+      },
+      {
+        "height": 52.796875,
+        "text": "My policy is renewing or getting more expensive.",
+        "width": 622
+      },
+      {
+        "height": 52.796875,
+        "text": "I received a cancellation or non-renewal notice.",
+        "width": 622
+      },
+      {
+        "height": 52.796875,
+        "text": "I want to review my coverage or HOA gaps.",
+        "width": 622
+      },
+      {
+        "height": 52.796875,
+        "text": "I’m just exploring options.",
+        "width": 622
+      },
+      {
+        "height": 44,
+        "text": "Prefer to talk? Have Dylan contact me.",
+        "width": 622
+      }
+    ],
+    "client": 1280,
+    "scroll": 1280
+  }
+]

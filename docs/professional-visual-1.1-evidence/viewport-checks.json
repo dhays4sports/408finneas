@@ -1,0 +1,514 @@
+[
+  {
+    "route": "tech",
+    "width": 375,
+    "buttonBackgrounds": [
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)"
+    ],
+    "buttonHeights": [
+      52,
+      52,
+      69.375,
+      69.375
+    ],
+    "documentWidth": 375,
+    "headline": "Your career may come with an insurance perk.",
+    "images": [
+      {
+        "alt": "Farmers Insurance",
+        "loaded": true
+      },
+      {
+        "alt": "Dylan Haysbert",
+        "loaded": true
+      }
+    ],
+    "mainHeight": 1098.28125,
+    "panelBackground": "rgb(237, 243, 248)",
+    "reassurance": "What happens next",
+    "viewport": 375
+  },
+  {
+    "route": "tech",
+    "width": 390,
+    "buttonBackgrounds": [
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)"
+    ],
+    "buttonHeights": [
+      52,
+      52,
+      52,
+      52
+    ],
+    "documentWidth": 390,
+    "headline": "Your career may come with an insurance perk.",
+    "images": [
+      {
+        "alt": "Farmers Insurance",
+        "loaded": true
+      },
+      {
+        "alt": "Dylan Haysbert",
+        "loaded": true
+      }
+    ],
+    "mainHeight": 1000.640625,
+    "panelBackground": "rgb(237, 243, 248)",
+    "reassurance": "What happens next",
+    "viewport": 390
+  },
+  {
+    "route": "tech",
+    "width": 430,
+    "buttonBackgrounds": [
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)"
+    ],
+    "buttonHeights": [
+      52,
+      52,
+      52,
+      52
+    ],
+    "documentWidth": 430,
+    "headline": "Your career may come with an insurance perk.",
+    "images": [
+      {
+        "alt": "Farmers Insurance",
+        "loaded": true
+      },
+      {
+        "alt": "Dylan Haysbert",
+        "loaded": true
+      }
+    ],
+    "mainHeight": 978.953125,
+    "panelBackground": "rgb(237, 243, 248)",
+    "reassurance": "What happens next",
+    "viewport": 430
+  },
+  {
+    "route": "tech",
+    "width": 1280,
+    "buttonBackgrounds": [
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)"
+    ],
+    "buttonHeights": [
+      52.796875,
+      52.796875,
+      52.796875,
+      52.796875
+    ],
+    "documentWidth": 1280,
+    "headline": "Your career may come with an insurance perk.",
+    "images": [
+      {
+        "alt": "Farmers Insurance",
+        "loaded": true
+      },
+      {
+        "alt": "Dylan Haysbert",
+        "loaded": true
+      }
+    ],
+    "mainHeight": 1007.5625,
+    "panelBackground": "rgb(237, 243, 248)",
+    "reassurance": "What happens next",
+    "viewport": 1280
+  },
+  {
+    "route": "healthcare",
+    "width": 375,
+    "buttonBackgrounds": [
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)"
+    ],
+    "buttonHeights": [
+      52,
+      52,
+      69.375,
+      69.375
+    ],
+    "documentWidth": 375,
+    "headline": "Your career may come with an insurance perk.",
+    "images": [
+      {
+        "alt": "Farmers Insurance",
+        "loaded": true
+      },
+      {
+        "alt": "Dylan Haysbert",
+        "loaded": true
+      }
+    ],
+    "mainHeight": 1098.28125,
+    "panelBackground": "rgb(237, 243, 248)",
+    "reassurance": "What happens next",
+    "viewport": 375
+  },
+  {
+    "route": "healthcare",
+    "width": 390,
+    "buttonBackgrounds": [
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)"
+    ],
+    "buttonHeights": [
+      52,
+      52,
+      52,
+      52
+    ],
+    "documentWidth": 390,
+    "headline": "Your career may come with an insurance perk.",
+    "images": [
+      {
+        "alt": "Farmers Insurance",
+        "loaded": true
+      },
+      {
+        "alt": "Dylan Haysbert",
+        "loaded": true
+      }
+    ],
+    "mainHeight": 1000.640625,
+    "panelBackground": "rgb(237, 243, 248)",
+    "reassurance": "What happens next",
+    "viewport": 390
+  },
+  {
+    "route": "healthcare",
+    "width": 430,
+    "buttonBackgrounds": [
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)"
+    ],
+    "buttonHeights": [
+      52,
+      52,
+      52,
+      52
+    ],
+    "documentWidth": 430,
+    "headline": "Your career may come with an insurance perk.",
+    "images": [
+      {
+        "alt": "Farmers Insurance",
+        "loaded": true
+      },
+      {
+        "alt": "Dylan Haysbert",
+        "loaded": true
+      }
+    ],
+    "mainHeight": 978.953125,
+    "panelBackground": "rgb(237, 243, 248)",
+    "reassurance": "What happens next",
+    "viewport": 430
+  },
+  {
+    "route": "healthcare",
+    "width": 1280,
+    "buttonBackgrounds": [
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)"
+    ],
+    "buttonHeights": [
+      52.796875,
+      52.796875,
+      52.796875,
+      52.796875
+    ],
+    "documentWidth": 1280,
+    "headline": "Your career may come with an insurance perk.",
+    "images": [
+      {
+        "alt": "Farmers Insurance",
+        "loaded": true
+      },
+      {
+        "alt": "Dylan Haysbert",
+        "loaded": true
+      }
+    ],
+    "mainHeight": 1007.5625,
+    "panelBackground": "rgb(237, 243, 248)",
+    "reassurance": "What happens next",
+    "viewport": 1280
+  },
+  {
+    "route": "engineers",
+    "width": 375,
+    "buttonBackgrounds": [
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)"
+    ],
+    "buttonHeights": [
+      52,
+      52,
+      69.375,
+      69.375
+    ],
+    "documentWidth": 375,
+    "headline": "Your career may come with an insurance perk.",
+    "images": [
+      {
+        "alt": "Farmers Insurance",
+        "loaded": true
+      },
+      {
+        "alt": "Dylan Haysbert",
+        "loaded": true
+      }
+    ],
+    "mainHeight": 1098.28125,
+    "panelBackground": "rgb(237, 243, 248)",
+    "reassurance": "What happens next",
+    "viewport": 375
+  },
+  {
+    "route": "engineers",
+    "width": 390,
+    "buttonBackgrounds": [
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)"
+    ],
+    "buttonHeights": [
+      52,
+      52,
+      52,
+      52
+    ],
+    "documentWidth": 390,
+    "headline": "Your career may come with an insurance perk.",
+    "images": [
+      {
+        "alt": "Farmers Insurance",
+        "loaded": true
+      },
+      {
+        "alt": "Dylan Haysbert",
+        "loaded": true
+      }
+    ],
+    "mainHeight": 1000.640625,
+    "panelBackground": "rgb(237, 243, 248)",
+    "reassurance": "What happens next",
+    "viewport": 390
+  },
+  {
+    "route": "engineers",
+    "width": 430,
+    "buttonBackgrounds": [
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)"
+    ],
+    "buttonHeights": [
+      52,
+      52,
+      52,
+      52
+    ],
+    "documentWidth": 430,
+    "headline": "Your career may come with an insurance perk.",
+    "images": [
+      {
+        "alt": "Farmers Insurance",
+        "loaded": true
+      },
+      {
+        "alt": "Dylan Haysbert",
+        "loaded": true
+      }
+    ],
+    "mainHeight": 978.953125,
+    "panelBackground": "rgb(237, 243, 248)",
+    "reassurance": "What happens next",
+    "viewport": 430
+  },
+  {
+    "route": "engineers",
+    "width": 1280,
+    "buttonBackgrounds": [
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)"
+    ],
+    "buttonHeights": [
+      52.796875,
+      52.796875,
+      52.796875,
+      52.796875
+    ],
+    "documentWidth": 1280,
+    "headline": "Your career may come with an insurance perk.",
+    "images": [
+      {
+        "alt": "Farmers Insurance",
+        "loaded": true
+      },
+      {
+        "alt": "Dylan Haysbert",
+        "loaded": true
+      }
+    ],
+    "mainHeight": 1007.5625,
+    "panelBackground": "rgb(237, 243, 248)",
+    "reassurance": "What happens next",
+    "viewport": 1280
+  },
+  {
+    "route": "teachers",
+    "width": 375,
+    "buttonBackgrounds": [
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)"
+    ],
+    "buttonHeights": [
+      52,
+      52,
+      69.375,
+      69.375
+    ],
+    "documentWidth": 375,
+    "headline": "Your career may come with an insurance perk.",
+    "images": [
+      {
+        "alt": "Farmers Insurance",
+        "loaded": true
+      },
+      {
+        "alt": "Dylan Haysbert",
+        "loaded": true
+      }
+    ],
+    "mainHeight": 1098.28125,
+    "panelBackground": "rgb(237, 243, 248)",
+    "reassurance": "What happens next",
+    "viewport": 375
+  },
+  {
+    "route": "teachers",
+    "width": 390,
+    "buttonBackgrounds": [
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)"
+    ],
+    "buttonHeights": [
+      52,
+      52,
+      52,
+      52
+    ],
+    "documentWidth": 390,
+    "headline": "Your career may come with an insurance perk.",
+    "images": [
+      {
+        "alt": "Farmers Insurance",
+        "loaded": true
+      },
+      {
+        "alt": "Dylan Haysbert",
+        "loaded": true
+      }
+    ],
+    "mainHeight": 1000.640625,
+    "panelBackground": "rgb(237, 243, 248)",
+    "reassurance": "What happens next",
+    "viewport": 390
+  },
+  {
+    "route": "teachers",
+    "width": 430,
+    "buttonBackgrounds": [
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)"
+    ],
+    "buttonHeights": [
+      52,
+      52,
+      52,
+      52
+    ],
+    "documentWidth": 430,
+    "headline": "Your career may come with an insurance perk.",
+    "images": [
+      {
+        "alt": "Farmers Insurance",
+        "loaded": true
+      },
+      {
+        "alt": "Dylan Haysbert",
+        "loaded": true
+      }
+    ],
+    "mainHeight": 978.953125,
+    "panelBackground": "rgb(237, 243, 248)",
+    "reassurance": "What happens next",
+    "viewport": 430
+  },
+  {
+    "route": "teachers",
+    "width": 1280,
+    "buttonBackgrounds": [
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)",
+      "rgb(255, 255, 255)"
+    ],
+    "buttonHeights": [
+      52.796875,
+      52.796875,
+      52.796875,
+      52.796875
+    ],
+    "documentWidth": 1280,
+    "headline": "Your career may come with an insurance perk.",
+    "images": [
+      {
+        "alt": "Farmers Insurance",
+        "loaded": true
+      },
+      {
+        "alt": "Dylan Haysbert",
+        "loaded": true
+      }
+    ],
+    "mainHeight": 1007.5625,
+    "panelBackground": "rgb(237, 243, 248)",
+    "reassurance": "What happens next",
+    "viewport": 1280
+  }
+]

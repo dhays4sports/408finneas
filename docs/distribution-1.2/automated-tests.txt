@@ -1,0 +1,132 @@
+✔ business links retain bounded source and placement without changing agency mailbox (4.83814ms)
+✔ untagged and malformed source values are safe (1.927729ms)
+✔ business callback is included in deployed worker routing (0.869456ms)
+✔ buyer presentation preserves canonical payload and semantic first question (6.003279ms)
+✔ buyer proxy permits reused assets, drops stale entity headers and retains only accepted attribution (9.405902ms)
+✔ condo shares buyer shell with agency primary and canonical questionnaire intact (7.911599ms)
+✔ condo proxy allows only same-origin approved assets and preserves safe source parameters (22.940297ms)
+✔ thin buyer sends bounded campaign context by POST without identity or a local engine (3.923357ms)
+✔ candidate preserves active buyer, campaign references and specialized life (4.17448ms)
+✔ candidate route set includes four professions; QR parser is bounded (3.291981ms)
+✔ 408 renders canonical questions without a redirect or local question engine (7.756862ms)
+✔ same-origin action proxy forwards only the opaque capability and fixed CoverageFit destination (2.55592ms)
+✔ Pages dispatch includes the active trailing-slash and compatibility entry URLs (2.063167ms)
+✔ upstream failure gives a safe contact fallback and logs only status/stage/type (2.126881ms)
+✔ native fetch keeps its global receiver and rejects redirects on page and action paths (4.174736ms)
+✔ fetch exception is distinguished without logging URLs, tokens or exception messages (0.676783ms)
+✔ manual redirects fail closed without forwarding location, cookies or bodies (7.602345ms)
+✔ Home compatibility bypasses campaign fallback and uses the pretty asset path (5.099974ms)
+✔ Buyer compatibility retains the original appointment form with independent canonical entry (2.533197ms)
+✔ Condo retains the appointment form and routes both legacy aliases (2.321336ms)
+✔ Tech compatibility preserves historical links while public Tech remains gated (1.58112ms)
+✔ Teachers compatibility survives candidate Engineers activation (1.796907ms)
+✔ Healthcare retains its original form alongside professional candidate routes (2.052592ms)
+✔ QR activation is bounded and forwards market/campaign without client PII (5.999308ms)
+✔ preview fails closed before network for absent, production, arbitrary, or mutable upstream (18.150969ms)
+✔ production ignores staging configuration; unknown hosts cannot select an upstream (0.941832ms)
+✔ preview presentation pins script, styles, CSP and noindex to configured backend (1.775385ms)
+✔ preview rejects mixed production assets and stale client versions (5.014348ms)
+✔ preview POST Origin and private cookie stay on the pinned pair (1.051683ms)
+✔ tech/home: adapter → canonical journey → durable producer receipt (209.532171ms)
+✔ tech/auto: adapter → canonical journey → durable producer receipt (63.581085ms)
+✔ tech/life: adapter → canonical journey → durable producer receipt (74.159608ms)
+✔ tech/commercial: adapter → canonical journey → durable producer receipt (72.996521ms)
+✔ healthcare/home: adapter → canonical journey → durable producer receipt (92.133422ms)
+✔ healthcare/auto: adapter → canonical journey → durable producer receipt (45.947296ms)
+✔ healthcare/life: adapter → canonical journey → durable producer receipt (41.265871ms)
+✔ healthcare/commercial: adapter → canonical journey → durable producer receipt (34.281874ms)
+✔ engineers/home: adapter → canonical journey → durable producer receipt (38.855825ms)
+✔ engineers/auto: adapter → canonical journey → durable producer receipt (35.470497ms)
+✔ engineers/life: adapter → canonical journey → durable producer receipt (31.503191ms)
+✔ engineers/commercial: adapter → canonical journey → durable producer receipt (29.839174ms)
+✔ teachers/home: adapter → canonical journey → durable producer receipt (35.208447ms)
+✔ teachers/auto: adapter → canonical journey → durable producer receipt (30.119626ms)
+✔ teachers/life: adapter → canonical journey → durable producer receipt (36.660975ms)
+✔ teachers/commercial: adapter → canonical journey → durable producer receipt (36.9547ms)
+✔ tech presentation preserves canonical state and actionable controls (10.219556ms)
+✔ healthcare presentation preserves canonical state and actionable controls (3.043275ms)
+✔ engineers presentation preserves canonical state and actionable controls (1.010002ms)
+✔ teachers presentation preserves canonical state and actionable controls (3.273844ms)
+✔ unrelated routes and unknown upstream markup are untouched (0.202977ms)
+✔ engineers compatibility keeps original assets and explicit worker route (2.267388ms)
+PASS exact lab CSP and unchanged Life route connection restrictions (source check)
+✔ tests/signal-csp.test.cjs (121.26998ms)
+SIGNAL-DECISION-BRIDGE-1.0 tests passed
+✔ tests/signal-decision-bridge.test.cjs (141.292484ms)
+✔ endpoint resolution: production default, configured override, explicit test override (4.746185ms)
+✔ unsafe protocols rejected; explicit loopback test endpoint supported (4.316713ms)
+✔ registry owns routes only; both shells delegate transport and load shared config first (10.887366ms)
+✔ Signal CSP permits exact production authority without wildcard or obsolete preview origin (0.78363ms)
+SIGNAL-FOUNDATION-1.0 core tests passed
+✔ tests/signal-foundation.test.cjs (158.08557ms)
+✔ proxy fails closed on missing configuration, cross-origin and upstream false success (21.413832ms)
+PASS Life HTTP happy path, public response and guardrails
+PASS session reload, Back, changed evidence, low intent and local/remote isolation
+PASS weak/existing Life, Home, both Auto paths and mandatory business type
+CoverageFit rate limiter unavailable { reason: 'binding_missing' }
+PASS real HTTP failure/retry, preserved answers, exact CORS, preflight and fail-closed missing DB
+PASS rate limit and minimal SQLite schema; no business tables or external business services
+{
+  "publicLifeResponse": {
+    "ok": true,
+    "schemaVersion": "1.0",
+    "engine": "CF-SIGNAL-DECISION-1.0",
+    "priorityEngine": "CF-OPPORTUNITY-PRIORITY-1.0",
+    "signalSessionId": "1aa6dacc-9920-4e63-b3b2-e0152410e931",
+    "flowId": "foundation_demo_remote",
+    "flowVersion": "1.0",
+    "decision": "OFFER_HUMAN",
+    "state": "qualified_signal",
+    "nextQuestionId": null,
+    "missingDimension": null,
+    "nextQuestion": null,
+    "publicExperience": {
+      "eyebrow": "Next step",
+      "headline": "This looks worth a quick conversation.",
+      "body": "A licensed agent can pick up from what you already shared instead of starting over.",
+      "actions": [
+        "talk_now",
+        "choose_time",
+        "text"
+      ]
+    },
+    "evaluatedAt": "2026-10-29T01:42:43.433Z",
+    "guardrails": {
+      "anonymous": true,
+      "persisted": false,
+      "leadCreated": false,
+      "opportunityCreated": false,
+      "contactPermissionGranted": false,
+      "consumerScoreExposed": false,
+      "underwritingDecision": false,
+      "eligibilityDecision": false,
+      "pricingDecision": false,
+      "bindAuthorized": false
+    }
+  }
+}
+✔ tests/signal-http-integration.test.mjs (629.564178ms)
+✔ all contact modes preserve evidence and remain stateless; retries have stable receipt (50.551562ms)
+✔ rejects missing permission, real contacts, PII, tampered signals, expired handoff and invalid timing (12.711372ms)
+✔ exact host/origin, method and body size gates (10.026588ms)
+✔ human override carries an empty anonymous Life session without invented answers (3.592992ms)
+✔ browser Back restoration shows the restored method and resets permission (7.87163ms)
+PASS Life adaptive routing, three-answer happy path, Back, learn/later, explicit-action handoff, retained evidence, mapped coverage/goal and non-submitting preview
+✔ tests/signal-life-preview.test.cjs (160.349713ms)
+✔ durable row survives reopen, preserving answers and scoped permission atomically (62.552125ms)
+✔ concurrent duplicates create one immutable row; lost acknowledgement retries recover (28.045662ms)
+✔ mode, time and evidence changes create distinct requests (6.087197ms)
+✔ missing/unverified DB fails closed; validation rejects before any database access (6.198811ms)
+✔ expiry pruning, bounded staging capacity, and no mutation of original receipt on retry (95.642461ms)
+PASS 11 routes, 58 engine paths, Back, isolation, privacy, terminal decisions, offline/retry and non-delivering human preview
+✔ tests/signal-routes.test.cjs (193.645811ms)
+PASS shell fresh URL consumption and refresh/resume control flow (VM DOM stub, not browser QA)
+✔ tests/signal-shell-resume.test.cjs (129.8165ms)
+ℹ tests 73
+ℹ suites 0
+ℹ pass 73
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1237.41866

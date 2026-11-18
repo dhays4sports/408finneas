@@ -1,0 +1,7 @@
+const test=require('node:test');const assert=require('node:assert/strict');const choice=require('../shared/contact-choice.js');
+test('business links retain bounded source and placement without changing agency mailbox',()=>{
+ const q='?intent=business&utm_source=test_partner&utm_medium=newsletter&utm_campaign=distribution_engine_1_2&utm_content=test_placement_01&partner_id=qa_partner&placement_id=qa_placement_001';
+ const r=choice.resolve(q),callback=new URL(r.callbackHref,'https://408farmers.com');assert.equal(callback.pathname,'/business/');assert.equal(callback.searchParams.get('placement_id'),'qa_placement_001');assert.equal(callback.searchParams.get('utm_source'),'test_partner');assert.match(decodeURIComponent(choice.smsHref(r.context)),/qa partner \/ qa placement 001/);assert.match(choice.emailHref(r.context),/^mailto:dylan.vtam@farmersagency.com/);assert.doesNotMatch(r.context.message,/utm_/);
+});
+test('untagged and malformed source values are safe',()=>{assert.equal(choice.resolve('?intent=business').context.message,choice.CONTEXTS.business.message);for(const value of ['x'.repeat(81),'a@b.com','<script>','4083276377','a%0d%0ab']){const r=choice.resolve('?intent=business&partner_id='+encodeURIComponent(value));assert.deepEqual(r.attribution,{});assert.equal(r.reference,'');}});
+test('business callback is included in deployed worker routing',()=>{const routes=require('../_routes.json');assert.ok(routes.include.includes('/business/'));assert.ok(routes.include.includes('/business'));});

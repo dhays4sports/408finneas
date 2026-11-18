@@ -45,7 +45,9 @@
     "/condo/qr/*",
     "/engineers/",
     "/engineers/legacy",
-    "/engineers/legacy.html"
+    "/engineers/legacy.html",
+    "/business",
+    "/business/"
   ],
   "exclude": []
 }

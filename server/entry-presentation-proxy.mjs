@@ -14,16 +14,16 @@ export function entryUpstream(request,env={}){
   if(env.BUYER_STAGING_ISOLATED!=='1'||!/^https:\/\/[a-f0-9]{8}\.coveragefit\.pages\.dev$/.test(upstream||''))throw Error('preview_configuration');
   return new URL('/api/distribution/',upstream);
 }
-export const ACTIVE_ENTRY_ROUTES=new Set(['home','buyer','condo','tech','teachers','healthcare','engineers']);
+export const ACTIVE_ENTRY_ROUTES=new Set(['business','home','buyer','condo','tech','teachers','healthcare','engineers']);
 export const ACTIVE_QR_PRODUCTS=new Set(['home','condo']);
 export function isActiveEntry(entry){return !!entry&&(entry.market?ACTIVE_QR_PRODUCTS:ACTIVE_ENTRY_ROUTES).has(entry.entry);}
 export function parseEntryRoute(path){
-  const direct=path.match(/^\/(home|buyer|condo|auto-bundle|tech|teachers|healthcare|engineers)\/?$/);
+  const direct=path.match(/^\/(business|home|buyer|condo|auto-bundle|tech|teachers|healthcare|engineers)\/?$/);
   if(direct)return {entry:direct[1]};
   const qr=path.match(/^\/(home|condo)\/qr\/(\d{5})\/(rate|review|fit)\/?$/);
   return qr?{entry:qr[1],market:qr[2],campaign:qr[3]}:null;
 }
-const cookie=request=>(request.headers.get('cookie')||'').split(';').map(x=>x.trim()).find(x=>/^cf_distribution_resume=pvxw_[A-Za-z0-9_-]{43}$/.test(x))||'';
+const cookie=request=>(request.headers.get('cookie')||'').split(';').map(x=>x.trim()).filter(x=>/^cf_distribution_resume(?:_[a-z_-]+)?=pvxw_[A-Za-z0-9_-]{43}$/.test(x)).join('; ');
 // Invoke the runtime method with its global receiver. Cloudflare runtimes may
 // reject detached native fetch calls; use a string input at the transport boundary.
 const upstreamFetch=(url,init,options)=>options.fetch
@@ -34,7 +34,7 @@ export async function entryPage(request,context,options={}){
   let stage='fetch',status=null;
   try{
     const base=entryUpstream(request,options.env),target=new URL('presentation',base);
-    for(const key of ['campaign_id','campaign_variant','partner_id','utm_source','utm_medium','utm_campaign','utm_content','utm_term','creative']){
+    for(const key of ['campaign_id','campaign_variant','partner_id','placement_id','utm_source','utm_medium','utm_campaign','utm_content','utm_term','creative']){
       const value=incoming.searchParams.get(key);if(value)target.searchParams.set(key,value);
     }
     target.searchParams.set('entry',context.entry);target.searchParams.set('presentation','408_contextual');
@@ -64,7 +64,7 @@ export async function entryAction(request,options={}){
     if(upstream.status>=300&&upstream.status<400)throw Object.assign(Error('upstream_redirect'),{upstreamStatus:upstream.status});
     const headers=new Headers({'Content-Type':'application/json','Cache-Control':'private, no-store','Referrer-Policy':'no-referrer'});
     const session=upstream.headers.get('set-cookie');
-    if(session&&/^cf_distribution_resume=pvxw_[A-Za-z0-9_-]{43};/.test(session))headers.set('Set-Cookie',session);
+    if(session&&/^cf_distribution_resume(?:_[a-z_-]+)?=pvxw_[A-Za-z0-9_-]{43};/.test(session))headers.set('Set-Cookie',session);
     return new Response(upstream.body,{status:upstream.status,headers});
   }catch(error){console.warn('entry_action_upstream_failure',JSON.stringify({name:error?.name||'Error'}));return Response.json({ok:false,message:'Please retry or contact Dylan.'},{status:503,headers:{'Cache-Control':'no-store'}});}
 }

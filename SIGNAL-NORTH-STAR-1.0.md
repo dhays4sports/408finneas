@@ -70,3 +70,8 @@ No Cloudflare configuration has been confirmed by Dylan during this mandate. A G
 Do not configure SIGNAL_HANDOFF_PREVIEW_DB or apply Life preview migrations in production. After manual settings, redeploy the existing main deployments. Return deployment SHAs, database name, migration verification results and setting names confirmed—never secrets. Previous checkpoint A is still pending; no need to repeat an item already completed, only report it.
 
 Next: anonymous production journeys, then synthetic Home handoff with producer receipt at CoverageFit `/agent/workspace/` (Original Inquiry) and retry dedupe. UI success alone is insufficient. No automatic SMS or AgencyZoom write. Internal SMS canary waits for deliberate manual enablement and exact-send approval. Do not begin market.ad.
+
+
+## Portfolio reconciliation 1.1
+
+See [408FARMERS adoption note](docs/MESH-PERSONAL-CONTROL-PLANE-ADOPTION-1.1.md). Documentation only: preserve native records, consent, current release state and existing runtime controls. No Mesh dependency or operational authority is introduced.
